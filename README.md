@@ -1,1 +1,0 @@
-﻿# MinecraftBot API Docs
