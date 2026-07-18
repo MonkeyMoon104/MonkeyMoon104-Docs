@@ -1,136 +1,99 @@
-# MonkeyMoon104 Docs
+# Aggiornare GitHub Pages
 
-Public documentation hub for MonkeyMoon104 projects.
-
-This repository is published through GitHub Pages and is available at:
-
-https://docs.monkeymoon104.it/
-
-## Structure
-
-Each project has its own folder inside the repository:
-
-```text
-.
-├── CNAME
-├── .nojekyll
-├── index.html
-├── mcbot/
-│   └── index.html
-└── buildinfra/
-    └── index.html
-````
-
-Example URLs:
-
-```text
-https://docs.monkeymoon104.it/mcbot/
-https://docs.monkeymoon104.it/buildinfra/
-```
-
-## Root files
-
-### `CNAME`
-
-Contains the custom domain used by GitHub Pages:
-
-```text
-docs.monkeymoon104.it
-```
-
-Do not delete this file.
-
-### `.nojekyll`
-
-Disables Jekyll processing on GitHub Pages.
-
-This is useful for generated documentation such as Javadocs.
-
-### `index.html`
-
-Main landing page for:
+Questo repository/submodule contiene la documentazione pubblica visibile su:
 
 ```text
 https://docs.monkeymoon104.it/
 ```
 
-It should link to all available project documentation folders.
-
-## Adding a new project
-
-To add documentation for a new project, create a new folder using a short lowercase project name.
-
-Example:
-
-```text
-myproject/
-```
-
-The project documentation should contain its own `index.html`:
-
-```text
-myproject/index.html
-```
-
-The final URL will be:
-
-```text
-https://docs.monkeymoon104.it/myproject/
-```
-
-## Updating project documentation
-
-Each private project should update only its own folder.
-
-For example, the MinecraftBot project should only write to:
+Per MinecraftBot, la cartella pubblicata e:
 
 ```text
 mcbot/
 ```
 
-and should not modify:
+URL finale:
+
+```text
+https://docs.monkeymoon104.it/mcbot/
+```
+
+## File da non toccare
+
+Non cancellare o modificare senza motivo:
 
 ```text
 CNAME
 .nojekyll
 index.html
-buildinfra/
-other-projects/
 ```
 
-Recommended Gradle output target example:
+`CNAME` mantiene il dominio custom. `.nojekyll` evita che GitHub Pages rompa i file generati dalla Javadoc.
 
-```gradle
-into(layout.projectDirectory.dir('docs/mcbot'))
+## Ordine corretto per aggiornare le docs MinecraftBot
+
+Questi comandi vanno lanciati dal repo principale `MinecraftBOT`, non direttamente da `docs`.
+
+### 1. Assicurati che la versione API sia corretta
+
+```powershell
+git describe --tags --exact-match HEAD
 ```
 
-For another project:
+Esempio:
 
-```gradle
-into(layout.projectDirectory.dir('docs/buildinfra'))
+```text
+v1.0.6
 ```
 
-## Publishing changes
+Se il comando fallisce, il commit corrente non e taggato. In quel caso la Javadoc potrebbe usare l'ultimo tag precedente.
 
-After generating or updating docs:
+### 2. Rigenera le Javadocs
 
-```bash
-git add <project-folder> .nojekyll
-git commit -m "Update <project-name> docs"
-git push
+```powershell
+.\gradlew.bat :mcbot-api:clean :mcbot-api:javadoc publishApiDocs
 ```
 
-Example:
+Il `clean` del modulo API e intenzionale: forza Gradle a rigenerare il titolo della Javadoc con la versione corretta.
 
-```bash
-git add mcbot .nojekyll
-git commit -m "Update MinecraftBot docs"
-git push
+### 3. Controlla il titolo generato
+
+```powershell
+Select-String -Path docs\mcbot\index.html -Pattern "mcbot-api"
 ```
 
-## Notes
+Deve comparire la versione attesa:
 
-This repository must contain only public documentation files.
-
-Do not commit private source code, configuration files, secrets, build scripts, or project internals.
+```text
+mcbot-api 1.0.6 API
 ```
+
+### 4. Commit e push nel submodule docs
+
+```powershell
+git -C docs status --short
+git -C docs add mcbot
+git -C docs commit -m "docs(api): regenerate javadocs for 1.0.6"
+git -C docs push origin master
+```
+
+### 5. Commit e push del puntatore nel repo principale
+
+```powershell
+git status --short
+git add docs
+git commit -m "docs(api): point to 1.0.6 javadocs"
+git push origin mcbot
+```
+
+## Se GitHub Pages mostra ancora la versione vecchia
+
+Controlla prima il file locale:
+
+```powershell
+Select-String -Path docs\mcbot\index.html -Pattern "mcbot-api"
+```
+
+Se localmente e corretto ma online no, aspetta qualche minuto e forza refresh del browser. GitHub Pages e il browser possono tenere cache.
+
+Se localmente e ancora vecchio, hai rigenerato le Javadocs prima del tag o Gradle le ha considerate `UP-TO-DATE`. Ripeti il comando con `:mcbot-api:clean`.
