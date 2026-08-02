@@ -1,0 +1,9 @@
+com.monkey.ultimatebot.api
+com.monkey.ultimatebot.api.event.action
+com.monkey.ultimatebot.api.event.base
+com.monkey.ultimatebot.api.event.bus
+com.monkey.ultimatebot.api.event.combat
+com.monkey.ultimatebot.api.event.lifecycle
+com.monkey.ultimatebot.api.event.state
+com.monkey.ultimatebot.api.managers
+com.monkey.ultimatebot.api.model

@@ -1,9 +1,0 @@
-com.monkey.mcbot.api
-com.monkey.mcbot.api.event.action
-com.monkey.mcbot.api.event.base
-com.monkey.mcbot.api.event.bus
-com.monkey.mcbot.api.event.combat
-com.monkey.mcbot.api.event.lifecycle
-com.monkey.mcbot.api.event.state
-com.monkey.mcbot.api.managers
-com.monkey.mcbot.api.model
