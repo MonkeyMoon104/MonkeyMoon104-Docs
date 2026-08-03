@@ -1,0 +1,5 @@
+com.monkey.ultimatebot.sdk
+com.monkey.ultimatebot.sdk.event
+com.monkey.ultimatebot.sdk.model.request
+com.monkey.ultimatebot.sdk.model.response
+com.monkey.ultimatebot.sdk.model.type
