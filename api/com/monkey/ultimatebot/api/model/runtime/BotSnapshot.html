@@ -94,10 +94,10 @@ loadScripts(document, 'script');</script>
 <dt>Record Components:</dt>
 <dd><code><span id="param-ownerUUID">ownerUUID</span></code> - owner UUID associated with this bot slot</dd>
 <dd><code><span id="param-botUUID">botUUID</span></code> - runtime bot entity UUID, may be null when unavailable</dd>
-<dd><code><span id="param-botType">botType</span></code> - bot type label</dd>
-<dd><code><span id="param-botDifficulty">botDifficulty</span></code> - current difficulty label</dd>
-<dd><code><span id="param-minDifficultyLevel">minDifficultyLevel</span></code> - minimum allowed difficulty label</dd>
-<dd><code><span id="param-maxDifficultyLevel">maxDifficultyLevel</span></code> - maximum allowed difficulty label</dd>
+<dd><code><span id="param-botMode">botMode</span></code> - lifecycle and ownership mode</dd>
+<dd><code><span id="param-difficulty">difficulty</span></code> - current difficulty</dd>
+<dd><code><span id="param-minDifficulty">minDifficulty</span></code> - minimum allowed difficulty</dd>
+<dd><code><span id="param-maxDifficulty">maxDifficulty</span></code> - maximum allowed difficulty</dd>
 <dd><code><span id="param-combatMode">combatMode</span></code> - selected combat mode</dd>
 <dd><code><span id="param-combatTuning">combatTuning</span></code> - resolved combat tuning</dd>
 <dd><code><span id="param-customizedCombatTuning">customizedCombatTuning</span></code> - whether the resolved tuning is a player or API override</dd>
@@ -112,9 +112,26 @@ loadScripts(document, 'script');</script>
 <dd><code><span id="param-attackBots">attackBots</span></code> - whether this bot can target other managed bots</dd>
 <dd><code><span id="param-targetMode">targetMode</span></code> - categories of living entities this bot may attack</dd>
 <dd><code><span id="param-explosionBlockDamage">explosionBlockDamage</span></code> - whether bot explosions may destroy terrain</dd>
+<dd><code><span id="param-teamOwnerUUIDs">teamOwnerUUIDs</span></code> - complete owner set for a shared team bot</dd>
+<dd><code><span id="param-botNameTemplate">botNameTemplate</span></code> - configured bot name template</dd>
+<dd><code><span id="param-botSkinSource">botSkinSource</span></code> - configured skin source</dd>
+<dd><code><span id="param-minArmor">minArmor</span></code> - minimum configured armor tier</dd>
+<dd><code><span id="param-maxArmor">maxArmor</span></code> - maximum configured armor tier</dd>
+<dd><code><span id="param-armor">armor</span></code> - current armor tier</dd>
+<dd><code><span id="param-blastProtection">blastProtection</span></code> - per-piece blast-protection state</dd>
+<dd><code><span id="param-changeableFollow">changeableFollow</span></code> - whether GUI follow changes are allowed</dd>
+<dd><code><span id="param-changeableCombat">changeableCombat</span></code> - whether GUI combat changes are allowed</dd>
+<dd><code><span id="param-changeableBlast">changeableBlast</span></code> - whether GUI blast changes are allowed</dd>
+<dd><code><span id="param-changeableArmor">changeableArmor</span></code> - whether GUI armor changes are allowed</dd>
+<dd><code><span id="param-changeableTotem">changeableTotem</span></code> - whether GUI totem changes are allowed</dd>
+<dd><code><span id="param-changeableDifficulty">changeableDifficulty</span></code> - whether GUI difficulty changes are allowed</dd>
+<dd><code><span id="param-changeableCombatMode">changeableCombatMode</span></code> - whether GUI combat-mode changes are allowed</dd>
+<dd><code><span id="param-spawnLocation">spawnLocation</span></code> - configured spawn location, when explicit</dd>
+<dd><code><span id="param-killMessage">killMessage</span></code> - configured custom kill message, when present</dd>
+<dd><code><span id="param-equipmentSlots">equipmentSlots</span></code> - persistent equipment-slot overrides</dd>
 </dl>
 <hr>
-<div class="type-signature"><span class="modifiers">public record </span><span class="element-name type-name-label">BotSnapshot</span>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/UUID.html" title="class or interface in java.util" class="external-link">UUID</a>&nbsp;ownerUUID, @Nullable <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/UUID.html" title="class or interface in java.util" class="external-link">UUID</a>&nbsp;botUUID, <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;botType, <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;botDifficulty, <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;minDifficultyLevel, <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;maxDifficultyLevel, com.monkey.ultimatebot.common.model.CombatMode&nbsp;combatMode, com.monkey.ultimatebot.common.model.CombatTuning&nbsp;combatTuning, boolean&nbsp;customizedCombatTuning, boolean&nbsp;follow, boolean&nbsp;combat, int&nbsp;totemCount, int&nbsp;minTotemCount, int&nbsp;maxTotemCount, @Nullable <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/UUID.html" title="class or interface in java.util" class="external-link">UUID</a>&nbsp;targetUUID, <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/UUID.html" title="class or interface in java.util" class="external-link">UUID</a>&gt;&nbsp;targetUUIDs, <a href="../identity/BotSource.html" title="enum class in com.monkey.ultimatebot.api.model.identity">BotSource</a>&nbsp;source, boolean&nbsp;autoTarget, double&nbsp;autoTargetRange, boolean&nbsp;attackBots, <a href="../configuration/BotTargetMode.html" title="enum class in com.monkey.ultimatebot.api.model.configuration">BotTargetMode</a>&nbsp;targetMode, boolean&nbsp;respectWorldGuardPvp, boolean&nbsp;stayAfterOwnerDeath, boolean&nbsp;idleWander, double&nbsp;idleWanderRadius, double&nbsp;idleReturnDistance, long&nbsp;idleReturnDelayMs, boolean&nbsp;crystalPvp, boolean&nbsp;explosions, boolean&nbsp;explosionBlockDamage, boolean&nbsp;enderPearls, boolean&nbsp;healing, boolean&nbsp;killMessageEnabled)
+<div class="type-signature"><span class="modifiers">public record </span><span class="element-name type-name-label">BotSnapshot</span>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/UUID.html" title="class or interface in java.util" class="external-link">UUID</a>&nbsp;ownerUUID, @Nullable <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/UUID.html" title="class or interface in java.util" class="external-link">UUID</a>&nbsp;botUUID, com.monkey.ultimatebot.common.model.BotMode&nbsp;botMode, com.monkey.ultimatebot.common.model.DifficultyTier&nbsp;difficulty, com.monkey.ultimatebot.common.model.DifficultyTier&nbsp;minDifficulty, com.monkey.ultimatebot.common.model.DifficultyTier&nbsp;maxDifficulty, com.monkey.ultimatebot.common.model.CombatMode&nbsp;combatMode, com.monkey.ultimatebot.common.model.CombatTuning&nbsp;combatTuning, boolean&nbsp;customizedCombatTuning, boolean&nbsp;follow, boolean&nbsp;combat, int&nbsp;totemCount, int&nbsp;minTotemCount, int&nbsp;maxTotemCount, @Nullable <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/UUID.html" title="class or interface in java.util" class="external-link">UUID</a>&nbsp;targetUUID, <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/UUID.html" title="class or interface in java.util" class="external-link">UUID</a>&gt;&nbsp;targetUUIDs, com.monkey.ultimatebot.common.model.BotSource&nbsp;source, boolean&nbsp;autoTarget, double&nbsp;autoTargetRange, boolean&nbsp;attackBots, com.monkey.ultimatebot.common.model.BotTargetMode&nbsp;targetMode, boolean&nbsp;respectWorldGuardPvp, boolean&nbsp;stayAfterOwnerDeath, boolean&nbsp;idleWander, double&nbsp;idleWanderRadius, double&nbsp;idleReturnDistance, long&nbsp;idleReturnDelayMs, boolean&nbsp;crystalPvp, boolean&nbsp;explosions, boolean&nbsp;explosionBlockDamage, boolean&nbsp;enderPearls, boolean&nbsp;healing, boolean&nbsp;killMessageEnabled, <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/UUID.html" title="class or interface in java.util" class="external-link">UUID</a>&gt;&nbsp;teamOwnerUUIDs, <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;botNameTemplate, <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;botSkinSource, com.monkey.ultimatebot.common.model.BotArmorTier&nbsp;minArmor, com.monkey.ultimatebot.common.model.BotArmorTier&nbsp;maxArmor, com.monkey.ultimatebot.common.model.BotArmorTier&nbsp;armor, com.monkey.ultimatebot.common.model.BlastProtectionSettings&nbsp;blastProtection, boolean&nbsp;changeableFollow, boolean&nbsp;changeableCombat, boolean&nbsp;changeableBlast, boolean&nbsp;changeableArmor, boolean&nbsp;changeableTotem, boolean&nbsp;changeableDifficulty, boolean&nbsp;changeableCombatMode, @Nullable <a href="BotLocation.html" title="class in com.monkey.ultimatebot.api.model.runtime">BotLocation</a>&nbsp;spawnLocation, @Nullable <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;killMessage, <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="../configuration/BotEquipmentSlot.html" title="enum class in com.monkey.ultimatebot.api.model.configuration">BotEquipmentSlot</a>,<wbr><a href="../configuration/BotEquipmentSlotSetting.html" title="class in com.monkey.ultimatebot.api.model.configuration">BotEquipmentSlotSetting</a>&gt;&nbsp;equipmentSlots)
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Record.html" title="class or interface in java.lang" class="external-link">Record</a></span></div>
 <div class="block">Immutable runtime snapshot of a managed bot.</div>
 </section>
@@ -128,12 +145,12 @@ loadScripts(document, 'script');</script>
 <div class="summary-table two-column-summary">
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
-<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(java.util.UUID,java.util.UUID,java.lang.String,java.lang.String,java.lang.String,java.lang.String,com.monkey.ultimatebot.common.model.CombatMode,com.monkey.ultimatebot.common.model.CombatTuning,boolean,boolean,boolean,int,int,int,java.util.UUID,java.util.Set,com.monkey.ultimatebot.api.model.identity.BotSource,boolean,double,boolean,com.monkey.ultimatebot.api.model.configuration.BotTargetMode,boolean,boolean,boolean,double,double,long,boolean,boolean,boolean,boolean,boolean,boolean)" class="member-name-link">BotSnapshot</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/UUID.html" title="class or interface in java.util" class="external-link">UUID</a>&nbsp;ownerUUID,
+<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(java.util.UUID,java.util.UUID,com.monkey.ultimatebot.common.model.BotMode,com.monkey.ultimatebot.common.model.DifficultyTier,com.monkey.ultimatebot.common.model.DifficultyTier,com.monkey.ultimatebot.common.model.DifficultyTier,com.monkey.ultimatebot.common.model.CombatMode,com.monkey.ultimatebot.common.model.CombatTuning,boolean,boolean,boolean,int,int,int,java.util.UUID,java.util.Set,com.monkey.ultimatebot.common.model.BotSource,boolean,double,boolean,com.monkey.ultimatebot.common.model.BotTargetMode,boolean,boolean,boolean,double,double,long,boolean,boolean,boolean,boolean,boolean,boolean,java.util.Set,java.lang.String,java.lang.String,com.monkey.ultimatebot.common.model.BotArmorTier,com.monkey.ultimatebot.common.model.BotArmorTier,com.monkey.ultimatebot.common.model.BotArmorTier,com.monkey.ultimatebot.common.model.BlastProtectionSettings,boolean,boolean,boolean,boolean,boolean,boolean,boolean,com.monkey.ultimatebot.api.model.runtime.BotLocation,java.lang.String,java.util.Map)" class="member-name-link">BotSnapshot</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/UUID.html" title="class or interface in java.util" class="external-link">UUID</a>&nbsp;ownerUUID,
  @Nullable <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/UUID.html" title="class or interface in java.util" class="external-link">UUID</a>&nbsp;botUUID,
- <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;botType,
- <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;botDifficulty,
- <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;minDifficultyLevel,
- <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;maxDifficultyLevel,
+ com.monkey.ultimatebot.common.model.BotMode&nbsp;botMode,
+ com.monkey.ultimatebot.common.model.DifficultyTier&nbsp;difficulty,
+ com.monkey.ultimatebot.common.model.DifficultyTier&nbsp;minDifficulty,
+ com.monkey.ultimatebot.common.model.DifficultyTier&nbsp;maxDifficulty,
  com.monkey.ultimatebot.common.model.CombatMode&nbsp;combatMode,
  com.monkey.ultimatebot.common.model.CombatTuning&nbsp;combatTuning,
  boolean&nbsp;customizedCombatTuning,
@@ -144,11 +161,11 @@ loadScripts(document, 'script');</script>
  int&nbsp;maxTotemCount,
  @Nullable <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/UUID.html" title="class or interface in java.util" class="external-link">UUID</a>&nbsp;targetUUID,
  <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/UUID.html" title="class or interface in java.util" class="external-link">UUID</a>&gt;&nbsp;targetUUIDs,
- <a href="../identity/BotSource.html" title="enum class in com.monkey.ultimatebot.api.model.identity">BotSource</a>&nbsp;source,
+ com.monkey.ultimatebot.common.model.BotSource&nbsp;source,
  boolean&nbsp;autoTarget,
  double&nbsp;autoTargetRange,
  boolean&nbsp;attackBots,
- <a href="../configuration/BotTargetMode.html" title="enum class in com.monkey.ultimatebot.api.model.configuration">BotTargetMode</a>&nbsp;targetMode,
+ com.monkey.ultimatebot.common.model.BotTargetMode&nbsp;targetMode,
  boolean&nbsp;respectWorldGuardPvp,
  boolean&nbsp;stayAfterOwnerDeath,
  boolean&nbsp;idleWander,
@@ -160,7 +177,24 @@ loadScripts(document, 'script');</script>
  boolean&nbsp;explosionBlockDamage,
  boolean&nbsp;enderPearls,
  boolean&nbsp;healing,
- boolean&nbsp;killMessageEnabled)</code></div>
+ boolean&nbsp;killMessageEnabled,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/UUID.html" title="class or interface in java.util" class="external-link">UUID</a>&gt;&nbsp;teamOwnerUUIDs,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;botNameTemplate,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;botSkinSource,
+ com.monkey.ultimatebot.common.model.BotArmorTier&nbsp;minArmor,
+ com.monkey.ultimatebot.common.model.BotArmorTier&nbsp;maxArmor,
+ com.monkey.ultimatebot.common.model.BotArmorTier&nbsp;armor,
+ com.monkey.ultimatebot.common.model.BlastProtectionSettings&nbsp;blastProtection,
+ boolean&nbsp;changeableFollow,
+ boolean&nbsp;changeableCombat,
+ boolean&nbsp;changeableBlast,
+ boolean&nbsp;changeableArmor,
+ boolean&nbsp;changeableTotem,
+ boolean&nbsp;changeableDifficulty,
+ boolean&nbsp;changeableCombatMode,
+ @Nullable <a href="BotLocation.html" title="class in com.monkey.ultimatebot.api.model.runtime">BotLocation</a>&nbsp;spawnLocation,
+ @Nullable <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;killMessage,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="../configuration/BotEquipmentSlot.html" title="enum class in com.monkey.ultimatebot.api.model.configuration">BotEquipmentSlot</a>,<wbr><a href="../configuration/BotEquipmentSlotSetting.html" title="class in com.monkey.ultimatebot.api.model.configuration">BotEquipmentSlotSetting</a>&gt;&nbsp;equipmentSlots)</code></div>
 <div class="col-last even-row-color">
 <div class="block">Creates an instance of a <code>BotSnapshot</code> record class.</div>
 </div>
@@ -178,35 +212,85 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#attackBots()" class="member-name-link">attackBots</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>com.monkey.ultimatebot.common.model.BotArmorTier</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#armor()" class="member-name-link">armor</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns the value of the <a href="#param-attackBots"><code>attackBots</code></a> record component.</div>
+<div class="block">Returns the value of the <a href="#param-armor"><code>armor</code></a> record component.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#autoTarget()" class="member-name-link">autoTarget</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#attackBots()" class="member-name-link">attackBots</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns the value of the <a href="#param-attackBots"><code>attackBots</code></a> record component.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#autoTarget()" class="member-name-link">autoTarget</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the value of the <code>autoTarget</code> record component.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>double</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#autoTargetRange()" class="member-name-link">autoTargetRange</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>double</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#autoTargetRange()" class="member-name-link">autoTargetRange</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the value of the <code>autoTargetRange</code> record component.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#botDifficulty()" class="member-name-link">botDifficulty</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>com.monkey.ultimatebot.common.model.BlastProtectionSettings</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#blastProtection()" class="member-name-link">blastProtection</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns the value of the <a href="#param-blastProtection"><code>blastProtection</code></a> record component.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>com.monkey.ultimatebot.common.model.BotMode</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#botMode()" class="member-name-link">botMode</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns the value of the <a href="#param-botDifficulty"><code>botDifficulty</code></a> record component.</div>
+<div class="block">Returns the value of the <a href="#param-botMode"><code>botMode</code></a> record component.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#botType()" class="member-name-link">botType</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#botNameTemplate()" class="member-name-link">botNameTemplate</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns the value of the <a href="#param-botType"><code>botType</code></a> record component.</div>
+<div class="block">Returns the value of the <a href="#param-botNameTemplate"><code>botNameTemplate</code></a> record component.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@Nullable <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/UUID.html" title="class or interface in java.util" class="external-link">UUID</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#botUUID()" class="member-name-link">botUUID</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#botSkinSource()" class="member-name-link">botSkinSource</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns the value of the <a href="#param-botSkinSource"><code>botSkinSource</code></a> record component.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@Nullable <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/UUID.html" title="class or interface in java.util" class="external-link">UUID</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#botUUID()" class="member-name-link">botUUID</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the value of the <a href="#param-botUUID"><code>botUUID</code></a> record component.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#changeableArmor()" class="member-name-link">changeableArmor</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns the value of the <a href="#param-changeableArmor"><code>changeableArmor</code></a> record component.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#changeableBlast()" class="member-name-link">changeableBlast</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns the value of the <a href="#param-changeableBlast"><code>changeableBlast</code></a> record component.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#changeableCombat()" class="member-name-link">changeableCombat</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns the value of the <a href="#param-changeableCombat"><code>changeableCombat</code></a> record component.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#changeableCombatMode()" class="member-name-link">changeableCombatMode</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns the value of the <a href="#param-changeableCombatMode"><code>changeableCombatMode</code></a> record component.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#changeableDifficulty()" class="member-name-link">changeableDifficulty</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns the value of the <a href="#param-changeableDifficulty"><code>changeableDifficulty</code></a> record component.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#changeableFollow()" class="member-name-link">changeableFollow</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns the value of the <a href="#param-changeableFollow"><code>changeableFollow</code></a> record component.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#changeableTotem()" class="member-name-link">changeableTotem</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns the value of the <a href="#param-changeableTotem"><code>changeableTotem</code></a> record component.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#combat()" class="member-name-link">combat</a>()</code></div>
@@ -233,15 +317,25 @@ loadScripts(document, 'script');</script>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the value of the <a href="#param-customizedCombatTuning"><code>customizedCombatTuning</code></a> record component.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#enderPearls()" class="member-name-link">enderPearls</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>com.monkey.ultimatebot.common.model.DifficultyTier</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#difficulty()" class="member-name-link">difficulty</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns the value of the <a href="#param-difficulty"><code>difficulty</code></a> record component.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#enderPearls()" class="member-name-link">enderPearls</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the value of the <code>enderPearls</code> record component.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#equals(java.lang.Object)" class="member-name-link">equals</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;o)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#equals(java.lang.Object)" class="member-name-link">equals</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;o)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Indicates whether some other object is "equal to" this one.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a><wbr>&lt;<a href="../configuration/BotEquipmentSlot.html" title="enum class in com.monkey.ultimatebot.api.model.configuration">BotEquipmentSlot</a>,<wbr><a href="../configuration/BotEquipmentSlotSetting.html" title="class in com.monkey.ultimatebot.api.model.configuration">BotEquipmentSlotSetting</a>&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#equipmentSlots()" class="member-name-link">equipmentSlots</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns the value of the <a href="#param-equipmentSlots"><code>equipmentSlots</code></a> record component.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#explosionBlockDamage()" class="member-name-link">explosionBlockDamage</a>()</code></div>
@@ -293,57 +387,77 @@ loadScripts(document, 'script');</script>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the value of the <code>idleWanderRadius</code> record component.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#killMessageEnabled()" class="member-name-link">killMessageEnabled</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@Nullable <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#killMessage()" class="member-name-link">killMessage</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns the value of the <a href="#param-killMessage"><code>killMessage</code></a> record component.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#killMessageEnabled()" class="member-name-link">killMessageEnabled</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the value of the <code>killMessageEnabled</code> record component.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#maxDifficultyLevel()" class="member-name-link">maxDifficultyLevel</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>com.monkey.ultimatebot.common.model.BotArmorTier</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#maxArmor()" class="member-name-link">maxArmor</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns the value of the <a href="#param-maxArmor"><code>maxArmor</code></a> record component.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>com.monkey.ultimatebot.common.model.DifficultyTier</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#maxDifficulty()" class="member-name-link">maxDifficulty</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns the value of the <a href="#param-maxDifficultyLevel"><code>maxDifficultyLevel</code></a> record component.</div>
+<div class="block">Returns the value of the <a href="#param-maxDifficulty"><code>maxDifficulty</code></a> record component.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#maxTotemCount()" class="member-name-link">maxTotemCount</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the value of the <a href="#param-maxTotemCount"><code>maxTotemCount</code></a> record component.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#minDifficultyLevel()" class="member-name-link">minDifficultyLevel</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>com.monkey.ultimatebot.common.model.BotArmorTier</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#minArmor()" class="member-name-link">minArmor</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns the value of the <a href="#param-minDifficultyLevel"><code>minDifficultyLevel</code></a> record component.</div>
+<div class="block">Returns the value of the <a href="#param-minArmor"><code>minArmor</code></a> record component.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#minTotemCount()" class="member-name-link">minTotemCount</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>com.monkey.ultimatebot.common.model.DifficultyTier</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#minDifficulty()" class="member-name-link">minDifficulty</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns the value of the <a href="#param-minDifficulty"><code>minDifficulty</code></a> record component.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#minTotemCount()" class="member-name-link">minTotemCount</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the value of the <a href="#param-minTotemCount"><code>minTotemCount</code></a> record component.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/UUID.html" title="class or interface in java.util" class="external-link">UUID</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#ownerUUID()" class="member-name-link">ownerUUID</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/UUID.html" title="class or interface in java.util" class="external-link">UUID</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#ownerUUID()" class="member-name-link">ownerUUID</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the value of the <a href="#param-ownerUUID"><code>ownerUUID</code></a> record component.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/UUID.html" title="class or interface in java.util" class="external-link">UUID</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#requireBotUUID()" class="member-name-link">requireBotUUID</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/UUID.html" title="class or interface in java.util" class="external-link">UUID</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#requireBotUUID()" class="member-name-link">requireBotUUID</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the runtime entity UUID or fails when this is a pre-spawn snapshot.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#respectWorldGuardPvp()" class="member-name-link">respectWorldGuardPvp</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#respectWorldGuardPvp()" class="member-name-link">respectWorldGuardPvp</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the value of the <code>respectWorldGuardPvp</code> record component.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../identity/BotSource.html" title="enum class in com.monkey.ultimatebot.api.model.identity">BotSource</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#source()" class="member-name-link">source</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>com.monkey.ultimatebot.common.model.BotSource</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#source()" class="member-name-link">source</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the value of the <a href="#param-source"><code>source</code></a> record component.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@Nullable <a href="BotLocation.html" title="class in com.monkey.ultimatebot.api.model.runtime">BotLocation</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#spawnLocation()" class="member-name-link">spawnLocation</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns the value of the <a href="#param-spawnLocation"><code>spawnLocation</code></a> record component.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#stayAfterOwnerDeath()" class="member-name-link">stayAfterOwnerDeath</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the value of the <code>stayAfterOwnerDeath</code> record component.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../configuration/BotTargetMode.html" title="enum class in com.monkey.ultimatebot.api.model.configuration">BotTargetMode</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>com.monkey.ultimatebot.common.model.BotTargetMode</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#targetMode()" class="member-name-link">targetMode</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the value of the <a href="#param-targetMode"><code>targetMode</code></a> record component.</div>
@@ -358,14 +472,19 @@ loadScripts(document, 'script');</script>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the value of the <a href="#param-targetUUIDs"><code>targetUUIDs</code></a> record component.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/UUID.html" title="class or interface in java.util" class="external-link">UUID</a>&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#teamOwnerUUIDs()" class="member-name-link">teamOwnerUUIDs</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns the value of the <a href="#param-teamOwnerUUIDs"><code>teamOwnerUUIDs</code></a> record component.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns a string representation of this record class.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#totemCount()" class="member-name-link">totemCount</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#totemCount()" class="member-name-link">totemCount</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the value of the <a href="#param-totemCount"><code>totemCount</code></a> record component.</div>
 </div>
 </div>
@@ -386,14 +505,14 @@ loadScripts(document, 'script');</script>
 <h2>Constructor Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="&lt;init&gt;(java.util.UUID,java.util.UUID,java.lang.String,java.lang.String,java.lang.String,java.lang.String,com.monkey.ultimatebot.common.model.CombatMode,com.monkey.ultimatebot.common.model.CombatTuning,boolean,boolean,boolean,int,int,int,java.util.UUID,java.util.Set,com.monkey.ultimatebot.api.model.identity.BotSource,boolean,double,boolean,com.monkey.ultimatebot.api.model.configuration.BotTargetMode,boolean,boolean,boolean,double,double,long,boolean,boolean,boolean,boolean,boolean,boolean)">
+<section class="detail" id="&lt;init&gt;(java.util.UUID,java.util.UUID,com.monkey.ultimatebot.common.model.BotMode,com.monkey.ultimatebot.common.model.DifficultyTier,com.monkey.ultimatebot.common.model.DifficultyTier,com.monkey.ultimatebot.common.model.DifficultyTier,com.monkey.ultimatebot.common.model.CombatMode,com.monkey.ultimatebot.common.model.CombatTuning,boolean,boolean,boolean,int,int,int,java.util.UUID,java.util.Set,com.monkey.ultimatebot.common.model.BotSource,boolean,double,boolean,com.monkey.ultimatebot.common.model.BotTargetMode,boolean,boolean,boolean,double,double,long,boolean,boolean,boolean,boolean,boolean,boolean,java.util.Set,java.lang.String,java.lang.String,com.monkey.ultimatebot.common.model.BotArmorTier,com.monkey.ultimatebot.common.model.BotArmorTier,com.monkey.ultimatebot.common.model.BotArmorTier,com.monkey.ultimatebot.common.model.BlastProtectionSettings,boolean,boolean,boolean,boolean,boolean,boolean,boolean,com.monkey.ultimatebot.api.model.runtime.BotLocation,java.lang.String,java.util.Map)">
 <h3>BotSnapshot</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">BotSnapshot</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/UUID.html" title="class or interface in java.util" class="external-link">UUID</a>&nbsp;ownerUUID,
  @Nullable <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/UUID.html" title="class or interface in java.util" class="external-link">UUID</a>&nbsp;botUUID,
- <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;botType,
- <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;botDifficulty,
- <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;minDifficultyLevel,
- <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;maxDifficultyLevel,
+ com.monkey.ultimatebot.common.model.BotMode&nbsp;botMode,
+ com.monkey.ultimatebot.common.model.DifficultyTier&nbsp;difficulty,
+ com.monkey.ultimatebot.common.model.DifficultyTier&nbsp;minDifficulty,
+ com.monkey.ultimatebot.common.model.DifficultyTier&nbsp;maxDifficulty,
  com.monkey.ultimatebot.common.model.CombatMode&nbsp;combatMode,
  com.monkey.ultimatebot.common.model.CombatTuning&nbsp;combatTuning,
  boolean&nbsp;customizedCombatTuning,
@@ -404,11 +523,11 @@ loadScripts(document, 'script');</script>
  int&nbsp;maxTotemCount,
  @Nullable <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/UUID.html" title="class or interface in java.util" class="external-link">UUID</a>&nbsp;targetUUID,
  <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/UUID.html" title="class or interface in java.util" class="external-link">UUID</a>&gt;&nbsp;targetUUIDs,
- <a href="../identity/BotSource.html" title="enum class in com.monkey.ultimatebot.api.model.identity">BotSource</a>&nbsp;source,
+ com.monkey.ultimatebot.common.model.BotSource&nbsp;source,
  boolean&nbsp;autoTarget,
  double&nbsp;autoTargetRange,
  boolean&nbsp;attackBots,
- <a href="../configuration/BotTargetMode.html" title="enum class in com.monkey.ultimatebot.api.model.configuration">BotTargetMode</a>&nbsp;targetMode,
+ com.monkey.ultimatebot.common.model.BotTargetMode&nbsp;targetMode,
  boolean&nbsp;respectWorldGuardPvp,
  boolean&nbsp;stayAfterOwnerDeath,
  boolean&nbsp;idleWander,
@@ -420,16 +539,33 @@ loadScripts(document, 'script');</script>
  boolean&nbsp;explosionBlockDamage,
  boolean&nbsp;enderPearls,
  boolean&nbsp;healing,
- boolean&nbsp;killMessageEnabled)</span></div>
+ boolean&nbsp;killMessageEnabled,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/UUID.html" title="class or interface in java.util" class="external-link">UUID</a>&gt;&nbsp;teamOwnerUUIDs,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;botNameTemplate,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;botSkinSource,
+ com.monkey.ultimatebot.common.model.BotArmorTier&nbsp;minArmor,
+ com.monkey.ultimatebot.common.model.BotArmorTier&nbsp;maxArmor,
+ com.monkey.ultimatebot.common.model.BotArmorTier&nbsp;armor,
+ com.monkey.ultimatebot.common.model.BlastProtectionSettings&nbsp;blastProtection,
+ boolean&nbsp;changeableFollow,
+ boolean&nbsp;changeableCombat,
+ boolean&nbsp;changeableBlast,
+ boolean&nbsp;changeableArmor,
+ boolean&nbsp;changeableTotem,
+ boolean&nbsp;changeableDifficulty,
+ boolean&nbsp;changeableCombatMode,
+ @Nullable <a href="BotLocation.html" title="class in com.monkey.ultimatebot.api.model.runtime">BotLocation</a>&nbsp;spawnLocation,
+ @Nullable <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;killMessage,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="../configuration/BotEquipmentSlot.html" title="enum class in com.monkey.ultimatebot.api.model.configuration">BotEquipmentSlot</a>,<wbr><a href="../configuration/BotEquipmentSlotSetting.html" title="class in com.monkey.ultimatebot.api.model.configuration">BotEquipmentSlotSetting</a>&gt;&nbsp;equipmentSlots)</span></div>
 <div class="block">Creates an instance of a <code>BotSnapshot</code> record class.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>ownerUUID</code> - the value for the <a href="#param-ownerUUID"><code>ownerUUID</code></a> record component</dd>
 <dd><code>botUUID</code> - the value for the <a href="#param-botUUID"><code>botUUID</code></a> record component</dd>
-<dd><code>botType</code> - the value for the <a href="#param-botType"><code>botType</code></a> record component</dd>
-<dd><code>botDifficulty</code> - the value for the <a href="#param-botDifficulty"><code>botDifficulty</code></a> record component</dd>
-<dd><code>minDifficultyLevel</code> - the value for the <a href="#param-minDifficultyLevel"><code>minDifficultyLevel</code></a> record component</dd>
-<dd><code>maxDifficultyLevel</code> - the value for the <a href="#param-maxDifficultyLevel"><code>maxDifficultyLevel</code></a> record component</dd>
+<dd><code>botMode</code> - the value for the <a href="#param-botMode"><code>botMode</code></a> record component</dd>
+<dd><code>difficulty</code> - the value for the <a href="#param-difficulty"><code>difficulty</code></a> record component</dd>
+<dd><code>minDifficulty</code> - the value for the <a href="#param-minDifficulty"><code>minDifficulty</code></a> record component</dd>
+<dd><code>maxDifficulty</code> - the value for the <a href="#param-maxDifficulty"><code>maxDifficulty</code></a> record component</dd>
 <dd><code>combatMode</code> - the value for the <a href="#param-combatMode"><code>combatMode</code></a> record component</dd>
 <dd><code>combatTuning</code> - the value for the <a href="#param-combatTuning"><code>combatTuning</code></a> record component</dd>
 <dd><code>customizedCombatTuning</code> - the value for the <a href="#param-customizedCombatTuning"><code>customizedCombatTuning</code></a> record component</dd>
@@ -457,6 +593,23 @@ loadScripts(document, 'script');</script>
 <dd><code>enderPearls</code> - the value for the <code>enderPearls</code> record component</dd>
 <dd><code>healing</code> - the value for the <code>healing</code> record component</dd>
 <dd><code>killMessageEnabled</code> - the value for the <code>killMessageEnabled</code> record component</dd>
+<dd><code>teamOwnerUUIDs</code> - the value for the <a href="#param-teamOwnerUUIDs"><code>teamOwnerUUIDs</code></a> record component</dd>
+<dd><code>botNameTemplate</code> - the value for the <a href="#param-botNameTemplate"><code>botNameTemplate</code></a> record component</dd>
+<dd><code>botSkinSource</code> - the value for the <a href="#param-botSkinSource"><code>botSkinSource</code></a> record component</dd>
+<dd><code>minArmor</code> - the value for the <a href="#param-minArmor"><code>minArmor</code></a> record component</dd>
+<dd><code>maxArmor</code> - the value for the <a href="#param-maxArmor"><code>maxArmor</code></a> record component</dd>
+<dd><code>armor</code> - the value for the <a href="#param-armor"><code>armor</code></a> record component</dd>
+<dd><code>blastProtection</code> - the value for the <a href="#param-blastProtection"><code>blastProtection</code></a> record component</dd>
+<dd><code>changeableFollow</code> - the value for the <a href="#param-changeableFollow"><code>changeableFollow</code></a> record component</dd>
+<dd><code>changeableCombat</code> - the value for the <a href="#param-changeableCombat"><code>changeableCombat</code></a> record component</dd>
+<dd><code>changeableBlast</code> - the value for the <a href="#param-changeableBlast"><code>changeableBlast</code></a> record component</dd>
+<dd><code>changeableArmor</code> - the value for the <a href="#param-changeableArmor"><code>changeableArmor</code></a> record component</dd>
+<dd><code>changeableTotem</code> - the value for the <a href="#param-changeableTotem"><code>changeableTotem</code></a> record component</dd>
+<dd><code>changeableDifficulty</code> - the value for the <a href="#param-changeableDifficulty"><code>changeableDifficulty</code></a> record component</dd>
+<dd><code>changeableCombatMode</code> - the value for the <a href="#param-changeableCombatMode"><code>changeableCombatMode</code></a> record component</dd>
+<dd><code>spawnLocation</code> - the value for the <a href="#param-spawnLocation"><code>spawnLocation</code></a> record component</dd>
+<dd><code>killMessage</code> - the value for the <a href="#param-killMessage"><code>killMessage</code></a> record component</dd>
+<dd><code>equipmentSlots</code> - the value for the <a href="#param-equipmentSlots"><code>equipmentSlots</code></a> record component</dd>
 </dl>
 </section>
 </li>
@@ -556,46 +709,46 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="botType()">
-<h3>botType</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">botType</span>()</div>
-<div class="block">Returns the value of the <a href="#param-botType"><code>botType</code></a> record component.</div>
+<section class="detail" id="botMode()">
+<h3>botMode</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">com.monkey.ultimatebot.common.model.BotMode</span>&nbsp;<span class="element-name">botMode</span>()</div>
+<div class="block">Returns the value of the <a href="#param-botMode"><code>botMode</code></a> record component.</div>
 <dl class="notes">
 <dt>Returns:</dt>
-<dd>the value of the <a href="#param-botType"><code>botType</code></a> record component</dd>
+<dd>the value of the <a href="#param-botMode"><code>botMode</code></a> record component</dd>
 </dl>
 </section>
 </li>
 <li>
-<section class="detail" id="botDifficulty()">
-<h3>botDifficulty</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">botDifficulty</span>()</div>
-<div class="block">Returns the value of the <a href="#param-botDifficulty"><code>botDifficulty</code></a> record component.</div>
+<section class="detail" id="difficulty()">
+<h3>difficulty</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">com.monkey.ultimatebot.common.model.DifficultyTier</span>&nbsp;<span class="element-name">difficulty</span>()</div>
+<div class="block">Returns the value of the <a href="#param-difficulty"><code>difficulty</code></a> record component.</div>
 <dl class="notes">
 <dt>Returns:</dt>
-<dd>the value of the <a href="#param-botDifficulty"><code>botDifficulty</code></a> record component</dd>
+<dd>the value of the <a href="#param-difficulty"><code>difficulty</code></a> record component</dd>
 </dl>
 </section>
 </li>
 <li>
-<section class="detail" id="minDifficultyLevel()">
-<h3>minDifficultyLevel</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">minDifficultyLevel</span>()</div>
-<div class="block">Returns the value of the <a href="#param-minDifficultyLevel"><code>minDifficultyLevel</code></a> record component.</div>
+<section class="detail" id="minDifficulty()">
+<h3>minDifficulty</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">com.monkey.ultimatebot.common.model.DifficultyTier</span>&nbsp;<span class="element-name">minDifficulty</span>()</div>
+<div class="block">Returns the value of the <a href="#param-minDifficulty"><code>minDifficulty</code></a> record component.</div>
 <dl class="notes">
 <dt>Returns:</dt>
-<dd>the value of the <a href="#param-minDifficultyLevel"><code>minDifficultyLevel</code></a> record component</dd>
+<dd>the value of the <a href="#param-minDifficulty"><code>minDifficulty</code></a> record component</dd>
 </dl>
 </section>
 </li>
 <li>
-<section class="detail" id="maxDifficultyLevel()">
-<h3>maxDifficultyLevel</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">maxDifficultyLevel</span>()</div>
-<div class="block">Returns the value of the <a href="#param-maxDifficultyLevel"><code>maxDifficultyLevel</code></a> record component.</div>
+<section class="detail" id="maxDifficulty()">
+<h3>maxDifficulty</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">com.monkey.ultimatebot.common.model.DifficultyTier</span>&nbsp;<span class="element-name">maxDifficulty</span>()</div>
+<div class="block">Returns the value of the <a href="#param-maxDifficulty"><code>maxDifficulty</code></a> record component.</div>
 <dl class="notes">
 <dt>Returns:</dt>
-<dd>the value of the <a href="#param-maxDifficultyLevel"><code>maxDifficultyLevel</code></a> record component</dd>
+<dd>the value of the <a href="#param-maxDifficulty"><code>maxDifficulty</code></a> record component</dd>
 </dl>
 </section>
 </li>
@@ -712,7 +865,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="source()">
 <h3>source</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../identity/BotSource.html" title="enum class in com.monkey.ultimatebot.api.model.identity">BotSource</a></span>&nbsp;<span class="element-name">source</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">com.monkey.ultimatebot.common.model.BotSource</span>&nbsp;<span class="element-name">source</span>()</div>
 <div class="block">Returns the value of the <a href="#param-source"><code>source</code></a> record component.</div>
 <dl class="notes">
 <dt>Returns:</dt>
@@ -756,7 +909,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="targetMode()">
 <h3>targetMode</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../configuration/BotTargetMode.html" title="enum class in com.monkey.ultimatebot.api.model.configuration">BotTargetMode</a></span>&nbsp;<span class="element-name">targetMode</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">com.monkey.ultimatebot.common.model.BotTargetMode</span>&nbsp;<span class="element-name">targetMode</span>()</div>
 <div class="block">Returns the value of the <a href="#param-targetMode"><code>targetMode</code></a> record component.</div>
 <dl class="notes">
 <dt>Returns:</dt>
@@ -893,6 +1046,193 @@ loadScripts(document, 'script');</script>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>the value of the <code>killMessageEnabled</code> record component</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="teamOwnerUUIDs()">
+<h3>teamOwnerUUIDs</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/UUID.html" title="class or interface in java.util" class="external-link">UUID</a>&gt;</span>&nbsp;<span class="element-name">teamOwnerUUIDs</span>()</div>
+<div class="block">Returns the value of the <a href="#param-teamOwnerUUIDs"><code>teamOwnerUUIDs</code></a> record component.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the value of the <a href="#param-teamOwnerUUIDs"><code>teamOwnerUUIDs</code></a> record component</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="botNameTemplate()">
+<h3>botNameTemplate</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">botNameTemplate</span>()</div>
+<div class="block">Returns the value of the <a href="#param-botNameTemplate"><code>botNameTemplate</code></a> record component.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the value of the <a href="#param-botNameTemplate"><code>botNameTemplate</code></a> record component</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="botSkinSource()">
+<h3>botSkinSource</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">botSkinSource</span>()</div>
+<div class="block">Returns the value of the <a href="#param-botSkinSource"><code>botSkinSource</code></a> record component.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the value of the <a href="#param-botSkinSource"><code>botSkinSource</code></a> record component</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="minArmor()">
+<h3>minArmor</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">com.monkey.ultimatebot.common.model.BotArmorTier</span>&nbsp;<span class="element-name">minArmor</span>()</div>
+<div class="block">Returns the value of the <a href="#param-minArmor"><code>minArmor</code></a> record component.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the value of the <a href="#param-minArmor"><code>minArmor</code></a> record component</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="maxArmor()">
+<h3>maxArmor</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">com.monkey.ultimatebot.common.model.BotArmorTier</span>&nbsp;<span class="element-name">maxArmor</span>()</div>
+<div class="block">Returns the value of the <a href="#param-maxArmor"><code>maxArmor</code></a> record component.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the value of the <a href="#param-maxArmor"><code>maxArmor</code></a> record component</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="armor()">
+<h3>armor</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">com.monkey.ultimatebot.common.model.BotArmorTier</span>&nbsp;<span class="element-name">armor</span>()</div>
+<div class="block">Returns the value of the <a href="#param-armor"><code>armor</code></a> record component.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the value of the <a href="#param-armor"><code>armor</code></a> record component</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="blastProtection()">
+<h3>blastProtection</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">com.monkey.ultimatebot.common.model.BlastProtectionSettings</span>&nbsp;<span class="element-name">blastProtection</span>()</div>
+<div class="block">Returns the value of the <a href="#param-blastProtection"><code>blastProtection</code></a> record component.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the value of the <a href="#param-blastProtection"><code>blastProtection</code></a> record component</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="changeableFollow()">
+<h3>changeableFollow</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">changeableFollow</span>()</div>
+<div class="block">Returns the value of the <a href="#param-changeableFollow"><code>changeableFollow</code></a> record component.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the value of the <a href="#param-changeableFollow"><code>changeableFollow</code></a> record component</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="changeableCombat()">
+<h3>changeableCombat</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">changeableCombat</span>()</div>
+<div class="block">Returns the value of the <a href="#param-changeableCombat"><code>changeableCombat</code></a> record component.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the value of the <a href="#param-changeableCombat"><code>changeableCombat</code></a> record component</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="changeableBlast()">
+<h3>changeableBlast</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">changeableBlast</span>()</div>
+<div class="block">Returns the value of the <a href="#param-changeableBlast"><code>changeableBlast</code></a> record component.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the value of the <a href="#param-changeableBlast"><code>changeableBlast</code></a> record component</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="changeableArmor()">
+<h3>changeableArmor</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">changeableArmor</span>()</div>
+<div class="block">Returns the value of the <a href="#param-changeableArmor"><code>changeableArmor</code></a> record component.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the value of the <a href="#param-changeableArmor"><code>changeableArmor</code></a> record component</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="changeableTotem()">
+<h3>changeableTotem</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">changeableTotem</span>()</div>
+<div class="block">Returns the value of the <a href="#param-changeableTotem"><code>changeableTotem</code></a> record component.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the value of the <a href="#param-changeableTotem"><code>changeableTotem</code></a> record component</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="changeableDifficulty()">
+<h3>changeableDifficulty</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">changeableDifficulty</span>()</div>
+<div class="block">Returns the value of the <a href="#param-changeableDifficulty"><code>changeableDifficulty</code></a> record component.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the value of the <a href="#param-changeableDifficulty"><code>changeableDifficulty</code></a> record component</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="changeableCombatMode()">
+<h3>changeableCombatMode</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">changeableCombatMode</span>()</div>
+<div class="block">Returns the value of the <a href="#param-changeableCombatMode"><code>changeableCombatMode</code></a> record component.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the value of the <a href="#param-changeableCombatMode"><code>changeableCombatMode</code></a> record component</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="spawnLocation()">
+<h3>spawnLocation</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">@Nullable <a href="BotLocation.html" title="class in com.monkey.ultimatebot.api.model.runtime">BotLocation</a></span>&nbsp;<span class="element-name">spawnLocation</span>()</div>
+<div class="block">Returns the value of the <a href="#param-spawnLocation"><code>spawnLocation</code></a> record component.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the value of the <a href="#param-spawnLocation"><code>spawnLocation</code></a> record component</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="killMessage()">
+<h3>killMessage</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">@Nullable <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">killMessage</span>()</div>
+<div class="block">Returns the value of the <a href="#param-killMessage"><code>killMessage</code></a> record component.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the value of the <a href="#param-killMessage"><code>killMessage</code></a> record component</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="equipmentSlots()">
+<h3>equipmentSlots</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="../configuration/BotEquipmentSlot.html" title="enum class in com.monkey.ultimatebot.api.model.configuration">BotEquipmentSlot</a>,<wbr><a href="../configuration/BotEquipmentSlotSetting.html" title="class in com.monkey.ultimatebot.api.model.configuration">BotEquipmentSlotSetting</a>&gt;</span>&nbsp;<span class="element-name">equipmentSlots</span>()</div>
+<div class="block">Returns the value of the <a href="#param-equipmentSlots"><code>equipmentSlots</code></a> record component.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the value of the <a href="#param-equipmentSlots"><code>equipmentSlots</code></a> record component</dd>
 </dl>
 </section>
 </li>

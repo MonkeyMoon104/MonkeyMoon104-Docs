@@ -1,0 +1,5 @@
+com.monkey.ultimatebot.common.addon
+com.monkey.ultimatebot.common.guard
+com.monkey.ultimatebot.common.metrics
+com.monkey.ultimatebot.common.model
+com.monkey.ultimatebot.common.util

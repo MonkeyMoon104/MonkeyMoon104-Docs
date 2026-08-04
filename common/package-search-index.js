@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"com.monkey.ultimatebot.common.addon"},{"l":"com.monkey.ultimatebot.common.guard"},{"l":"com.monkey.ultimatebot.common.metrics"},{"l":"com.monkey.ultimatebot.common.model"},{"l":"com.monkey.ultimatebot.common.util"}];updateSearchResults();
