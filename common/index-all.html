@@ -66,6 +66,14 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Creates an instance of a <code>AddonDefinition</code> record class.</div>
 </dd>
+<dt><a href="com/monkey/ultimatebot/common/model/AddonInfo.html" class="type-name-link" title="class in com.monkey.ultimatebot.common.model">AddonInfo</a> - Record Class in <a href="com/monkey/ultimatebot/common/model/package-summary.html">com.monkey.ultimatebot.common.model</a></dt>
+<dd>
+<div class="block">Platform-neutral installed-addon status exposed by the remote API and SDK.</div>
+</dd>
+<dt><a href="com/monkey/ultimatebot/common/model/AddonInfo.html#%3Cinit%3E(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.util.List,java.util.List,java.lang.String)" class="member-name-link">AddonInfo(String, String, String, String, List&lt;String&gt;, List&lt;String&gt;, String)</a> - Constructor for record class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/AddonInfo.html" title="class in com.monkey.ultimatebot.common.model">AddonInfo</a></dt>
+<dd>
+<div class="block">Creates an instance of a <code>AddonInfo</code> record class.</div>
+</dd>
 <dt><a href="com/monkey/ultimatebot/common/addon/AddonInitializer.html" class="type-name-link" title="interface in com.monkey.ultimatebot.common.addon">AddonInitializer&lt;F,<wbr>A&gt;</a> - Interface in <a href="com/monkey/ultimatebot/common/addon/package-summary.html">com.monkey.ultimatebot.common.addon</a></dt>
 <dd>
 <div class="block">Builds the runtime service supplied by an addon factory.</div>
@@ -116,6 +124,10 @@ loadScripts(document, 'script');</script>
 </dd>
 <dt><a href="com/monkey/ultimatebot/common/model/CombatTuning.Builder.html#attackRange(double)" class="member-name-link">attackRange(double)</a> - Method in class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/CombatTuning.Builder.html" title="class in com.monkey.ultimatebot.common.model">CombatTuning.Builder</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="com/monkey/ultimatebot/common/model/AddonInfo.html#authors()" class="member-name-link">authors()</a> - Method in record class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/AddonInfo.html" title="class in com.monkey.ultimatebot.common.model">AddonInfo</a></dt>
+<dd>
+<div class="block">Returns the value of the <code>authors</code> record component.</div>
+</dd>
 <dt><a href="com/monkey/ultimatebot/common/model/AutoTargetSettings.html" class="type-name-link" title="class in com.monkey.ultimatebot.common.model">AutoTargetSettings</a> - Record Class in <a href="com/monkey/ultimatebot/common/model/package-summary.html">com.monkey.ultimatebot.common.model</a></dt>
 <dd>
 <div class="block">Immutable automatic-targeting configuration.</div>
@@ -124,7 +136,7 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Creates an instance of a <code>AutoTargetSettings</code> record class.</div>
 </dd>
-<dt><a href="com/monkey/ultimatebot/common/model/CombatMode.html#AXE_SHIELD" class="member-name-link">AXE_SHIELD</a> - Enum constant in enum class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/CombatMode.html" title="enum class in com.monkey.ultimatebot.common.model">CombatMode</a></dt>
+<dt><a href="com/monkey/ultimatebot/common/model/CombatMode.html#AXE_SHIELD" class="member-name-link">AXE_SHIELD</a> - Static variable in record class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/CombatMode.html" title="class in com.monkey.ultimatebot.common.model">CombatMode</a></dt>
 <dd>&nbsp;</dd>
 </dl>
 <h2 class="title" id="I:B">B</h2>
@@ -157,22 +169,56 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Platform-independent categories of living entities a bot may target.</div>
 </dd>
+<dt><a href="com/monkey/ultimatebot/common/model/CombatModeDefinition.html#brain()" class="member-name-link">brain()</a> - Method in record class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/CombatModeDefinition.html" title="class in com.monkey.ultimatebot.common.model">CombatModeDefinition</a></dt>
+<dd>
+<div class="block">Returns the value of the <code>brain</code> record component.</div>
+</dd>
+<dt><a href="com/monkey/ultimatebot/common/model/BrainCapability.html" class="type-name-link" title="enum class in com.monkey.ultimatebot.common.model">BrainCapability</a> - Enum Class in <a href="com/monkey/ultimatebot/common/model/package-summary.html">com.monkey.ultimatebot.common.model</a></dt>
+<dd>
+<div class="block">Closed set of bot subsystems that a custom brain may own.</div>
+</dd>
+<dt><a href="com/monkey/ultimatebot/common/model/BrainDefinition.html" class="type-name-link" title="class in com.monkey.ultimatebot.common.model">BrainDefinition</a> - Record Class in <a href="com/monkey/ultimatebot/common/model/package-summary.html">com.monkey.ultimatebot.common.model</a></dt>
+<dd>
+<div class="block">Platform-neutral description of a custom brain exposed through the API and SDK.</div>
+</dd>
+<dt><a href="com/monkey/ultimatebot/common/model/BrainDefinition.html#%3Cinit%3E(com.monkey.ultimatebot.common.model.BrainKey,java.lang.String,java.lang.String,java.util.Set,boolean,java.lang.String)" class="member-name-link">BrainDefinition(BrainKey, String, String, Set&lt;BrainCapability&gt;, boolean, String)</a> - Constructor for record class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/BrainDefinition.html" title="class in com.monkey.ultimatebot.common.model">BrainDefinition</a></dt>
+<dd>
+<div class="block">Creates an instance of a <code>BrainDefinition</code> record class.</div>
+</dd>
+<dt><a href="com/monkey/ultimatebot/common/model/BrainKey.html" class="type-name-link" title="class in com.monkey.ultimatebot.common.model">BrainKey</a> - Record Class in <a href="com/monkey/ultimatebot/common/model/package-summary.html">com.monkey.ultimatebot.common.model</a></dt>
+<dd>
+<div class="block">Stable namespaced identifier for a bot brain implementation.</div>
+</dd>
+<dt><a href="com/monkey/ultimatebot/common/model/BrainKey.html#%3Cinit%3E(java.lang.String,java.lang.String)" class="member-name-link">BrainKey(String, String)</a> - Constructor for record class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/BrainKey.html" title="class in com.monkey.ultimatebot.common.model">BrainKey</a></dt>
+<dd>
+<div class="block">Creates an instance of a <code>BrainKey</code> record class.</div>
+</dd>
 <dt><a href="com/monkey/ultimatebot/common/model/CombatTuning.Builder.html#build()" class="member-name-link">build()</a> - Method in class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/CombatTuning.Builder.html" title="class in com.monkey.ultimatebot.common.model">CombatTuning.Builder</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/monkey/ultimatebot/common/model/CombatTuning.html#builder()" class="member-name-link">builder()</a> - Static method in record class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/CombatTuning.html" title="class in com.monkey.ultimatebot.common.model">CombatTuning</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/monkey/ultimatebot/common/model/CombatCapability.html#BUILDING" class="member-name-link">BUILDING</a> - Enum constant in enum class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/CombatCapability.html" title="enum class in com.monkey.ultimatebot.common.model">CombatCapability</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="com/monkey/ultimatebot/common/model/CombatMode.html#builtIn()" class="member-name-link">builtIn()</a> - Method in record class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/CombatMode.html" title="class in com.monkey.ultimatebot.common.model">CombatMode</a></dt>
+<dd>
+<div class="block">Returns whether this identifier belongs to UltimateBot itself.</div>
+</dd>
 </dl>
 <h2 class="title" id="I:C">C</h2>
 <dl class="index">
-<dt><a href="com/monkey/ultimatebot/common/model/CombatMode.html#capabilities()" class="member-name-link">capabilities()</a> - Method in enum class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/CombatMode.html" title="enum class in com.monkey.ultimatebot.common.model">CombatMode</a></dt>
-<dd>&nbsp;</dd>
+<dt><a href="com/monkey/ultimatebot/common/model/BrainDefinition.html#capabilities()" class="member-name-link">capabilities()</a> - Method in record class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/BrainDefinition.html" title="class in com.monkey.ultimatebot.common.model">BrainDefinition</a></dt>
+<dd>
+<div class="block">Returns the value of the <code>capabilities</code> record component.</div>
+</dd>
+<dt><a href="com/monkey/ultimatebot/common/model/CombatMode.html#capabilities()" class="member-name-link">capabilities()</a> - Method in record class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/CombatMode.html" title="class in com.monkey.ultimatebot.common.model">CombatMode</a></dt>
+<dd>
+<div class="block">Returns the default capabilities of a built-in mode.</div>
+</dd>
 <dt><a href="com/monkey/ultimatebot/common/model/CombatModeDefinition.html#capabilities()" class="member-name-link">capabilities()</a> - Method in record class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/CombatModeDefinition.html" title="class in com.monkey.ultimatebot.common.model">CombatModeDefinition</a></dt>
 <dd>
 <div class="block">Returns the value of the <code>capabilities</code> record component.</div>
 </dd>
-<dt><a href="com/monkey/ultimatebot/common/model/CombatMode.html#CART" class="member-name-link">CART</a> - Enum constant in enum class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/CombatMode.html" title="enum class in com.monkey.ultimatebot.common.model">CombatMode</a></dt>
+<dt><a href="com/monkey/ultimatebot/common/model/CombatMode.html#CART" class="member-name-link">CART</a> - Static variable in record class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/CombatMode.html" title="class in com.monkey.ultimatebot.common.model">CombatMode</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/monkey/ultimatebot/common/model/BlastProtectionSettings.html#chestplate()" class="member-name-link">chestplate()</a> - Method in record class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/BlastProtectionSettings.html" title="class in com.monkey.ultimatebot.common.model">BlastProtectionSettings</a></dt>
 <dd>
@@ -206,19 +252,27 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Small dependency-free helpers for values crossing module boundaries.</div>
 </dd>
+<dt><a href="com/monkey/ultimatebot/common/model/BrainCapability.html#COMBAT" class="member-name-link">COMBAT</a> - Enum constant in enum class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/BrainCapability.html" title="enum class in com.monkey.ultimatebot.common.model">BrainCapability</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="com/monkey/ultimatebot/common/model/CombatCapability.html" class="type-name-link" title="enum class in com.monkey.ultimatebot.common.model">CombatCapability</a> - Enum Class in <a href="com/monkey/ultimatebot/common/model/package-summary.html">com.monkey.ultimatebot.common.model</a></dt>
 <dd>
 <div class="block">Capabilities implemented by a combat mode.</div>
 </dd>
-<dt><a href="com/monkey/ultimatebot/common/model/CombatMode.html" class="type-name-link" title="enum class in com.monkey.ultimatebot.common.model">CombatMode</a> - Enum Class in <a href="com/monkey/ultimatebot/common/model/package-summary.html">com.monkey.ultimatebot.common.model</a></dt>
+<dt><a href="com/monkey/ultimatebot/common/model/CombatMode.html" class="type-name-link" title="class in com.monkey.ultimatebot.common.model">CombatMode</a> - Record Class in <a href="com/monkey/ultimatebot/common/model/package-summary.html">com.monkey.ultimatebot.common.model</a></dt>
 <dd>
-<div class="block">Canonical combat modes supported by UltimateBot.</div>
+<div class="block">Stable namespaced identifier for built-in and addon-provided combat modes.</div>
+</dd>
+<dt><a href="com/monkey/ultimatebot/common/model/CombatMode.html#%3Cinit%3E(java.lang.String,java.lang.String)" class="member-name-link">CombatMode(String, String)</a> - Constructor for record class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/CombatMode.html" title="class in com.monkey.ultimatebot.common.model">CombatMode</a></dt>
+<dd>
+<div class="block">Creates an instance of a <code>CombatMode</code> record class.</div>
 </dd>
 <dt><a href="com/monkey/ultimatebot/common/model/CombatModeDefinition.html" class="type-name-link" title="class in com.monkey.ultimatebot.common.model">CombatModeDefinition</a> - Record Class in <a href="com/monkey/ultimatebot/common/model/package-summary.html">com.monkey.ultimatebot.common.model</a></dt>
 <dd>
 <div class="block">Public description of an available combat mode and its difficulty profiles.</div>
 </dd>
 <dt><a href="com/monkey/ultimatebot/common/model/CombatModeDefinition.html#%3Cinit%3E(com.monkey.ultimatebot.common.model.CombatMode,java.lang.String,boolean,java.lang.String,java.util.Set,java.util.Map)" class="member-name-link">CombatModeDefinition(CombatMode, String, boolean, String, Set&lt;CombatCapability&gt;, Map&lt;DifficultyTier, CombatTuning&gt;)</a> - Constructor for record class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/CombatModeDefinition.html" title="class in com.monkey.ultimatebot.common.model">CombatModeDefinition</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="com/monkey/ultimatebot/common/model/CombatModeDefinition.html#%3Cinit%3E(com.monkey.ultimatebot.common.model.CombatMode,java.lang.String,boolean,java.lang.String,java.util.Set,java.util.Map,java.lang.String,java.util.List,java.lang.String,int,com.monkey.ultimatebot.common.model.BrainKey)" class="member-name-link">CombatModeDefinition(CombatMode, String, boolean, String, Set&lt;CombatCapability&gt;, Map&lt;DifficultyTier, CombatTuning&gt;, String, List&lt;String&gt;, String, int, BrainKey)</a> - Constructor for record class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/CombatModeDefinition.html" title="class in com.monkey.ultimatebot.common.model">CombatModeDefinition</a></dt>
 <dd>
 <div class="block">Creates an instance of a <code>CombatModeDefinition</code> record class.</div>
 </dd>
@@ -232,6 +286,10 @@ loadScripts(document, 'script');</script>
 </dd>
 <dt><a href="com/monkey/ultimatebot/common/model/CombatTuning.Builder.html" class="type-name-link" title="class in com.monkey.ultimatebot.common.model">CombatTuning.Builder</a> - Class in <a href="com/monkey/ultimatebot/common/model/package-summary.html">com.monkey.ultimatebot.common.model</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="com/monkey/ultimatebot/common/model/BrainKey.html#compareTo(com.monkey.ultimatebot.common.model.BrainKey)" class="member-name-link">compareTo(BrainKey)</a> - Method in record class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/BrainKey.html" title="class in com.monkey.ultimatebot.common.model">BrainKey</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="com/monkey/ultimatebot/common/model/CombatMode.html#compareTo(com.monkey.ultimatebot.common.model.CombatMode)" class="member-name-link">compareTo(CombatMode)</a> - Method in record class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/CombatMode.html" title="class in com.monkey.ultimatebot.common.model">CombatMode</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="com/monkey/ultimatebot/common/model/BotSource.html#CORE" class="member-name-link">CORE</a> - Enum constant in enum class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/BotSource.html" title="enum class in com.monkey.ultimatebot.common.model">BotSource</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/monkey/ultimatebot/common/guard/GuardBackendFactory.html#create(com.monkey.ultimatebot.common.guard.GuardBackendContext)" class="member-name-link">create(GuardBackendContext)</a> - Method in interface com.monkey.ultimatebot.common.guard.<a href="com/monkey/ultimatebot/common/guard/GuardBackendFactory.html" title="interface in com.monkey.ultimatebot.common.guard">GuardBackendFactory</a></dt>
@@ -240,7 +298,7 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Creates a backend for the supplied runtime context.</div>
 </dd>
-<dt><a href="com/monkey/ultimatebot/common/model/CombatMode.html#CRYSTAL" class="member-name-link">CRYSTAL</a> - Enum constant in enum class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/CombatMode.html" title="enum class in com.monkey.ultimatebot.common.model">CombatMode</a></dt>
+<dt><a href="com/monkey/ultimatebot/common/model/CombatMode.html#CRYSTAL" class="member-name-link">CRYSTAL</a> - Static variable in record class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/CombatMode.html" title="class in com.monkey.ultimatebot.common.model">CombatMode</a></dt>
 <dd>&nbsp;</dd>
 </dl>
 <h2 class="title" id="I:D">D</h2>
@@ -251,6 +309,18 @@ loadScripts(document, 'script');</script>
 </dd>
 <dt><a href="com/monkey/ultimatebot/common/model/CombatTuning.Builder.html#defensiveChance(double)" class="member-name-link">defensiveChance(double)</a> - Method in class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/CombatTuning.Builder.html" title="class in com.monkey.ultimatebot.common.model">CombatTuning.Builder</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="com/monkey/ultimatebot/common/model/AddonInfo.html#dependencies()" class="member-name-link">dependencies()</a> - Method in record class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/AddonInfo.html" title="class in com.monkey.ultimatebot.common.model">AddonInfo</a></dt>
+<dd>
+<div class="block">Returns the value of the <code>dependencies</code> record component.</div>
+</dd>
+<dt><a href="com/monkey/ultimatebot/common/model/BrainDefinition.html#description()" class="member-name-link">description()</a> - Method in record class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/BrainDefinition.html" title="class in com.monkey.ultimatebot.common.model">BrainDefinition</a></dt>
+<dd>
+<div class="block">Returns the value of the <code>description</code> record component.</div>
+</dd>
+<dt><a href="com/monkey/ultimatebot/common/model/CombatModeDefinition.html#description()" class="member-name-link">description()</a> - Method in record class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/CombatModeDefinition.html" title="class in com.monkey.ultimatebot.common.model">CombatModeDefinition</a></dt>
+<dd>
+<div class="block">Returns the value of the <code>description</code> record component.</div>
+</dd>
 <dt><a href="com/monkey/ultimatebot/common/addon/AddonDefinition.html#descriptorResource()" class="member-name-link">descriptorResource()</a> - Method in record class com.monkey.ultimatebot.common.addon.<a href="com/monkey/ultimatebot/common/addon/AddonDefinition.html" title="class in com.monkey.ultimatebot.common.addon">AddonDefinition</a></dt>
 <dd>
 <div class="block">Returns the value of the <code>descriptorResource</code> record component.</div>
@@ -271,8 +341,14 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Returns the value of the <code>displayName</code> record component.</div>
 </dd>
-<dt><a href="com/monkey/ultimatebot/common/model/CombatMode.html#displayName()" class="member-name-link">displayName()</a> - Method in enum class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/CombatMode.html" title="enum class in com.monkey.ultimatebot.common.model">CombatMode</a></dt>
-<dd>&nbsp;</dd>
+<dt><a href="com/monkey/ultimatebot/common/model/BrainDefinition.html#displayName()" class="member-name-link">displayName()</a> - Method in record class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/BrainDefinition.html" title="class in com.monkey.ultimatebot.common.model">BrainDefinition</a></dt>
+<dd>
+<div class="block">Returns the value of the <code>displayName</code> record component.</div>
+</dd>
+<dt><a href="com/monkey/ultimatebot/common/model/CombatMode.html#displayName()" class="member-name-link">displayName()</a> - Method in record class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/CombatMode.html" title="class in com.monkey.ultimatebot.common.model">CombatMode</a></dt>
+<dd>
+<div class="block">Returns the default display name; registered descriptors may override it.</div>
+</dd>
 <dt><a href="com/monkey/ultimatebot/common/model/CombatModeDefinition.html#displayName()" class="member-name-link">displayName()</a> - Method in record class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/CombatModeDefinition.html" title="class in com.monkey.ultimatebot.common.model">CombatModeDefinition</a></dt>
 <dd>
 <div class="block">Returns the value of the <code>displayName</code> record component.</div>
@@ -314,11 +390,27 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Indicates whether some other object is "equal to" this one.</div>
 </dd>
+<dt><a href="com/monkey/ultimatebot/common/model/AddonInfo.html#equals(java.lang.Object)" class="member-name-link">equals(Object)</a> - Method in record class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/AddonInfo.html" title="class in com.monkey.ultimatebot.common.model">AddonInfo</a></dt>
+<dd>
+<div class="block">Indicates whether some other object is "equal to" this one.</div>
+</dd>
 <dt><a href="com/monkey/ultimatebot/common/model/AutoTargetSettings.html#equals(java.lang.Object)" class="member-name-link">equals(Object)</a> - Method in record class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/AutoTargetSettings.html" title="class in com.monkey.ultimatebot.common.model">AutoTargetSettings</a></dt>
 <dd>
 <div class="block">Indicates whether some other object is "equal to" this one.</div>
 </dd>
 <dt><a href="com/monkey/ultimatebot/common/model/BlastProtectionSettings.html#equals(java.lang.Object)" class="member-name-link">equals(Object)</a> - Method in record class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/BlastProtectionSettings.html" title="class in com.monkey.ultimatebot.common.model">BlastProtectionSettings</a></dt>
+<dd>
+<div class="block">Indicates whether some other object is "equal to" this one.</div>
+</dd>
+<dt><a href="com/monkey/ultimatebot/common/model/BrainDefinition.html#equals(java.lang.Object)" class="member-name-link">equals(Object)</a> - Method in record class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/BrainDefinition.html" title="class in com.monkey.ultimatebot.common.model">BrainDefinition</a></dt>
+<dd>
+<div class="block">Indicates whether some other object is "equal to" this one.</div>
+</dd>
+<dt><a href="com/monkey/ultimatebot/common/model/BrainKey.html#equals(java.lang.Object)" class="member-name-link">equals(Object)</a> - Method in record class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/BrainKey.html" title="class in com.monkey.ultimatebot.common.model">BrainKey</a></dt>
+<dd>
+<div class="block">Indicates whether some other object is "equal to" this one.</div>
+</dd>
+<dt><a href="com/monkey/ultimatebot/common/model/CombatMode.html#equals(java.lang.Object)" class="member-name-link">equals(Object)</a> - Method in record class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/CombatMode.html" title="class in com.monkey.ultimatebot.common.model">CombatMode</a></dt>
 <dd>
 <div class="block">Indicates whether some other object is "equal to" this one.</div>
 </dd>
@@ -349,6 +441,10 @@ loadScripts(document, 'script');</script>
 </dl>
 <h2 class="title" id="I:F">F</h2>
 <dl class="index">
+<dt><a href="com/monkey/ultimatebot/common/model/AddonInfo.html#failure()" class="member-name-link">failure()</a> - Method in record class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/AddonInfo.html" title="class in com.monkey.ultimatebot.common.model">AddonInfo</a></dt>
+<dd>
+<div class="block">Returns the value of the <code>failure</code> record component.</div>
+</dd>
 <dt><a href="com/monkey/ultimatebot/common/addon/AddonDefinition.html#fileName()" class="member-name-link">fileName()</a> - Method in record class com.monkey.ultimatebot.common.addon.<a href="com/monkey/ultimatebot/common/addon/AddonDefinition.html" title="class in com.monkey.ultimatebot.common.addon">AddonDefinition</a></dt>
 <dd>
 <div class="block">Returns the value of the <code>fileName</code> record component.</div>
@@ -356,6 +452,8 @@ loadScripts(document, 'script');</script>
 <dt><a href="com/monkey/ultimatebot/common/guard/GuardMetadata.html#FIRE_ASPECT_UNTIL" class="member-name-link">FIRE_ASPECT_UNTIL</a> - Static variable in class com.monkey.ultimatebot.common.guard.<a href="com/monkey/ultimatebot/common/guard/GuardMetadata.html" title="class in com.monkey.ultimatebot.common.guard">GuardMetadata</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/monkey/ultimatebot/common/guard/GuardBackend.html#forgetBot(java.util.UUID)" class="member-name-link">forgetBot(UUID)</a> - Method in interface com.monkey.ultimatebot.common.guard.<a href="com/monkey/ultimatebot/common/guard/GuardBackend.html" title="interface in com.monkey.ultimatebot.common.guard">GuardBackend</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="com/monkey/ultimatebot/common/model/BrainCapability.html#FULL_CONTROL" class="member-name-link">FULL_CONTROL</a> - Enum constant in enum class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/BrainCapability.html" title="enum class in com.monkey.ultimatebot.common.model">BrainCapability</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/monkey/ultimatebot/common/model/BlastProtectionSettings.html#fullyEnabled()" class="member-name-link">fullyEnabled()</a> - Method in record class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/BlastProtectionSettings.html" title="class in com.monkey.ultimatebot.common.model">BlastProtectionSettings</a></dt>
 <dd>
@@ -405,11 +503,27 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Returns a hash code value for this object.</div>
 </dd>
+<dt><a href="com/monkey/ultimatebot/common/model/AddonInfo.html#hashCode()" class="member-name-link">hashCode()</a> - Method in record class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/AddonInfo.html" title="class in com.monkey.ultimatebot.common.model">AddonInfo</a></dt>
+<dd>
+<div class="block">Returns a hash code value for this object.</div>
+</dd>
 <dt><a href="com/monkey/ultimatebot/common/model/AutoTargetSettings.html#hashCode()" class="member-name-link">hashCode()</a> - Method in record class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/AutoTargetSettings.html" title="class in com.monkey.ultimatebot.common.model">AutoTargetSettings</a></dt>
 <dd>
 <div class="block">Returns a hash code value for this object.</div>
 </dd>
 <dt><a href="com/monkey/ultimatebot/common/model/BlastProtectionSettings.html#hashCode()" class="member-name-link">hashCode()</a> - Method in record class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/BlastProtectionSettings.html" title="class in com.monkey.ultimatebot.common.model">BlastProtectionSettings</a></dt>
+<dd>
+<div class="block">Returns a hash code value for this object.</div>
+</dd>
+<dt><a href="com/monkey/ultimatebot/common/model/BrainDefinition.html#hashCode()" class="member-name-link">hashCode()</a> - Method in record class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/BrainDefinition.html" title="class in com.monkey.ultimatebot.common.model">BrainDefinition</a></dt>
+<dd>
+<div class="block">Returns a hash code value for this object.</div>
+</dd>
+<dt><a href="com/monkey/ultimatebot/common/model/BrainKey.html#hashCode()" class="member-name-link">hashCode()</a> - Method in record class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/BrainKey.html" title="class in com.monkey.ultimatebot.common.model">BrainKey</a></dt>
+<dd>
+<div class="block">Returns a hash code value for this object.</div>
+</dd>
+<dt><a href="com/monkey/ultimatebot/common/model/CombatMode.html#hashCode()" class="member-name-link">hashCode()</a> - Method in record class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/CombatMode.html" title="class in com.monkey.ultimatebot.common.model">CombatMode</a></dt>
 <dd>
 <div class="block">Returns a hash code value for this object.</div>
 </dd>
@@ -456,6 +570,10 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Returns the value of the <code>id</code> record component.</div>
 </dd>
+<dt><a href="com/monkey/ultimatebot/common/model/AddonInfo.html#id()" class="member-name-link">id()</a> - Method in record class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/AddonInfo.html" title="class in com.monkey.ultimatebot.common.model">AddonInfo</a></dt>
+<dd>
+<div class="block">Returns the value of the <code>id</code> record component.</div>
+</dd>
 <dt><a href="com/monkey/ultimatebot/common/model/IdleWanderSettings.html" class="type-name-link" title="class in com.monkey.ultimatebot.common.model">IdleWanderSettings</a> - Record Class in <a href="com/monkey/ultimatebot/common/model/package-summary.html">com.monkey.ultimatebot.common.model</a></dt>
 <dd>
 <div class="block">Immutable idle wandering and return-to-spawn configuration.</div>
@@ -468,11 +586,23 @@ loadScripts(document, 'script');</script>
 <dd>&nbsp;</dd>
 <dt><a href="com/monkey/ultimatebot/common/addon/LoadedAddon.html#instance()" class="member-name-link">instance()</a> - Method in class com.monkey.ultimatebot.common.addon.<a href="com/monkey/ultimatebot/common/addon/LoadedAddon.html" title="class in com.monkey.ultimatebot.common.addon">LoadedAddon</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="com/monkey/ultimatebot/common/model/BrainCapability.html#INVENTORY" class="member-name-link">INVENTORY</a> - Enum constant in enum class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/BrainCapability.html" title="enum class in com.monkey.ultimatebot.common.model">BrainCapability</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="com/monkey/ultimatebot/common/model/BotArmorTier.html#IRON" class="member-name-link">IRON</a> - Enum constant in enum class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/BotArmorTier.html" title="enum class in com.monkey.ultimatebot.common.model">BotArmorTier</a></dt>
 <dd>&nbsp;</dd>
 </dl>
 <h2 class="title" id="I:K">K</h2>
 <dl class="index">
+<dt><a href="com/monkey/ultimatebot/common/model/BrainDefinition.html#key()" class="member-name-link">key()</a> - Method in record class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/BrainDefinition.html" title="class in com.monkey.ultimatebot.common.model">BrainDefinition</a></dt>
+<dd>
+<div class="block">Returns the value of the <code>key</code> record component.</div>
+</dd>
+<dt><a href="com/monkey/ultimatebot/common/model/BrainKey.html#key()" class="member-name-link">key()</a> - Method in record class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/BrainKey.html" title="class in com.monkey.ultimatebot.common.model">BrainKey</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="com/monkey/ultimatebot/common/model/CombatMode.html#key()" class="member-name-link">key()</a> - Method in record class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/CombatMode.html" title="class in com.monkey.ultimatebot.common.model">CombatMode</a></dt>
+<dd>
+<div class="block">Returns the canonical <code>namespace:value</code> representation.</div>
+</dd>
 <dt><a href="com/monkey/ultimatebot/common/model/KillMessageSettings.html" class="type-name-link" title="class in com.monkey.ultimatebot.common.model">KillMessageSettings</a> - Record Class in <a href="com/monkey/ultimatebot/common/model/package-summary.html">com.monkey.ultimatebot.common.model</a></dt>
 <dd>
 <div class="block">Immutable built-in kill-message configuration.</div>
@@ -503,7 +633,7 @@ loadScripts(document, 'script');</script>
 </dl>
 <h2 class="title" id="I:M">M</h2>
 <dl class="index">
-<dt><a href="com/monkey/ultimatebot/common/model/CombatMode.html#MACE" class="member-name-link">MACE</a> - Enum constant in enum class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/CombatMode.html" title="enum class in com.monkey.ultimatebot.common.model">CombatMode</a></dt>
+<dt><a href="com/monkey/ultimatebot/common/model/CombatMode.html#MACE" class="member-name-link">MACE</a> - Static variable in record class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/CombatMode.html" title="class in com.monkey.ultimatebot.common.model">CombatMode</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/monkey/ultimatebot/common/guard/GuardMetadata.html#MANAGED_BOT" class="member-name-link">MANAGED_BOT</a> - Static variable in class com.monkey.ultimatebot.common.guard.<a href="com/monkey/ultimatebot/common/guard/GuardMetadata.html" title="class in com.monkey.ultimatebot.common.guard">GuardMetadata</a></dt>
 <dd>&nbsp;</dd>
@@ -567,6 +697,8 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Creates an instance of a <code>ModeDifficultyProfile</code> record class.</div>
 </dd>
+<dt><a href="com/monkey/ultimatebot/common/model/BrainCapability.html#MOVEMENT" class="member-name-link">MOVEMENT</a> - Enum constant in enum class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/BrainCapability.html" title="enum class in com.monkey.ultimatebot.common.model">BrainCapability</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="com/monkey/ultimatebot/common/model/CombatTuning.html#movementSpeed()" class="member-name-link">movementSpeed()</a> - Method in record class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/CombatTuning.html" title="class in com.monkey.ultimatebot.common.model">CombatTuning</a></dt>
 <dd>
 <div class="block">Returns the value of the <code>movementSpeed</code> record component.</div>
@@ -576,9 +708,31 @@ loadScripts(document, 'script');</script>
 </dl>
 <h2 class="title" id="I:N">N</h2>
 <dl class="index">
+<dt><a href="com/monkey/ultimatebot/common/model/AddonInfo.html#name()" class="member-name-link">name()</a> - Method in record class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/AddonInfo.html" title="class in com.monkey.ultimatebot.common.model">AddonInfo</a></dt>
+<dd>
+<div class="block">Returns the value of the <code>name</code> record component.</div>
+</dd>
+<dt><a href="com/monkey/ultimatebot/common/model/CombatMode.html#name()" class="member-name-link">name()</a> - Method in record class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/CombatMode.html" title="class in com.monkey.ultimatebot.common.model">CombatMode</a></dt>
+<dd>
+<div class="block">Returns the built-in configuration name or the namespaced custom key.</div>
+</dd>
+<dt><a href="com/monkey/ultimatebot/common/model/BrainKey.html#namespace()" class="member-name-link">namespace()</a> - Method in record class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/BrainKey.html" title="class in com.monkey.ultimatebot.common.model">BrainKey</a></dt>
+<dd>
+<div class="block">Returns the value of the <code>namespace</code> record component.</div>
+</dd>
+<dt><a href="com/monkey/ultimatebot/common/model/CombatMode.html#namespace()" class="member-name-link">namespace()</a> - Method in record class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/CombatMode.html" title="class in com.monkey.ultimatebot.common.model">CombatMode</a></dt>
+<dd>
+<div class="block">Returns the value of the <code>namespace</code> record component.</div>
+</dd>
+<dt><a href="com/monkey/ultimatebot/common/model/BrainDefinition.html#nativeAccess()" class="member-name-link">nativeAccess()</a> - Method in record class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/BrainDefinition.html" title="class in com.monkey.ultimatebot.common.model">BrainDefinition</a></dt>
+<dd>
+<div class="block">Returns the value of the <code>nativeAccess</code> record component.</div>
+</dd>
+<dt><a href="com/monkey/ultimatebot/common/model/BrainCapability.html#NAVIGATION" class="member-name-link">NAVIGATION</a> - Enum constant in enum class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/BrainCapability.html" title="enum class in com.monkey.ultimatebot.common.model">BrainCapability</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="com/monkey/ultimatebot/common/model/BotArmorTier.html#NETHERITE" class="member-name-link">NETHERITE</a> - Enum constant in enum class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/BotArmorTier.html" title="enum class in com.monkey.ultimatebot.common.model">BotArmorTier</a></dt>
 <dd>&nbsp;</dd>
-<dt><a href="com/monkey/ultimatebot/common/model/CombatMode.html#NETHERITE_POT" class="member-name-link">NETHERITE_POT</a> - Enum constant in enum class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/CombatMode.html" title="enum class in com.monkey.ultimatebot.common.model">CombatMode</a></dt>
+<dt><a href="com/monkey/ultimatebot/common/model/CombatMode.html#NETHERITE_POT" class="member-name-link">NETHERITE_POT</a> - Static variable in record class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/CombatMode.html" title="class in com.monkey.ultimatebot.common.model">CombatMode</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/monkey/ultimatebot/common/model/BotTargetMode.html#next()" class="member-name-link">next()</a> - Method in enum class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/BotTargetMode.html" title="enum class in com.monkey.ultimatebot.common.model">BotTargetMode</a></dt>
 <dd>&nbsp;</dd>
@@ -597,6 +751,16 @@ loadScripts(document, 'script');</script>
 <dl class="index">
 <dt><a href="com/monkey/ultimatebot/common/model/ModeDifficultyProfile.html#of(com.monkey.ultimatebot.common.model.CombatMode,com.monkey.ultimatebot.common.model.DifficultyTier,com.monkey.ultimatebot.common.model.CombatTuning)" class="member-name-link">of(CombatMode, DifficultyTier, CombatTuning)</a> - Static method in record class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/ModeDifficultyProfile.html" title="class in com.monkey.ultimatebot.common.model">ModeDifficultyProfile</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="com/monkey/ultimatebot/common/model/BrainKey.html#of(java.lang.String,java.lang.String)" class="member-name-link">of(String, String)</a> - Static method in record class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/BrainKey.html" title="class in com.monkey.ultimatebot.common.model">BrainKey</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="com/monkey/ultimatebot/common/model/CombatMode.html#of(java.lang.String,java.lang.String)" class="member-name-link">of(String, String)</a> - Static method in record class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/CombatMode.html" title="class in com.monkey.ultimatebot.common.model">CombatMode</a></dt>
+<dd>
+<div class="block">Creates a validated namespaced combat-mode identifier.</div>
+</dd>
+<dt><a href="com/monkey/ultimatebot/common/model/CombatModeDefinition.html#order()" class="member-name-link">order()</a> - Method in record class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/CombatModeDefinition.html" title="class in com.monkey.ultimatebot.common.model">CombatModeDefinition</a></dt>
+<dd>
+<div class="block">Returns the value of the <code>order</code> record component.</div>
+</dd>
 <dt><a href="com/monkey/ultimatebot/common/util/TextValues.html#orElseIfBlank(java.lang.String,java.lang.String)" class="member-name-link">orElseIfBlank(String, String)</a> - Static method in class com.monkey.ultimatebot.common.util.<a href="com/monkey/ultimatebot/common/util/TextValues.html" title="class in com.monkey.ultimatebot.common.util">TextValues</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/monkey/ultimatebot/common/addon/AddonDefinition.html#overrideUrlProperty()" class="member-name-link">overrideUrlProperty()</a> - Method in record class com.monkey.ultimatebot.common.addon.<a href="com/monkey/ultimatebot/common/addon/AddonDefinition.html" title="class in com.monkey.ultimatebot.common.addon">AddonDefinition</a></dt>
@@ -608,6 +772,12 @@ loadScripts(document, 'script');</script>
 <dl class="index">
 <dt><a href="com/monkey/ultimatebot/common/util/EnumValues.html#parse(java.lang.Class,java.lang.String,E)" class="member-name-link">parse(Class&lt;E&gt;, String, E)</a> - Static method in class com.monkey.ultimatebot.common.util.<a href="com/monkey/ultimatebot/common/util/EnumValues.html" title="class in com.monkey.ultimatebot.common.util">EnumValues</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="com/monkey/ultimatebot/common/model/BrainKey.html#parse(java.lang.String)" class="member-name-link">parse(String)</a> - Static method in record class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/BrainKey.html" title="class in com.monkey.ultimatebot.common.model">BrainKey</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="com/monkey/ultimatebot/common/model/CombatMode.html#parse(java.lang.String)" class="member-name-link">parse(String)</a> - Static method in record class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/CombatMode.html" title="class in com.monkey.ultimatebot.common.model">CombatMode</a></dt>
+<dd>
+<div class="block">Parses <code>namespace:value</code>; unqualified values use the UltimateBot namespace.</div>
+</dd>
 <dt><a href="com/monkey/ultimatebot/common/util/EnumValues.html#parseOrDefault(java.lang.Class,java.lang.String,E)" class="member-name-link">parseOrDefault(Class&lt;E&gt;, String, E)</a> - Static method in class com.monkey.ultimatebot.common.util.<a href="com/monkey/ultimatebot/common/util/EnumValues.html" title="class in com.monkey.ultimatebot.common.util">EnumValues</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/monkey/ultimatebot/common/model/CombatTuning.html#pearlTriggerDistance()" class="member-name-link">pearlTriggerDistance()</a> - Method in record class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/CombatTuning.html" title="class in com.monkey.ultimatebot.common.model">CombatTuning</a></dt>
@@ -616,6 +786,10 @@ loadScripts(document, 'script');</script>
 </dd>
 <dt><a href="com/monkey/ultimatebot/common/model/CombatTuning.Builder.html#pearlTriggerDistance(double)" class="member-name-link">pearlTriggerDistance(double)</a> - Method in class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/CombatTuning.Builder.html" title="class in com.monkey.ultimatebot.common.model">CombatTuning.Builder</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="com/monkey/ultimatebot/common/model/CombatModeDefinition.html#permission()" class="member-name-link">permission()</a> - Method in record class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/CombatModeDefinition.html" title="class in com.monkey.ultimatebot.common.model">CombatModeDefinition</a></dt>
+<dd>
+<div class="block">Returns the value of the <code>permission</code> record component.</div>
+</dd>
 <dt><a href="com/monkey/ultimatebot/common/model/BotTargetMode.html#PLAYERS" class="member-name-link">PLAYERS</a> - Enum constant in enum class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/BotTargetMode.html" title="enum class in com.monkey.ultimatebot.common.model">BotTargetMode</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/monkey/ultimatebot/common/model/BotTargetMode.html#PLAYERS_AND_MOBS" class="member-name-link">PLAYERS_AND_MOBS</a> - Enum constant in enum class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/BotTargetMode.html" title="enum class in com.monkey.ultimatebot.common.model">BotTargetMode</a></dt>
@@ -643,6 +817,14 @@ loadScripts(document, 'script');</script>
 <dt><a href="com/monkey/ultimatebot/common/metrics/MetricsBackendContext.html#prometheusEndpointEnabled()" class="member-name-link">prometheusEndpointEnabled()</a> - Method in record class com.monkey.ultimatebot.common.metrics.<a href="com/monkey/ultimatebot/common/metrics/MetricsBackendContext.html" title="class in com.monkey.ultimatebot.common.metrics">MetricsBackendContext</a></dt>
 <dd>
 <div class="block">Returns the value of the <code>prometheusEndpointEnabled</code> record component.</div>
+</dd>
+<dt><a href="com/monkey/ultimatebot/common/model/BrainDefinition.html#provider()" class="member-name-link">provider()</a> - Method in record class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/BrainDefinition.html" title="class in com.monkey.ultimatebot.common.model">BrainDefinition</a></dt>
+<dd>
+<div class="block">Returns the value of the <code>provider</code> record component.</div>
+</dd>
+<dt><a href="com/monkey/ultimatebot/common/model/CombatModeDefinition.html#provider()" class="member-name-link">provider()</a> - Method in record class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/CombatModeDefinition.html" title="class in com.monkey.ultimatebot.common.model">CombatModeDefinition</a></dt>
+<dd>
+<div class="block">Returns the value of the <code>provider</code> record component.</div>
 </dd>
 </dl>
 <h2 class="title" id="I:R">R</h2>
@@ -687,6 +869,8 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Returns the value of the <code>returnDistance</code> record component.</div>
 </dd>
+<dt><a href="com/monkey/ultimatebot/common/model/BrainCapability.html#ROTATION" class="member-name-link">ROTATION</a> - Enum constant in enum class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/BrainCapability.html" title="enum class in com.monkey.ultimatebot.common.model">BrainCapability</a></dt>
+<dd>&nbsp;</dd>
 </dl>
 <h2 class="title" id="I:S">S</h2>
 <dl class="index">
@@ -698,7 +882,7 @@ loadScripts(document, 'script');</script>
 <dd>&nbsp;</dd>
 <dt><a href="com/monkey/ultimatebot/common/model/BotMode.html#SINGLE" class="member-name-link">SINGLE</a> - Enum constant in enum class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/BotMode.html" title="enum class in com.monkey.ultimatebot.common.model">BotMode</a></dt>
 <dd>&nbsp;</dd>
-<dt><a href="com/monkey/ultimatebot/common/model/CombatMode.html#SMP" class="member-name-link">SMP</a> - Enum constant in enum class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/CombatMode.html" title="enum class in com.monkey.ultimatebot.common.model">CombatMode</a></dt>
+<dt><a href="com/monkey/ultimatebot/common/model/CombatMode.html#SMP" class="member-name-link">SMP</a> - Static variable in record class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/CombatMode.html" title="class in com.monkey.ultimatebot.common.model">CombatMode</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/monkey/ultimatebot/common/model/CombatTuning.html#specialActionCooldownTicks()" class="member-name-link">specialActionCooldownTicks()</a> - Method in record class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/CombatTuning.html" title="class in com.monkey.ultimatebot.common.model">CombatTuning</a></dt>
 <dd>
@@ -712,15 +896,21 @@ loadScripts(document, 'script');</script>
 </dd>
 <dt><a href="com/monkey/ultimatebot/common/model/CombatTuning.Builder.html#sprintResetChance(double)" class="member-name-link">sprintResetChance(double)</a> - Method in class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/CombatTuning.Builder.html" title="class in com.monkey.ultimatebot.common.model">CombatTuning.Builder</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="com/monkey/ultimatebot/common/model/AddonInfo.html#state()" class="member-name-link">state()</a> - Method in record class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/AddonInfo.html" title="class in com.monkey.ultimatebot.common.model">AddonInfo</a></dt>
+<dd>
+<div class="block">Returns the value of the <code>state</code> record component.</div>
+</dd>
 <dt><a href="com/monkey/ultimatebot/common/model/CombatTuning.html#strafeStrength()" class="member-name-link">strafeStrength()</a> - Method in record class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/CombatTuning.html" title="class in com.monkey.ultimatebot.common.model">CombatTuning</a></dt>
 <dd>
 <div class="block">Returns the value of the <code>strafeStrength</code> record component.</div>
 </dd>
 <dt><a href="com/monkey/ultimatebot/common/model/CombatTuning.Builder.html#strafeStrength(double)" class="member-name-link">strafeStrength(double)</a> - Method in class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/CombatTuning.Builder.html" title="class in com.monkey.ultimatebot.common.model">CombatTuning.Builder</a></dt>
 <dd>&nbsp;</dd>
-<dt><a href="com/monkey/ultimatebot/common/model/CombatMode.html#supports(com.monkey.ultimatebot.common.model.CombatCapability)" class="member-name-link">supports(CombatCapability)</a> - Method in enum class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/CombatMode.html" title="enum class in com.monkey.ultimatebot.common.model">CombatMode</a></dt>
-<dd>&nbsp;</dd>
-<dt><a href="com/monkey/ultimatebot/common/model/CombatMode.html#SWORD" class="member-name-link">SWORD</a> - Enum constant in enum class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/CombatMode.html" title="enum class in com.monkey.ultimatebot.common.model">CombatMode</a></dt>
+<dt><a href="com/monkey/ultimatebot/common/model/CombatMode.html#supports(com.monkey.ultimatebot.common.model.CombatCapability)" class="member-name-link">supports(CombatCapability)</a> - Method in record class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/CombatMode.html" title="class in com.monkey.ultimatebot.common.model">CombatMode</a></dt>
+<dd>
+<div class="block">Returns whether the built-in defaults include a capability.</div>
+</dd>
+<dt><a href="com/monkey/ultimatebot/common/model/CombatMode.html#SWORD" class="member-name-link">SWORD</a> - Static variable in record class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/CombatMode.html" title="class in com.monkey.ultimatebot.common.model">CombatMode</a></dt>
 <dd>&nbsp;</dd>
 </dl>
 <h2 class="title" id="I:T">T</h2>
@@ -741,6 +931,8 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Returns the value of the <code>targetCacheSize</code> record component.</div>
 </dd>
+<dt><a href="com/monkey/ultimatebot/common/model/BrainCapability.html#TARGETING" class="member-name-link">TARGETING</a> - Enum constant in enum class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/BrainCapability.html" title="enum class in com.monkey.ultimatebot.common.model">BrainCapability</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="com/monkey/ultimatebot/common/model/BotMode.html#TEAM_ALLY" class="member-name-link">TEAM_ALLY</a> - Enum constant in enum class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/BotMode.html" title="enum class in com.monkey.ultimatebot.common.model">BotMode</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/monkey/ultimatebot/common/util/TextValues.html" class="type-name-link" title="class in com.monkey.ultimatebot.common.util">TextValues</a> - Class in <a href="com/monkey/ultimatebot/common/util/package-summary.html">com.monkey.ultimatebot.common.util</a></dt>
@@ -763,11 +955,27 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Returns a string representation of this record class.</div>
 </dd>
+<dt><a href="com/monkey/ultimatebot/common/model/AddonInfo.html#toString()" class="member-name-link">toString()</a> - Method in record class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/AddonInfo.html" title="class in com.monkey.ultimatebot.common.model">AddonInfo</a></dt>
+<dd>
+<div class="block">Returns a string representation of this record class.</div>
+</dd>
 <dt><a href="com/monkey/ultimatebot/common/model/AutoTargetSettings.html#toString()" class="member-name-link">toString()</a> - Method in record class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/AutoTargetSettings.html" title="class in com.monkey.ultimatebot.common.model">AutoTargetSettings</a></dt>
 <dd>
 <div class="block">Returns a string representation of this record class.</div>
 </dd>
 <dt><a href="com/monkey/ultimatebot/common/model/BlastProtectionSettings.html#toString()" class="member-name-link">toString()</a> - Method in record class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/BlastProtectionSettings.html" title="class in com.monkey.ultimatebot.common.model">BlastProtectionSettings</a></dt>
+<dd>
+<div class="block">Returns a string representation of this record class.</div>
+</dd>
+<dt><a href="com/monkey/ultimatebot/common/model/BrainDefinition.html#toString()" class="member-name-link">toString()</a> - Method in record class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/BrainDefinition.html" title="class in com.monkey.ultimatebot.common.model">BrainDefinition</a></dt>
+<dd>
+<div class="block">Returns a string representation of this record class.</div>
+</dd>
+<dt><a href="com/monkey/ultimatebot/common/model/BrainKey.html#toString()" class="member-name-link">toString()</a> - Method in record class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/BrainKey.html" title="class in com.monkey.ultimatebot.common.model">BrainKey</a></dt>
+<dd>
+<div class="block">Returns a string representation of this record class.</div>
+</dd>
+<dt><a href="com/monkey/ultimatebot/common/model/CombatMode.html#toString()" class="member-name-link">toString()</a> - Method in record class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/CombatMode.html" title="class in com.monkey.ultimatebot.common.model">CombatMode</a></dt>
 <dd>
 <div class="block">Returns a string representation of this record class.</div>
 </dd>
@@ -791,7 +999,7 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Returns a string representation of this record class.</div>
 </dd>
-<dt><a href="com/monkey/ultimatebot/common/model/CombatMode.html#TRIDENT" class="member-name-link">TRIDENT</a> - Enum constant in enum class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/CombatMode.html" title="enum class in com.monkey.ultimatebot.common.model">CombatMode</a></dt>
+<dt><a href="com/monkey/ultimatebot/common/model/CombatMode.html#TRIDENT" class="member-name-link">TRIDENT</a> - Static variable in record class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/CombatMode.html" title="class in com.monkey.ultimatebot.common.model">CombatMode</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/monkey/ultimatebot/common/util/TextValues.html#trimToNull(java.lang.String)" class="member-name-link">trimToNull(String)</a> - Static method in class com.monkey.ultimatebot.common.util.<a href="com/monkey/ultimatebot/common/util/TextValues.html" title="class in com.monkey.ultimatebot.common.util">TextValues</a></dt>
 <dd>&nbsp;</dd>
@@ -802,11 +1010,19 @@ loadScripts(document, 'script');</script>
 </dl>
 <h2 class="title" id="I:U">U</h2>
 <dl class="index">
-<dt><a href="com/monkey/ultimatebot/common/model/CombatMode.html#UHC" class="member-name-link">UHC</a> - Enum constant in enum class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/CombatMode.html" title="enum class in com.monkey.ultimatebot.common.model">CombatMode</a></dt>
+<dt><a href="com/monkey/ultimatebot/common/model/CombatMode.html#UHC" class="member-name-link">UHC</a> - Static variable in record class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/CombatMode.html" title="class in com.monkey.ultimatebot.common.model">CombatMode</a></dt>
 <dd>&nbsp;</dd>
 </dl>
 <h2 class="title" id="I:V">V</h2>
 <dl class="index">
+<dt><a href="com/monkey/ultimatebot/common/model/BrainKey.html#value()" class="member-name-link">value()</a> - Method in record class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/BrainKey.html" title="class in com.monkey.ultimatebot.common.model">BrainKey</a></dt>
+<dd>
+<div class="block">Returns the value of the <code>value</code> record component.</div>
+</dd>
+<dt><a href="com/monkey/ultimatebot/common/model/CombatMode.html#value()" class="member-name-link">value()</a> - Method in record class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/CombatMode.html" title="class in com.monkey.ultimatebot.common.model">CombatMode</a></dt>
+<dd>
+<div class="block">Returns the value of the <code>value</code> record component.</div>
+</dd>
 <dt><a href="com/monkey/ultimatebot/common/model/BotArmorTier.html#valueOf(java.lang.String)" class="member-name-link">valueOf(String)</a> - Static method in enum class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/BotArmorTier.html" title="enum class in com.monkey.ultimatebot.common.model">BotArmorTier</a></dt>
 <dd>
 <div class="block">Returns the enum constant of this class with the specified name.</div>
@@ -823,13 +1039,17 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Returns the enum constant of this class with the specified name.</div>
 </dd>
+<dt><a href="com/monkey/ultimatebot/common/model/BrainCapability.html#valueOf(java.lang.String)" class="member-name-link">valueOf(String)</a> - Static method in enum class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/BrainCapability.html" title="enum class in com.monkey.ultimatebot.common.model">BrainCapability</a></dt>
+<dd>
+<div class="block">Returns the enum constant of this class with the specified name.</div>
+</dd>
 <dt><a href="com/monkey/ultimatebot/common/model/CombatCapability.html#valueOf(java.lang.String)" class="member-name-link">valueOf(String)</a> - Static method in enum class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/CombatCapability.html" title="enum class in com.monkey.ultimatebot.common.model">CombatCapability</a></dt>
 <dd>
 <div class="block">Returns the enum constant of this class with the specified name.</div>
 </dd>
-<dt><a href="com/monkey/ultimatebot/common/model/CombatMode.html#valueOf(java.lang.String)" class="member-name-link">valueOf(String)</a> - Static method in enum class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/CombatMode.html" title="enum class in com.monkey.ultimatebot.common.model">CombatMode</a></dt>
+<dt><a href="com/monkey/ultimatebot/common/model/CombatMode.html#valueOf(java.lang.String)" class="member-name-link">valueOf(String)</a> - Static method in record class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/CombatMode.html" title="class in com.monkey.ultimatebot.common.model">CombatMode</a></dt>
 <dd>
-<div class="block">Returns the enum constant of this class with the specified name.</div>
+<div class="block">Resolves the legacy enum-like name of a built-in mode.</div>
 </dd>
 <dt><a href="com/monkey/ultimatebot/common/model/DifficultyTier.html#valueOf(java.lang.String)" class="member-name-link">valueOf(String)</a> - Static method in enum class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/DifficultyTier.html" title="enum class in com.monkey.ultimatebot.common.model">DifficultyTier</a></dt>
 <dd>
@@ -855,27 +1075,37 @@ the order they are declared.</div>
 <div class="block">Returns an array containing the constants of this enum class, in
 the order they are declared.</div>
 </dd>
+<dt><a href="com/monkey/ultimatebot/common/model/BrainCapability.html#values()" class="member-name-link">values()</a> - Static method in enum class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/BrainCapability.html" title="enum class in com.monkey.ultimatebot.common.model">BrainCapability</a></dt>
+<dd>
+<div class="block">Returns an array containing the constants of this enum class, in
+the order they are declared.</div>
+</dd>
 <dt><a href="com/monkey/ultimatebot/common/model/CombatCapability.html#values()" class="member-name-link">values()</a> - Static method in enum class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/CombatCapability.html" title="enum class in com.monkey.ultimatebot.common.model">CombatCapability</a></dt>
 <dd>
 <div class="block">Returns an array containing the constants of this enum class, in
 the order they are declared.</div>
 </dd>
-<dt><a href="com/monkey/ultimatebot/common/model/CombatMode.html#values()" class="member-name-link">values()</a> - Static method in enum class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/CombatMode.html" title="enum class in com.monkey.ultimatebot.common.model">CombatMode</a></dt>
+<dt><a href="com/monkey/ultimatebot/common/model/CombatMode.html#values()" class="member-name-link">values()</a> - Static method in record class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/CombatMode.html" title="class in com.monkey.ultimatebot.common.model">CombatMode</a></dt>
 <dd>
-<div class="block">Returns an array containing the constants of this enum class, in
-the order they are declared.</div>
+<div class="block">Returns the built-in modes in their canonical GUI order.</div>
 </dd>
 <dt><a href="com/monkey/ultimatebot/common/model/DifficultyTier.html#values()" class="member-name-link">values()</a> - Static method in enum class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/DifficultyTier.html" title="enum class in com.monkey.ultimatebot.common.model">DifficultyTier</a></dt>
 <dd>
 <div class="block">Returns an array containing the constants of this enum class, in
 the order they are declared.</div>
 </dd>
+<dt><a href="com/monkey/ultimatebot/common/model/AddonInfo.html#version()" class="member-name-link">version()</a> - Method in record class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/AddonInfo.html" title="class in com.monkey.ultimatebot.common.model">AddonInfo</a></dt>
+<dd>
+<div class="block">Returns the value of the <code>version</code> record component.</div>
+</dd>
 </dl>
 <h2 class="title" id="I:W">W</h2>
 <dl class="index">
 <dt><a href="com/monkey/ultimatebot/common/model/CombatCapability.html#WATER" class="member-name-link">WATER</a> - Enum constant in enum class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/CombatCapability.html" title="enum class in com.monkey.ultimatebot.common.model">CombatCapability</a></dt>
 <dd>&nbsp;</dd>
-<dt><a href="com/monkey/ultimatebot/common/model/CombatMode.html#WATER" class="member-name-link">WATER</a> - Enum constant in enum class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/CombatMode.html" title="enum class in com.monkey.ultimatebot.common.model">CombatMode</a></dt>
+<dt><a href="com/monkey/ultimatebot/common/model/CombatMode.html#WATER" class="member-name-link">WATER</a> - Static variable in record class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/CombatMode.html" title="class in com.monkey.ultimatebot.common.model">CombatMode</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="com/monkey/ultimatebot/common/model/BrainCapability.html#WORLD_INTERACTION" class="member-name-link">WORLD_INTERACTION</a> - Enum constant in enum class com.monkey.ultimatebot.common.model.<a href="com/monkey/ultimatebot/common/model/BrainCapability.html" title="enum class in com.monkey.ultimatebot.common.model">BrainCapability</a></dt>
 <dd>&nbsp;</dd>
 </dl>
 <a href="#I:A">A</a>&nbsp;<a href="#I:B">B</a>&nbsp;<a href="#I:C">C</a>&nbsp;<a href="#I:D">D</a>&nbsp;<a href="#I:E">E</a>&nbsp;<a href="#I:F">F</a>&nbsp;<a href="#I:G">G</a>&nbsp;<a href="#I:H">H</a>&nbsp;<a href="#I:I">I</a>&nbsp;<a href="#I:K">K</a>&nbsp;<a href="#I:L">L</a>&nbsp;<a href="#I:M">M</a>&nbsp;<a href="#I:N">N</a>&nbsp;<a href="#I:O">O</a>&nbsp;<a href="#I:P">P</a>&nbsp;<a href="#I:R">R</a>&nbsp;<a href="#I:S">S</a>&nbsp;<a href="#I:T">T</a>&nbsp;<a href="#I:U">U</a>&nbsp;<a href="#I:V">V</a>&nbsp;<a href="#I:W">W</a>&nbsp;<br><a href="allclasses-index.html">All&nbsp;Classes&nbsp;and&nbsp;Interfaces</a><span class="vertical-separator">|</span><a href="allpackages-index.html">All&nbsp;Packages</a><span class="vertical-separator">|</span><a href="constant-values.html">Constant&nbsp;Field&nbsp;Values</a></main>

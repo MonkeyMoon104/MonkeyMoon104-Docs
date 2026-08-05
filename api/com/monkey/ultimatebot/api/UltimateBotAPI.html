@@ -93,8 +93,8 @@ loadScripts(document, 'script');</script>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
 <div class="block">Main public entry point for the UltimateBot API.
 
- <p>This object exposes the two core API services:
- <a href="managers/IBotManager.html" title="interface in com.monkey.ultimatebot.api.managers"><code>IBotManager</code></a> for operations and <a href="managers/IBotRegistry.html" title="interface in com.monkey.ultimatebot.api.managers"><code>IBotRegistry</code></a> for read-only snapshots.
+ <p>This object exposes bot management, snapshots, events, dynamic extensions and addon status.
+ <a href="managers/IBotManager.html" title="interface in com.monkey.ultimatebot.api.managers"><code>IBotManager</code></a> handles operations and <a href="managers/IBotRegistry.html" title="interface in com.monkey.ultimatebot.api.managers"><code>IBotRegistry</code></a> provides read-only snapshots.
  The instance is registered by the core plugin during startup and can be retrieved by
  external plugins after <code>UltimateBotReadyEvent</code> is fired.</p>
 
@@ -116,9 +116,11 @@ loadScripts(document, 'script');</script>
 <div class="summary-table two-column-summary">
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
-<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(org.bukkit.plugin.Plugin,com.monkey.ultimatebot.api.managers.IBotManager,com.monkey.ultimatebot.api.managers.IBotRegistry)" class="member-name-link">UltimateBotAPI</a><wbr>(org.bukkit.plugin.Plugin&nbsp;plugin,
+<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(org.bukkit.plugin.Plugin,com.monkey.ultimatebot.api.managers.IBotManager,com.monkey.ultimatebot.api.managers.IBotRegistry,com.monkey.ultimatebot.api.extension.UltimateBotExtensionRegistry,com.monkey.ultimatebot.api.addon.AddonRegistry)" class="member-name-link">UltimateBotAPI</a><wbr>(org.bukkit.plugin.Plugin&nbsp;plugin,
  <a href="managers/IBotManager.html" title="interface in com.monkey.ultimatebot.api.managers">IBotManager</a>&nbsp;botManager,
- <a href="managers/IBotRegistry.html" title="interface in com.monkey.ultimatebot.api.managers">IBotRegistry</a>&nbsp;botRegistry)</code></div>
+ <a href="managers/IBotRegistry.html" title="interface in com.monkey.ultimatebot.api.managers">IBotRegistry</a>&nbsp;botRegistry,
+ <a href="extension/UltimateBotExtensionRegistry.html" title="interface in com.monkey.ultimatebot.api.extension">UltimateBotExtensionRegistry</a>&nbsp;extensions,
+ <a href="addon/AddonRegistry.html" title="interface in com.monkey.ultimatebot.api.addon">AddonRegistry</a>&nbsp;addons)</code></div>
 <div class="col-last even-row-color">
 <div class="block">Creates a new API container.</div>
 </div>
@@ -141,20 +143,30 @@ loadScripts(document, 'script');</script>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Returns the registered API singleton.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="managers/IBotManager.html" title="interface in com.monkey.ultimatebot.api.managers">IBotManager</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getBotManager()" class="member-name-link">getBotManager</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="addon/AddonRegistry.html" title="interface in com.monkey.ultimatebot.api.addon">AddonRegistry</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getAddons()" class="member-name-link">getAddons</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns the read-only status of jars managed by the addon engine.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="managers/IBotManager.html" title="interface in com.monkey.ultimatebot.api.managers">IBotManager</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getBotManager()" class="member-name-link">getBotManager</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the operational bot manager service.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="managers/IBotRegistry.html" title="interface in com.monkey.ultimatebot.api.managers">IBotRegistry</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getBotRegistry()" class="member-name-link">getBotRegistry</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="managers/IBotRegistry.html" title="interface in com.monkey.ultimatebot.api.managers">IBotRegistry</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getBotRegistry()" class="member-name-link">getBotRegistry</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the registry service for reading bot snapshots.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="event/bus/BotEventBus.html" title="class in com.monkey.ultimatebot.api.event.bus">BotEventBus</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getEventBus()" class="member-name-link">getEventBus</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="event/bus/BotEventBus.html" title="class in com.monkey.ultimatebot.api.event.bus">BotEventBus</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getEventBus()" class="member-name-link">getEventBus</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the typed Bukkit-backed event subscription facade.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="extension/UltimateBotExtensionRegistry.html" title="interface in com.monkey.ultimatebot.api.extension">UltimateBotExtensionRegistry</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getExtensions()" class="member-name-link">getExtensions</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns the dynamic combat-mode and custom-brain registry.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static @Nullable <a href="UltimateBotAPI.html" title="class in com.monkey.ultimatebot.api">UltimateBotAPI</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getOrNull()" class="member-name-link">getOrNull</a>()</code></div>
@@ -199,11 +211,13 @@ loadScripts(document, 'script');</script>
 <h2>Constructor Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="&lt;init&gt;(org.bukkit.plugin.Plugin,com.monkey.ultimatebot.api.managers.IBotManager,com.monkey.ultimatebot.api.managers.IBotRegistry)">
+<section class="detail" id="&lt;init&gt;(org.bukkit.plugin.Plugin,com.monkey.ultimatebot.api.managers.IBotManager,com.monkey.ultimatebot.api.managers.IBotRegistry,com.monkey.ultimatebot.api.extension.UltimateBotExtensionRegistry,com.monkey.ultimatebot.api.addon.AddonRegistry)">
 <h3>UltimateBotAPI</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">UltimateBotAPI</span><wbr><span class="parameters">(org.bukkit.plugin.Plugin&nbsp;plugin,
  <a href="managers/IBotManager.html" title="interface in com.monkey.ultimatebot.api.managers">IBotManager</a>&nbsp;botManager,
- <a href="managers/IBotRegistry.html" title="interface in com.monkey.ultimatebot.api.managers">IBotRegistry</a>&nbsp;botRegistry)</span></div>
+ <a href="managers/IBotRegistry.html" title="interface in com.monkey.ultimatebot.api.managers">IBotRegistry</a>&nbsp;botRegistry,
+ <a href="extension/UltimateBotExtensionRegistry.html" title="interface in com.monkey.ultimatebot.api.extension">UltimateBotExtensionRegistry</a>&nbsp;extensions,
+ <a href="addon/AddonRegistry.html" title="interface in com.monkey.ultimatebot.api.addon">AddonRegistry</a>&nbsp;addons)</span></div>
 <div class="block">Creates a new API container.
 
  <p>This constructor is intended for the core plugin integration layer.
@@ -214,6 +228,8 @@ loadScripts(document, 'script');</script>
 <dd><code>plugin</code> - owning Bukkit plugin instance</dd>
 <dd><code>botManager</code> - bot management service implementation</dd>
 <dd><code>botRegistry</code> - bot registry service implementation</dd>
+<dd><code>extensions</code> - dynamic combat-mode and brain registry</dd>
+<dd><code>addons</code> - read-only hosted-addon registry</dd>
 </dl>
 </section>
 </li>
@@ -321,6 +337,20 @@ loadScripts(document, 'script');</script>
 <h3>getEventBus</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="event/bus/BotEventBus.html" title="class in com.monkey.ultimatebot.api.event.bus">BotEventBus</a></span>&nbsp;<span class="element-name">getEventBus</span>()</div>
 <div class="block">Returns the typed Bukkit-backed event subscription facade.</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getExtensions()">
+<h3>getExtensions</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="extension/UltimateBotExtensionRegistry.html" title="interface in com.monkey.ultimatebot.api.extension">UltimateBotExtensionRegistry</a></span>&nbsp;<span class="element-name">getExtensions</span>()</div>
+<div class="block">Returns the dynamic combat-mode and custom-brain registry.</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getAddons()">
+<h3>getAddons</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="addon/AddonRegistry.html" title="interface in com.monkey.ultimatebot.api.addon">AddonRegistry</a></span>&nbsp;<span class="element-name">getAddons</span>()</div>
+<div class="block">Returns the read-only status of jars managed by the addon engine.</div>
 </section>
 </li>
 </ul>

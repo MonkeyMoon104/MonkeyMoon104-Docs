@@ -1,0 +1,591 @@
+<!doctype html>
+<html lang="en" data-product="api">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Complete UltimateBot {{VERSION}} in-server API guide with bot management, events, custom combat modes, custom AI and hosted addons.">
+    <meta name="theme-color" content="#070b12">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="UltimateBot Developer Documentation">
+    <meta property="og:title" content="UltimateBot API {{VERSION}}">
+    <meta property="og:description" content="The complete in-server API guide for bot management, events, custom modes, AI and hosted addons.">
+    <meta property="og:url" content="https://docs.monkeymoon104.it/api/">
+    <meta name="twitter:card" content="summary">
+    <title>UltimateBot API {{VERSION}} · Developer Guide</title>
+    <link rel="canonical" href="https://docs.monkeymoon104.it/api/">
+    <link rel="stylesheet" href="../assets/docs.css">
+    <script defer src="../assets/docs.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="../" aria-label="UltimateBot developer documentation home">
+          <span class="brand-mark" aria-hidden="true">UB</span>
+          <span>UltimateBot <span class="brand-product">API</span></span>
+        </a>
+        <nav class="header-nav" data-header-nav aria-label="Primary navigation">
+          <a href="./" aria-current="page">API guide</a>
+          <a href="../sdk/">Remote SDK</a>
+          <a href="reference.html">Javadocs</a>
+          <a href="#extensions">Extensions</a>
+          <span class="version-pill">v{{VERSION}}</span>
+        </nav>
+        <button class="menu-button" type="button" data-menu-toggle aria-label="Open navigation" aria-expanded="false">
+          <span class="menu-icon" aria-hidden="true"></span>
+        </button>
+        <button class="icon-button" type="button" data-theme-toggle aria-label="Change color theme">
+          <span class="theme-icon" aria-hidden="true"></span>
+        </button>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero">
+        <div>
+          <p class="eyebrow">In-server Java API · {{VERSION}}</p>
+          <h1>Control every bot. <span>Extend every fight.</span></h1>
+          <p class="hero-copy">
+            The compile-only Paper API for creating and managing bots, observing their full lifecycle and building custom combat modes or complete AI implementations inside the server.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#installation">Start integrating</a>
+            <a class="button" href="reference.html">Open complete Javadocs</a>
+          </div>
+        </div>
+        <div class="hero-panel" aria-label="API quick start example">
+          <div class="terminal-bar">
+            <span class="terminal-dot"></span><span class="terminal-dot"></span><span class="terminal-dot"></span>
+            <span class="terminal-title">BotPlugin.java</span>
+          </div>
+          <pre><code><span class="code-type">UltimateBotAPI</span> api = <span class="code-type">UltimateBotAPI</span>.<span class="code-method">get</span>();
+
+<span class="code-type">BotOperationResult</span> result = api
+    .<span class="code-method">getBotManager</span>()
+    .<span class="code-method">spawn</span>(request);
+
+<span class="code-keyword">if</span> (!result.<span class="code-method">success</span>()) {
+    getLogger().warning(result.<span class="code-method">message</span>());
+}</code></pre>
+        </div>
+      </section>
+
+      <div class="trust-strip">
+        <div class="trust-inner">
+          <div class="trust-item"><span class="trust-index">01</span><span>Paper 1.21.4+</span></div>
+          <div class="trust-item"><span class="trust-index">02</span><span>Java 21+</span></div>
+          <div class="trust-item"><span class="trust-index">03</span><span>compileOnly integration</span></div>
+          <div class="trust-item"><span class="trust-index">04</span><span>Bukkit-backed EventBus</span></div>
+        </div>
+      </div>
+
+      <div class="docs-shell">
+        <aside class="docs-sidebar" aria-label="On this page">
+          <p class="sidebar-label">On this page</p>
+          <nav class="section-nav" data-section-nav>
+            <a href="#overview">Overview</a>
+            <a href="#installation">Installation</a>
+            <a href="#spawning">Spawning bots</a>
+            <a href="#management">Runtime management</a>
+            <a href="#events">Events</a>
+            <a href="#extensions">Modes and AI</a>
+            <a href="#addons">Hosted addons</a>
+            <a href="#safety">Contracts and safety</a>
+            <a href="#reference">API reference</a>
+          </nav>
+          <div class="sidebar-card">
+            <strong>Need an external client?</strong>
+            Applications outside Paper should use the authenticated <a href="../sdk/">UltimateBot SDK</a>.
+          </div>
+        </aside>
+
+        <div class="docs-content">
+          <section class="docs-section" id="overview">
+            <p class="section-kicker">Choose the right integration</p>
+            <h2>A direct contract with the running server.</h2>
+            <p class="section-lead">
+              Use the API when your code is a Paper plugin loaded on the same server as UltimateBot. Calls are direct, Bukkit entities and ItemStacks are available, and events use the normal server event pipeline.
+            </p>
+            <div class="grid-3">
+              <article class="card" data-search="bot management snapshots registry">
+                <div class="card-number">01 / Manage</div>
+                <h3>Create and control bots</h3>
+                <p>Spawn all supported bot types, query immutable snapshots and update combat, equipment, targets, modes or ownership at runtime.</p>
+                <a href="com/monkey/ultimatebot/api/managers/IBotManager.html">IBotManager reference</a>
+              </article>
+              <article class="card" data-search="events eventbus bukkit lifecycle combat">
+                <div class="card-number">02 / Observe</div>
+                <h3>React to typed events</h3>
+                <p>Use standard Bukkit listeners or functional subscriptions. Both receive the same cancellable event objects and metadata.</p>
+                <a href="com/monkey/ultimatebot/api/event/bus/BotEventBus.html">BotEventBus reference</a>
+              </article>
+              <article class="card" data-search="extensions addon combat modes artificial intelligence brain nms">
+                <div class="card-number">03 / Extend</div>
+                <h3>Provide modes and full AI</h3>
+                <p>Register a complete mode, per-bot stateful combat sessions or a brain that replaces UltimateBot’s built-in decision tick.</p>
+                <a href="#extensions">Extension guide</a>
+              </article>
+            </div>
+            <div class="callout">
+              <h3>API or SDK?</h3>
+              <p>The API is the recommended dependency for Paper plugins and must be <code>compileOnly</code>. Use the SDK only for remote Java applications communicating through HTTP and Server-Sent Events.</p>
+            </div>
+          </section>
+
+          <section class="docs-section" id="installation">
+            <p class="section-kicker">Installation</p>
+            <h2>Add the API without bundling it.</h2>
+            <p class="section-lead">
+              UltimateBot supplies the implementation at runtime. Your plugin compiles against the public artifact and declares UltimateBot as a server dependency.
+            </p>
+
+            <div class="tabs" data-tabs>
+              <div class="tab-list" role="tablist" aria-label="Build tool">
+                <button class="tab-button" id="api-gradle-tab" type="button" role="tab" aria-selected="true" aria-controls="api-gradle-panel">Gradle Kotlin DSL</button>
+                <button class="tab-button" id="api-maven-tab" type="button" role="tab" aria-selected="false" aria-controls="api-maven-panel" tabindex="-1">Maven</button>
+              </div>
+              <div class="tab-panel" id="api-gradle-panel" role="tabpanel" aria-labelledby="api-gradle-tab">
+                <div class="code-block" data-code>
+                  <div class="code-header"><span>build.gradle.kts</span></div>
+                  <pre><code>repositories {
+    maven("https://repo.monkeymoon104.it/releases")
+    maven("https://repo.papermc.io/repository/maven-public/")
+}
+
+dependencies {
+    compileOnly("com.monkey.ultimatebot:api:{{VERSION}}")
+    compileOnly("io.papermc.paper:paper-api:1.21.4-R0.1-SNAPSHOT")
+}</code></pre>
+                </div>
+              </div>
+              <div class="tab-panel" id="api-maven-panel" role="tabpanel" aria-labelledby="api-maven-tab" hidden>
+                <div class="code-block" data-code>
+                  <div class="code-header"><span>pom.xml</span></div>
+                  <pre><code>&lt;dependency&gt;
+    &lt;groupId&gt;com.monkey.ultimatebot&lt;/groupId&gt;
+    &lt;artifactId&gt;api&lt;/artifactId&gt;
+    &lt;version&gt;{{VERSION}}&lt;/version&gt;
+    &lt;scope&gt;provided&lt;/scope&gt;
+&lt;/dependency&gt;</code></pre>
+                </div>
+              </div>
+            </div>
+
+            <div class="grid-2">
+              <div>
+                <div class="code-block" data-code>
+                  <div class="code-header"><span>plugin.yml</span></div>
+                  <pre><code>name: MyUltimateBotIntegration
+version: 1.0.0
+main: com.example.MyPlugin
+api-version: '1.21'
+depend: [UltimateBot]</code></pre>
+                </div>
+              </div>
+              <article class="card">
+                <div class="card-number">Runtime access</div>
+                <h3>One stable entry point</h3>
+                <p><code>UltimateBotAPI.get()</code> returns the registered API or fails fast when called too early. Use <code>isAvailable()</code> or listen for <code>UltimateBotReadyEvent</code> when UltimateBot is optional.</p>
+                <a href="com/monkey/ultimatebot/api/UltimateBotAPI.html">UltimateBotAPI Javadocs</a>
+              </article>
+            </div>
+
+            <div class="callout callout-warning">
+              <h3>Never shade API or common into your jar</h3>
+              <p>Bundling public UltimateBot classes creates duplicate class identities and breaks provider casting. Keep the dependency compile-only; UltimateBot provides both API and shared models on the server.</p>
+            </div>
+          </section>
+
+          <section class="docs-section" id="spawning">
+            <p class="section-kicker">Bot construction</p>
+            <h2>Validated settings from identity to combat.</h2>
+            <p class="section-lead">
+              <code>BotSettings</code> uses a staged builder: required values are supplied in a safe order, invalid combinations fail immediately, and optional runtime behavior remains fluent after the required profile is complete.
+            </p>
+
+            <div class="code-block" data-code>
+              <div class="code-header"><span>Complete single-bot spawn</span></div>
+              <pre><code>BotSettings settings = BotSettings.builder()
+    .setBotName("Trainer-%owner%")
+    .setBotSkinOwner()
+    .follow(true)
+    .setChangeableFollow(true)
+    .combat(true)
+    .setChangeableCombat(true)
+    .blastProtection(false, false, false, false)
+    .setChangeableBlast(true)
+    .armorValue(BotArmorTier.LEATHER, BotArmorTier.NETHERITE)
+    .armor(BotArmorTier.NETHERITE)
+    .setChangeableArmor(true)
+    .totemValue(-1, 20)
+    .totemCount(5)
+    .setChangeableTotem(true)
+    .difficultyValue(DifficultyTier.EASY, DifficultyTier.GOD)
+    .difficulty(DifficultyTier.MEDIUM)
+    .setChangeableDifficulty(true)
+    .targetMode(BotTargetMode.PLAYERS)
+    .combatMode(CombatMode.SWORD)
+    .autoTarget(true)
+    .autoTargetRange(24.0D)
+    .healing(true)
+    .build();
+
+BotSpawnRequest request = BotSpawnRequest.builder(BotMode.SINGLE)
+    .owner(player.getUniqueId())
+    .settings(settings)
+    .build();
+
+BotOperationResult result = UltimateBotAPI.get()
+    .getBotManager()
+    .spawn(request);</code></pre>
+            </div>
+
+            <div class="grid-4">
+              <article class="card">
+                <div class="card-number">SINGLE</div>
+                <h3>Player opponent</h3>
+                <p>Requires an owner. The owner is automatically used as the target.</p>
+              </article>
+              <article class="card">
+                <div class="card-number">EVENT</div>
+                <h3>Independent bot</h3>
+                <p>Supports explicit target sets and server-controlled event scenarios.</p>
+              </article>
+              <article class="card">
+                <div class="card-number">ALLY</div>
+                <h3>Player ally</h3>
+                <p>Requires an owner and follows the configured ally behavior.</p>
+              </article>
+              <article class="card">
+                <div class="card-number">TEAM_ALLY</div>
+                <h3>Shared team ally</h3>
+                <p>Uses a primary owner or a set of team-owner UUIDs.</p>
+              </article>
+            </div>
+
+            <h3>Everything available in a bot profile</h3>
+            <ul class="feature-list">
+              <li>Name templates and random, owner, player, texture or URL skins</li>
+              <li>Fixed or changeable follow, combat, armor, blast protection, totems and difficulty</li>
+              <li>Built-in or namespaced combat modes and optional custom brain assignment</li>
+              <li>Player, mob or combined targeting with automatic range selection</li>
+              <li>Custom UUID, spawn location, explicit targets and team owners</li>
+              <li>Healing, explosions, terrain damage, Crystal PvP and Ender Pearls</li>
+              <li>Idle wandering, return distance, delay and owner-death persistence</li>
+              <li>Armor, trims, inventory contents and persistent empty/custom equipment slots</li>
+              <li>Kill-message control, WorldGuard PvP respect and bot-vs-bot attacks</li>
+              <li>Per-bot combat tuning overrides with server-profile reset support</li>
+            </ul>
+
+            <div class="code-block" data-code>
+              <div class="code-header"><span>Specific UUID and empty equipment slots</span></div>
+              <pre><code>BotSpawnRequest request = BotSpawnRequest.builder(BotMode.ALLY)
+    .botUUID(UUID.fromString("5fbf64f4-c012-4f04-9cb6-f27f68f3bb80"))
+    .owner(player.getUniqueId())
+    .emptyEquipmentSlot(BotEquipmentSlot.MAIN_HAND)
+    .emptyEquipmentSlot(BotEquipmentSlot.OFF_HAND)
+    .equipmentItem(BotEquipmentSlot.HEAD, customHelmet)
+    .settings(settings)
+    .build();</code></pre>
+            </div>
+          </section>
+
+          <section class="docs-section" id="management">
+            <p class="section-kicker">Runtime management</p>
+            <h2>Owner UUID or bot UUID. Your choice.</h2>
+            <p class="section-lead">
+              Mutation lives in <code>IBotManager</code>; monitoring lives in the read-only <code>IBotRegistry</code>. Snapshots are immutable views and do not expose internal bot state.
+            </p>
+
+            <div class="grid-2">
+              <article class="card">
+                <div class="card-number">Mutation</div>
+                <h3>IBotManager</h3>
+                <p>Spawn, update, resolve player references, remove bots and enumerate available combat modes or registered brains.</p>
+                <a href="com/monkey/ultimatebot/api/managers/IBotManager.html">Complete method reference</a>
+              </article>
+              <article class="card">
+                <div class="card-number">Inspection</div>
+                <h3>IBotRegistry</h3>
+                <p>Read snapshots by owner or bot UUID, translate identities and inspect all currently active bots.</p>
+                <a href="com/monkey/ultimatebot/api/managers/IBotRegistry.html">Complete method reference</a>
+              </article>
+            </div>
+
+            <table class="method-table">
+              <thead><tr><th>Operation family</th><th>Available controls</th></tr></thead>
+              <tbody>
+                <tr><td>Identity and lifecycle</td><td>Get by owner/bot UUID, count, remove one, remove all or remove only bots from a specific <code>BotSource</code>.</td></tr>
+                <tr><td>Core behavior</td><td>Follow, combat, difficulty, armor, totems, healing, target mode, target sets, team owners and auto-target range.</td></tr>
+                <tr><td>Combat platform</td><td>Change combat mode or brain, override/reset tuning, toggle Crystal PvP, explosions, terrain damage, Ender Pearls and bot-vs-bot combat.</td></tr>
+                <tr><td>Equipment</td><td>Replace armor or inventory maps, update individual inventory indexes, or persist <code>DEFAULT</code>, <code>EMPTY</code> and <code>ITEM</code> policies per equipment slot.</td></tr>
+                <tr><td>World behavior</td><td>WorldGuard PvP respect, idle wandering, return timing, owner-death persistence, spawn location and kill messages.</td></tr>
+              </tbody>
+            </table>
+
+            <div class="code-block" data-code>
+              <div class="code-header"><span>Runtime updates and snapshots</span></div>
+              <pre><code>IBotManager bots = UltimateBotAPI.get().getBotManager();
+
+bots.updateCombatModeByBotUUID(botUuid, CombatMode.MACE);
+bots.updateDifficultyByBotUUID(botUuid, DifficultyTier.HARD);
+bots.updateTargetModeByBotUUID(botUuid, BotTargetMode.PLAYERS_AND_MOBS);
+
+BotSnapshot snapshot = bots.getBotByBotUUID(botUuid)
+    .orElseThrow(() -&gt; new IllegalStateException("Bot is no longer active"));
+
+getLogger().info(snapshot.botNameTemplate() + " uses " + snapshot.combatMode());</code></pre>
+            </div>
+          </section>
+
+          <section class="docs-section" id="events">
+            <p class="section-kicker">Typed EventBus</p>
+            <h2>One event, two listening styles.</h2>
+            <p class="section-lead">
+              Every API event is a Bukkit event. Use familiar <code>@EventHandler</code> methods or retain a closeable functional subscription from <code>BotEventBus</code>.
+            </p>
+
+            <div class="tabs" data-tabs>
+              <div class="tab-list" role="tablist" aria-label="Event listener style">
+                <button class="tab-button" id="bukkit-event-tab" type="button" role="tab" aria-selected="true" aria-controls="bukkit-event-panel">Bukkit listener</button>
+                <button class="tab-button" id="bus-event-tab" type="button" role="tab" aria-selected="false" aria-controls="bus-event-panel" tabindex="-1">Functional EventBus</button>
+              </div>
+              <div class="tab-panel" id="bukkit-event-panel" role="tabpanel" aria-labelledby="bukkit-event-tab">
+                <div class="code-block" data-code>
+                  <div class="code-header"><span>Standard listener</span></div>
+                  <pre><code>@EventHandler(ignoreCancelled = true)
+public void onBotAttack(BotAttackEvent event) {
+    if (event.getAttackType() == BotAttackType.MELEE) {
+        rewardCombo(event.getOwnerUUID(), event.getBotUUID());
+    }
+}</code></pre>
+                </div>
+              </div>
+              <div class="tab-panel" id="bus-event-panel" role="tabpanel" aria-labelledby="bus-event-tab" hidden>
+                <div class="code-block" data-code>
+                  <div class="code-header"><span>Close on plugin disable</span></div>
+                  <pre><code>BotEventSubscription attacks = UltimateBotAPI.get()
+    .getEventBus()
+    .subscribeForOwner(
+        this,
+        ownerUuid,
+        BotAttackEvent.class,
+        event -&gt; rewardCombo(event.getOwnerUUID(), event.getBotUUID()));
+
+// Retain the handle and call attacks.close() during shutdown.</code></pre>
+                </div>
+              </div>
+            </div>
+
+            <div class="grid-3">
+              <article class="card"><div class="card-number">Lifecycle</div><h3>Ready, spawn and removal</h3><p>Ready, spawn preparation/completion, despawn preparation/completion, death and explicit despawn reasons.</p></article>
+              <article class="card"><div class="card-number">Combat</div><h3>Attacks and outcomes</h3><p>Attack, damage, player/entity kills, explosions, explosion type and terrain policy, plus totem usage.</p></article>
+              <article class="card"><div class="card-number">Action</div><h3>Healing and teleport</h3><p>Observe or control individual bot actions before their runtime effect is committed.</p></article>
+              <article class="card"><div class="card-number">State</div><h3>Target and settings</h3><p>Track target transitions and every supported runtime setting mutation through structured keys.</p></article>
+              <article class="card"><div class="card-number">Addon</div><h3>Extension lifecycle</h3><p>Observe hosted addon discovery, loading, enablement, failure and shutdown states.</p></article>
+              <article class="card"><div class="card-number">Metadata</div><h3>Trace every event</h3><p>Event ID, timestamp, source, owner UUID, bot UUID, per-bot sequence and immutable snapshot travel together.</p></article>
+            </div>
+
+            <div class="callout">
+              <h3>Cancellable means pre-action</h3>
+              <p>Cancelling a supported event prevents the underlying action. Mutable properties such as explosion block damage change only that part of the operation; cancelling an explosion event cancels the complete explosion.</p>
+            </div>
+          </section>
+
+          <section class="docs-section" id="extensions">
+            <p class="section-kicker">Combat extension platform</p>
+            <h2>Custom mode, custom brain—or both.</h2>
+            <p class="section-lead">
+              Paper plugins and hosted addon jars use the same provider contracts. Registrations are namespaced, owner-scoped and removable without touching UltimateBot internals.
+            </p>
+
+            <div class="grid-2">
+              <article class="card">
+                <div class="card-number">CombatModeProvider</div>
+                <h3>Build a complete game mode</h3>
+                <p>Supply GUI metadata, permission, ordering, capabilities, kit, every difficulty profile and an optional stateful runtime session per bot.</p>
+                <a href="com/monkey/ultimatebot/api/extension/combat/CombatModeProvider.html">Mode provider contract</a>
+              </article>
+              <article class="card">
+                <div class="card-number">BotBrainProvider</div>
+                <h3>Replace the complete AI tick</h3>
+                <p>Own targeting reactions, movement, rotation, attacks and inventory decisions while UltimateBot retains entity lifecycle and cleanup.</p>
+                <a href="com/monkey/ultimatebot/api/extension/brain/BotBrainProvider.html">Brain provider contract</a>
+              </article>
+            </div>
+
+            <div class="code-block" data-code>
+              <div class="code-header"><span>Register from a Paper plugin</span></div>
+              <pre><code>public final class CombatExtensionPlugin extends JavaPlugin {
+    private final List&lt;ExtensionRegistration&gt; registrations = new ArrayList&lt;&gt;();
+
+    @Override
+    public void onEnable() {
+        UltimateBotExtensionRegistry extensions = UltimateBotAPI.get().getExtensions();
+        registrations.add(extensions.registerBrain(this, new AdaptiveBrainProvider()));
+        registrations.add(extensions.registerCombatMode(this, new AdaptiveModeProvider()));
+    }
+
+    @Override
+    public void onDisable() {
+        registrations.reversed().forEach(ExtensionRegistration::close);
+        registrations.clear();
+    }
+}</code></pre>
+            </div>
+
+            <div class="code-block" data-code>
+              <div class="code-header"><span>Stateful full-control brain</span></div>
+              <pre><code>public final class AdaptiveBrainProvider implements BotBrainProvider {
+    private static final BrainKey KEY = BrainKey.of("myplugin", "adaptive-melee");
+
+    @Override
+    public BrainDescriptor descriptor() {
+        return new BrainDescriptor(
+            KEY,
+            "Adaptive Melee",
+            "Reads distance and controls the full combat tick",
+            Set.of(BrainCapability.FULL_CONTROL),
+            false);
+    }
+
+    @Override
+    public BotBrainSession create(BotBrainContext context) {
+        return tick -&gt; tick.selectedTarget().ifPresent(target -&gt; {
+            context.control().lookAt(target);
+            context.control().moveTowards(target, 2.7D);
+            if (context.bot().getLocation().distanceSquared(target.getLocation()) &lt;= 9.0D) {
+                context.control().attack(target);
+            }
+        });
+    }
+}</code></pre>
+            </div>
+
+            <table class="method-table">
+              <thead><tr><th>Runtime surface</th><th>Contract</th></tr></thead>
+              <tbody>
+                <tr><td>BotControl</td><td>Look, move, strafe, jump, stop, attack, swing, use items and manipulate bot equipment through controlled operations.</td></tr>
+                <tr><td>BrainTick</td><td>Current tick, selected target and state supplied to one isolated brain session.</td></tr>
+                <tr><td>BrainDamage / TargetChange</td><td>Typed signals delivered to the session without requiring global listener maps.</td></tr>
+                <tr><td>CombatModeRuntime</td><td>Per-bot mode context for kit-aware, stateful mode behavior with enter, tick, suspend, resume, exit and close lifecycle.</td></tr>
+                <tr><td>NativeBotAccess</td><td>An intentionally unstable, typed escape hatch for exact-version NMS bot, level and target handles.</td></tr>
+              </tbody>
+            </table>
+
+            <div class="callout callout-warning">
+              <h3>NMS is optional and version-specific</h3>
+              <p>Most custom AI should use <code>BotControl</code>. If direct NMS is unavoidable, compile one implementation per supported Minecraft version and load it only through a matching <code>native.&lt;version&gt;</code> addon entrypoint.</p>
+            </div>
+          </section>
+
+          <section class="docs-section" id="addons">
+            <p class="section-kicker">Hosted addon engine</p>
+            <h2>One jar, discovered automatically.</h2>
+            <p class="section-lead">
+              Developers who do not need a separate Paper plugin can ship an UltimateBot addon directly into <code>plugins/UltimateBot/addon/</code>. The engine validates, orders and isolates every addon at startup.
+            </p>
+
+            <div class="grid-3">
+              <article class="card"><div class="card-number">Discover</div><h3>Validated descriptor</h3><p>Unique IDs, API version, required and soft dependencies, entrypoints and optional native mappings are checked before code loads.</p></article>
+              <article class="card"><div class="card-number">Isolate</div><h3>Dedicated ClassLoader</h3><p>Bundled UltimateBot classes are rejected, dependency cycles fail clearly and only the matching native entrypoint is selected.</p></article>
+              <article class="card"><div class="card-number">Release</div><h3>Owned lifecycle</h3><p>Registrations, listeners, Paper/Folia tasks, closeable resources, bot sessions and ClassLoaders are released in safe reverse order.</p></article>
+            </div>
+
+            <div class="code-block" data-code>
+              <div class="code-header"><span>META-INF/ultimatebot-addon.properties</span></div>
+              <pre><code>id=adaptive-combat
+name=Adaptive Combat
+version=1.0.0
+api-version=2
+main=com.example.adaptive.AdaptiveAddon
+authors=DeveloperName
+dependencies=
+soft-dependencies=
+native.1.21.11=com.example.adaptive.nms.v1_21_11.NativeAddon</code></pre>
+            </div>
+
+            <div class="code-block" data-code>
+              <div class="code-header"><span>Hosted addon entrypoint</span></div>
+              <pre><code>public final class AdaptiveAddon implements UltimateBotAddon {
+    @Override
+    public void onLoad(AddonContext context) {
+        context.registerBrain(new AdaptiveBrainProvider());
+        context.registerCombatMode(new AdaptiveModeProvider());
+
+        context.resources().runAsyncTask(() -&gt; loadReadOnlyModel(context.dataDirectory()));
+    }
+}</code></pre>
+            </div>
+
+            <ul class="check-list">
+              <li>No manual API jar is installed on the server.</li>
+              <li>API and common remain compile-only and are never shaded.</li>
+              <li>Private third-party libraries may be relocated inside the addon jar.</li>
+              <li>Replacing addon jars through server reload is intentionally unsupported; restart after changes.</li>
+              <li>One addon jar may contain separate NMS implementations for every version it supports.</li>
+            </ul>
+          </section>
+
+          <section class="docs-section" id="safety">
+            <p class="section-kicker">Runtime contracts</p>
+            <h2>Predictable ownership, nullability and cleanup.</h2>
+            <p class="section-lead">
+              The public surface is designed for fail-fast integration. Read the annotations and lifecycle contracts rather than retaining mutable Bukkit state indefinitely.
+            </p>
+            <div class="grid-2">
+              <article class="card"><div class="card-number">Null safety</div><h3>JSpecify contracts</h3><p>Nullable parameters and returns are explicit. Required public inputs reject null immediately with descriptive failures.</p></article>
+              <article class="card"><div class="card-number">Threading</div><h3>Respect Bukkit ownership</h3><p>Call entity/world operations from the correct Paper or Folia context. Hosted addons should schedule through their scoped resource API.</p></article>
+              <article class="card"><div class="card-number">Resources</div><h3>Close what you retain</h3><p>Functional event subscriptions and direct extension registrations are <code>AutoCloseable</code>. Close them when the owning plugin disables.</p></article>
+              <article class="card"><div class="card-number">State</div><h3>Prefer snapshots</h3><p>Registry and operation results expose immutable data. Resolve the bot again instead of retaining internal entity assumptions across despawn.</p></article>
+            </div>
+
+            <div class="callout">
+              <h3>Built-in failure isolation</h3>
+              <p>Custom brain and mode sessions are isolated per bot. Repeated provider failures close the faulty session and return the bot to a safe built-in fallback instead of continuously crashing the entity tick.</p>
+            </div>
+          </section>
+
+          <section class="docs-section" id="reference">
+            <p class="section-kicker">Generated from source</p>
+            <h2>Complete API reference.</h2>
+            <p class="section-lead">
+              Search every public API type generated for version {{VERSION}}. Select a result to open its constructors, methods, parameters, return values, exceptions and nullability contract.
+            </p>
+
+            <div class="search-panel" data-reference-index="type-search-index.js">
+              <div class="search-row">
+                <label class="search-field">
+                  <input class="search-input" type="search" data-reference-search aria-label="Search API types" placeholder="Search classes, records and packages…" autocomplete="off">
+                  <span class="search-shortcut" aria-hidden="true">/</span>
+                </label>
+              </div>
+              <p class="reference-meta" data-reference-count aria-live="polite">Loading public types…</p>
+              <div class="reference-grid" data-reference-grid>
+                <div class="reference-empty">Loading the generated Javadoc index…</div>
+              </div>
+            </div>
+
+            <div class="button-row">
+              <a class="button button-primary" href="reference.html">Javadoc overview</a>
+              <a class="button" href="allclasses-index.html">All API classes</a>
+              <a class="button button-quiet" href="../common/">Shared model reference</a>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <span>© <span data-current-year></span> MonkeyMoon104 · UltimateBot API {{VERSION}}</span>
+        <div class="footer-links">
+          <a href="../">Documentation home</a>
+          <a href="../sdk/">Remote SDK</a>
+          <a href="reference.html">Javadocs</a>
+          <a href="../common/">Shared types</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

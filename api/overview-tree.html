@@ -52,12 +52,19 @@ loadScripts(document, 'script');</script>
 <span class="package-hierarchy-label">Package Hierarchies:</span>
 <ul class="horizontal contents-list">
 <li><a href="com/monkey/ultimatebot/api/package-tree.html">com.monkey.ultimatebot.api</a>, </li>
+<li><a href="com/monkey/ultimatebot/api/addon/package-tree.html">com.monkey.ultimatebot.api.addon</a>, </li>
 <li><a href="com/monkey/ultimatebot/api/event/action/package-tree.html">com.monkey.ultimatebot.api.event.action</a>, </li>
+<li><a href="com/monkey/ultimatebot/api/event/addon/package-tree.html">com.monkey.ultimatebot.api.event.addon</a>, </li>
 <li><a href="com/monkey/ultimatebot/api/event/base/package-tree.html">com.monkey.ultimatebot.api.event.base</a>, </li>
 <li><a href="com/monkey/ultimatebot/api/event/bus/package-tree.html">com.monkey.ultimatebot.api.event.bus</a>, </li>
 <li><a href="com/monkey/ultimatebot/api/event/combat/package-tree.html">com.monkey.ultimatebot.api.event.combat</a>, </li>
 <li><a href="com/monkey/ultimatebot/api/event/lifecycle/package-tree.html">com.monkey.ultimatebot.api.event.lifecycle</a>, </li>
 <li><a href="com/monkey/ultimatebot/api/event/state/package-tree.html">com.monkey.ultimatebot.api.event.state</a>, </li>
+<li><a href="com/monkey/ultimatebot/api/extension/package-tree.html">com.monkey.ultimatebot.api.extension</a>, </li>
+<li><a href="com/monkey/ultimatebot/api/extension/brain/package-tree.html">com.monkey.ultimatebot.api.extension.brain</a>, </li>
+<li><a href="com/monkey/ultimatebot/api/extension/combat/package-tree.html">com.monkey.ultimatebot.api.extension.combat</a>, </li>
+<li><a href="com/monkey/ultimatebot/api/extension/control/package-tree.html">com.monkey.ultimatebot.api.extension.control</a>, </li>
+<li><a href="com/monkey/ultimatebot/api/extension/nativeaccess/package-tree.html">com.monkey.ultimatebot.api.extension.nativeaccess</a>, </li>
 <li><a href="com/monkey/ultimatebot/api/managers/package-tree.html">com.monkey.ultimatebot.api.managers</a>, </li>
 <li><a href="com/monkey/ultimatebot/api/model/configuration/package-tree.html">com.monkey.ultimatebot.api.model.configuration</a>, </li>
 <li><a href="com/monkey/ultimatebot/api/model/identity/package-tree.html">com.monkey.ultimatebot.api.model.identity</a>, </li>
@@ -73,8 +80,10 @@ loadScripts(document, 'script');</script>
 <li class="circle">com.monkey.ultimatebot.api.model.configuration.<a href="com/monkey/ultimatebot/api/model/configuration/BotSettings.html" class="type-name-link" title="class in com.monkey.ultimatebot.api.model.configuration">BotSettings</a></li>
 <li class="circle">com.monkey.ultimatebot.api.model.runtime.<a href="com/monkey/ultimatebot/api/model/runtime/BotSpawnRequest.html" class="type-name-link" title="class in com.monkey.ultimatebot.api.model.runtime">BotSpawnRequest</a></li>
 <li class="circle">com.monkey.ultimatebot.api.model.runtime.<a href="com/monkey/ultimatebot/api/model/runtime/BotSpawnRequest.Builder.html" class="type-name-link" title="class in com.monkey.ultimatebot.api.model.runtime">BotSpawnRequest.Builder</a></li>
+<li class="circle">com.monkey.ultimatebot.api.extension.combat.<a href="com/monkey/ultimatebot/api/extension/combat/CombatModeDescriptor.Builder.html" class="type-name-link" title="class in com.monkey.ultimatebot.api.extension.combat">CombatModeDescriptor.Builder</a></li>
 <li class="circle">org.bukkit.event.Event
 <ul>
+<li class="circle">com.monkey.ultimatebot.api.event.addon.<a href="com/monkey/ultimatebot/api/event/addon/AddonLifecycleEvent.html" class="type-name-link" title="class in com.monkey.ultimatebot.api.event.addon">AddonLifecycleEvent</a></li>
 <li class="circle">com.monkey.ultimatebot.api.event.base.<a href="com/monkey/ultimatebot/api/event/base/BotEvent.html" class="type-name-link" title="class in com.monkey.ultimatebot.api.event.base">BotEvent</a>
 <ul>
 <li class="circle">com.monkey.ultimatebot.api.event.combat.<a href="com/monkey/ultimatebot/api/event/combat/BotAttackEvent.html" class="type-name-link" title="class in com.monkey.ultimatebot.api.event.combat">BotAttackEvent</a> (implements org.bukkit.event.Cancellable)</li>
@@ -97,6 +106,8 @@ loadScripts(document, 'script');</script>
 <li class="circle">com.monkey.ultimatebot.api.event.lifecycle.<a href="com/monkey/ultimatebot/api/event/lifecycle/UltimateBotReadyEvent.html" class="type-name-link" title="class in com.monkey.ultimatebot.api.event.lifecycle">UltimateBotReadyEvent</a></li>
 </ul>
 </li>
+<li class="circle">com.monkey.ultimatebot.api.extension.combat.<a href="com/monkey/ultimatebot/api/extension/combat/ModeKit.html" class="type-name-link" title="class in com.monkey.ultimatebot.api.extension.combat">ModeKit</a></li>
+<li class="circle">com.monkey.ultimatebot.api.extension.combat.<a href="com/monkey/ultimatebot/api/extension/combat/ModeKit.Builder.html" class="type-name-link" title="class in com.monkey.ultimatebot.api.extension.combat">ModeKit.Builder</a></li>
 <li class="circle">com.monkey.ultimatebot.api.<a href="com/monkey/ultimatebot/api/UltimateBotAPI.html" class="type-name-link" title="class in com.monkey.ultimatebot.api">UltimateBotAPI</a></li>
 </ul>
 </li>
@@ -105,11 +116,21 @@ loadScripts(document, 'script');</script>
 <section class="hierarchy">
 <h2 title="Interface Hierarchy">Interface Hierarchy</h2>
 <ul>
+<li class="circle">com.monkey.ultimatebot.api.addon.<a href="com/monkey/ultimatebot/api/addon/AddonContext.html" class="type-name-link" title="interface in com.monkey.ultimatebot.api.addon">AddonContext</a></li>
+<li class="circle">com.monkey.ultimatebot.api.addon.<a href="com/monkey/ultimatebot/api/addon/AddonRegistry.html" class="type-name-link" title="interface in com.monkey.ultimatebot.api.addon">AddonRegistry</a></li>
 <li class="circle">java.lang.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/AutoCloseable.html" class="type-name-link external-link" title="class or interface in java.lang">AutoCloseable</a>
 <ul>
+<li class="circle">com.monkey.ultimatebot.api.addon.<a href="com/monkey/ultimatebot/api/addon/AddonResourceScope.html" class="type-name-link" title="interface in com.monkey.ultimatebot.api.addon">AddonResourceScope</a></li>
+<li class="circle">com.monkey.ultimatebot.api.addon.<a href="com/monkey/ultimatebot/api/addon/AddonTask.html" class="type-name-link" title="interface in com.monkey.ultimatebot.api.addon">AddonTask</a></li>
+<li class="circle">com.monkey.ultimatebot.api.extension.brain.<a href="com/monkey/ultimatebot/api/extension/brain/BotBrainSession.html" class="type-name-link" title="interface in com.monkey.ultimatebot.api.extension.brain">BotBrainSession</a></li>
 <li class="circle">com.monkey.ultimatebot.api.event.bus.<a href="com/monkey/ultimatebot/api/event/bus/BotEventSubscription.html" class="type-name-link" title="interface in com.monkey.ultimatebot.api.event.bus">BotEventSubscription</a></li>
+<li class="circle">com.monkey.ultimatebot.api.extension.combat.<a href="com/monkey/ultimatebot/api/extension/combat/CombatModeSession.html" class="type-name-link" title="interface in com.monkey.ultimatebot.api.extension.combat">CombatModeSession</a></li>
+<li class="circle">com.monkey.ultimatebot.api.extension.<a href="com/monkey/ultimatebot/api/extension/ExtensionRegistration.html" class="type-name-link" title="interface in com.monkey.ultimatebot.api.extension">ExtensionRegistration</a></li>
 </ul>
 </li>
+<li class="circle">com.monkey.ultimatebot.api.extension.brain.<a href="com/monkey/ultimatebot/api/extension/brain/BotBrainContext.html" class="type-name-link" title="interface in com.monkey.ultimatebot.api.extension.brain">BotBrainContext</a></li>
+<li class="circle">com.monkey.ultimatebot.api.extension.brain.<a href="com/monkey/ultimatebot/api/extension/brain/BotBrainProvider.html" class="type-name-link" title="interface in com.monkey.ultimatebot.api.extension.brain">BotBrainProvider</a></li>
+<li class="circle">com.monkey.ultimatebot.api.extension.control.<a href="com/monkey/ultimatebot/api/extension/control/BotControl.html" class="type-name-link" title="interface in com.monkey.ultimatebot.api.extension.control">BotControl</a></li>
 <li class="circle">com.monkey.ultimatebot.api.model.configuration.<a href="com/monkey/ultimatebot/api/model/configuration/BotSettings.ArmorRangeStep.html" class="type-name-link" title="interface in com.monkey.ultimatebot.api.model.configuration">BotSettings.ArmorRangeStep</a></li>
 <li class="circle">com.monkey.ultimatebot.api.model.configuration.<a href="com/monkey/ultimatebot/api/model/configuration/BotSettings.ArmorStep.html" class="type-name-link" title="interface in com.monkey.ultimatebot.api.model.configuration">BotSettings.ArmorStep</a></li>
 <li class="circle">com.monkey.ultimatebot.api.model.configuration.<a href="com/monkey/ultimatebot/api/model/configuration/BotSettings.BlastProtectionStep.html" class="type-name-link" title="interface in com.monkey.ultimatebot.api.model.configuration">BotSettings.BlastProtectionStep</a></li>
@@ -128,8 +149,13 @@ loadScripts(document, 'script');</script>
 <li class="circle">com.monkey.ultimatebot.api.model.configuration.<a href="com/monkey/ultimatebot/api/model/configuration/BotSettings.FollowStep.html" class="type-name-link" title="interface in com.monkey.ultimatebot.api.model.configuration">BotSettings.FollowStep</a></li>
 <li class="circle">com.monkey.ultimatebot.api.model.configuration.<a href="com/monkey/ultimatebot/api/model/configuration/BotSettings.TotemRangeStep.html" class="type-name-link" title="interface in com.monkey.ultimatebot.api.model.configuration">BotSettings.TotemRangeStep</a></li>
 <li class="circle">com.monkey.ultimatebot.api.model.configuration.<a href="com/monkey/ultimatebot/api/model/configuration/BotSettings.TotemStep.html" class="type-name-link" title="interface in com.monkey.ultimatebot.api.model.configuration">BotSettings.TotemStep</a></li>
+<li class="circle">com.monkey.ultimatebot.api.extension.combat.<a href="com/monkey/ultimatebot/api/extension/combat/CombatModeProvider.html" class="type-name-link" title="interface in com.monkey.ultimatebot.api.extension.combat">CombatModeProvider</a></li>
+<li class="circle">com.monkey.ultimatebot.api.extension.combat.<a href="com/monkey/ultimatebot/api/extension/combat/CombatModeRuntime.html" class="type-name-link" title="interface in com.monkey.ultimatebot.api.extension.combat">CombatModeRuntime</a></li>
 <li class="circle">com.monkey.ultimatebot.api.managers.<a href="com/monkey/ultimatebot/api/managers/IBotManager.html" class="type-name-link" title="interface in com.monkey.ultimatebot.api.managers">IBotManager</a></li>
 <li class="circle">com.monkey.ultimatebot.api.managers.<a href="com/monkey/ultimatebot/api/managers/IBotRegistry.html" class="type-name-link" title="interface in com.monkey.ultimatebot.api.managers">IBotRegistry</a></li>
+<li class="circle">com.monkey.ultimatebot.api.extension.nativeaccess.<a href="com/monkey/ultimatebot/api/extension/nativeaccess/NativeBotAccess.html" class="type-name-link" title="interface in com.monkey.ultimatebot.api.extension.nativeaccess">NativeBotAccess</a></li>
+<li class="circle">com.monkey.ultimatebot.api.addon.<a href="com/monkey/ultimatebot/api/addon/UltimateBotAddon.html" class="type-name-link" title="interface in com.monkey.ultimatebot.api.addon">UltimateBotAddon</a></li>
+<li class="circle">com.monkey.ultimatebot.api.extension.<a href="com/monkey/ultimatebot/api/extension/UltimateBotExtensionRegistry.html" class="type-name-link" title="interface in com.monkey.ultimatebot.api.extension">UltimateBotExtensionRegistry</a></li>
 </ul>
 </section>
 <section class="hierarchy">
@@ -139,6 +165,7 @@ loadScripts(document, 'script');</script>
 <ul>
 <li class="circle">java.lang.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Enum.html" class="type-name-link external-link" title="class or interface in java.lang">Enum</a>&lt;E&gt; (implements java.lang.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Comparable.html" title="class or interface in java.lang" class="external-link">Comparable</a>&lt;T&gt;, java.lang.constant.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/constant/Constable.html" title="class or interface in java.lang.constant" class="external-link">Constable</a>, java.io.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/io/Serializable.html" title="class or interface in java.io" class="external-link">Serializable</a>)
 <ul>
+<li class="circle">com.monkey.ultimatebot.api.addon.<a href="com/monkey/ultimatebot/api/addon/AddonState.html" class="type-name-link" title="enum class in com.monkey.ultimatebot.api.addon">AddonState</a></li>
 <li class="circle">com.monkey.ultimatebot.api.event.combat.<a href="com/monkey/ultimatebot/api/event/combat/BotAttackType.html" class="type-name-link" title="enum class in com.monkey.ultimatebot.api.event.combat">BotAttackType</a></li>
 <li class="circle">com.monkey.ultimatebot.api.event.lifecycle.<a href="com/monkey/ultimatebot/api/event/lifecycle/BotDespawnReason.html" class="type-name-link" title="enum class in com.monkey.ultimatebot.api.event.lifecycle">BotDespawnReason</a></li>
 <li class="circle">com.monkey.ultimatebot.api.model.configuration.<a href="com/monkey/ultimatebot/api/model/configuration/BotEquipmentSlot.html" class="type-name-link" title="enum class in com.monkey.ultimatebot.api.model.configuration">BotEquipmentSlot</a></li>
@@ -160,11 +187,19 @@ loadScripts(document, 'script');</script>
 <ul>
 <li class="circle">java.lang.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Record.html" class="type-name-link external-link" title="class or interface in java.lang">Record</a>
 <ul>
+<li class="circle">com.monkey.ultimatebot.api.addon.<a href="com/monkey/ultimatebot/api/addon/AddonDescriptor.html" class="type-name-link" title="class in com.monkey.ultimatebot.api.addon">AddonDescriptor</a></li>
+<li class="circle">com.monkey.ultimatebot.api.addon.<a href="com/monkey/ultimatebot/api/addon/AddonSnapshot.html" class="type-name-link" title="class in com.monkey.ultimatebot.api.addon">AddonSnapshot</a></li>
 <li class="circle">com.monkey.ultimatebot.api.model.configuration.<a href="com/monkey/ultimatebot/api/model/configuration/BotBlastProtection.html" class="type-name-link" title="class in com.monkey.ultimatebot.api.model.configuration">BotBlastProtection</a></li>
 <li class="circle">com.monkey.ultimatebot.api.model.runtime.<a href="com/monkey/ultimatebot/api/model/runtime/BotLocation.html" class="type-name-link" title="class in com.monkey.ultimatebot.api.model.runtime">BotLocation</a></li>
 <li class="circle">com.monkey.ultimatebot.api.model.runtime.<a href="com/monkey/ultimatebot/api/model/runtime/BotOperationResult.html" class="type-name-link" title="class in com.monkey.ultimatebot.api.model.runtime">BotOperationResult</a></li>
 <li class="circle">com.monkey.ultimatebot.api.model.identity.<a href="com/monkey/ultimatebot/api/model/identity/BotSkin.html" class="type-name-link" title="class in com.monkey.ultimatebot.api.model.identity">BotSkin</a></li>
 <li class="circle">com.monkey.ultimatebot.api.model.runtime.<a href="com/monkey/ultimatebot/api/model/runtime/BotSnapshot.html" class="type-name-link" title="class in com.monkey.ultimatebot.api.model.runtime">BotSnapshot</a></li>
+<li class="circle">com.monkey.ultimatebot.api.extension.brain.<a href="com/monkey/ultimatebot/api/extension/brain/BrainDamage.html" class="type-name-link" title="class in com.monkey.ultimatebot.api.extension.brain">BrainDamage</a></li>
+<li class="circle">com.monkey.ultimatebot.api.extension.brain.<a href="com/monkey/ultimatebot/api/extension/brain/BrainDescriptor.html" class="type-name-link" title="class in com.monkey.ultimatebot.api.extension.brain">BrainDescriptor</a></li>
+<li class="circle">com.monkey.ultimatebot.api.extension.brain.<a href="com/monkey/ultimatebot/api/extension/brain/BrainTargetChange.html" class="type-name-link" title="class in com.monkey.ultimatebot.api.extension.brain">BrainTargetChange</a></li>
+<li class="circle">com.monkey.ultimatebot.api.extension.brain.<a href="com/monkey/ultimatebot/api/extension/brain/BrainTick.html" class="type-name-link" title="class in com.monkey.ultimatebot.api.extension.brain">BrainTick</a></li>
+<li class="circle">com.monkey.ultimatebot.api.extension.combat.<a href="com/monkey/ultimatebot/api/extension/combat/CombatModeDescriptor.html" class="type-name-link" title="class in com.monkey.ultimatebot.api.extension.combat">CombatModeDescriptor</a></li>
+<li class="circle">com.monkey.ultimatebot.api.extension.combat.<a href="com/monkey/ultimatebot/api/extension/combat/CombatModeTick.html" class="type-name-link" title="class in com.monkey.ultimatebot.api.extension.combat">CombatModeTick</a></li>
 </ul>
 </li>
 </ul>

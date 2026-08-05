@@ -143,6 +143,16 @@ loadScripts(document, 'script');</script>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns a snapshot using the runtime bot entity UUID.</div>
 </div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a><wbr>&lt;com.monkey.ultimatebot.common.model.BrainDefinition&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getBrain(com.monkey.ultimatebot.common.model.BrainKey)" class="member-name-link">getBrain</a><wbr>(com.monkey.ultimatebot.common.model.BrainKey&nbsp;brainKey)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Returns one custom brain definition.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;com.monkey.ultimatebot.common.model.BrainDefinition&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getBrains()" class="member-name-link">getBrains</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Returns every custom brain currently registered on the server.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a><wbr>&lt;com.monkey.ultimatebot.common.model.CombatModeDefinition&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getCombatMode(com.monkey.ultimatebot.common.model.CombatMode)" class="member-name-link">getCombatMode</a><wbr>(com.monkey.ultimatebot.common.model.CombatMode&nbsp;combatMode)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
@@ -190,6 +200,16 @@ loadScripts(document, 'script');</script>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#removeBySource(com.monkey.ultimatebot.common.model.BotSource)" class="member-name-link">removeBySource</a><wbr>(com.monkey.ultimatebot.common.model.BotSource&nbsp;source)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Removes all active bots created from the given source.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#resetBrain(java.util.UUID)" class="member-name-link">resetBrain</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/UUID.html" title="class or interface in java.util" class="external-link">UUID</a>&nbsp;ownerUUID)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Restores the brain declared by the selected combat mode, or the built-in brain.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#resetBrainByBotUUID(java.util.UUID)" class="member-name-link">resetBrainByBotUUID</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/UUID.html" title="class or interface in java.util" class="external-link">UUID</a>&nbsp;botUUID)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Restores the default brain using the runtime bot UUID.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#resetCombatTuning(java.util.UUID)" class="member-name-link">resetCombatTuning</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/UUID.html" title="class or interface in java.util" class="external-link">UUID</a>&nbsp;ownerUUID)</code></div>
@@ -280,6 +300,18 @@ loadScripts(document, 'script');</script>
  com.monkey.ultimatebot.common.model.BlastProtectionSettings&nbsp;blastProtection)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Updates per-piece blast protection using the runtime bot UUID.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#updateBrain(java.util.UUID,com.monkey.ultimatebot.common.model.BrainKey)" class="member-name-link">updateBrain</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/UUID.html" title="class or interface in java.util" class="external-link">UUID</a>&nbsp;ownerUUID,
+ com.monkey.ultimatebot.common.model.BrainKey&nbsp;brainKey)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Assigns a custom brain to an active bot independently of its combat mode.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#updateBrainByBotUUID(java.util.UUID,com.monkey.ultimatebot.common.model.BrainKey)" class="member-name-link">updateBrainByBotUUID</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/UUID.html" title="class or interface in java.util" class="external-link">UUID</a>&nbsp;botUUID,
+ com.monkey.ultimatebot.common.model.BrainKey&nbsp;brainKey)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Assigns a custom brain using the runtime bot UUID.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#updateCombat(java.util.UUID,boolean)" class="member-name-link">updateCombat</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/UUID.html" title="class or interface in java.util" class="external-link">UUID</a>&nbsp;ownerUUID,
@@ -572,6 +604,20 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
+<section class="detail" id="getBrains()">
+<h3>getBrains</h3>
+<div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;com.monkey.ultimatebot.common.model.BrainDefinition&gt;</span>&nbsp;<span class="element-name">getBrains</span>()</div>
+<div class="block">Returns every custom brain currently registered on the server.</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getBrain(com.monkey.ultimatebot.common.model.BrainKey)">
+<h3>getBrain</h3>
+<div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a>&lt;com.monkey.ultimatebot.common.model.BrainDefinition&gt;</span>&nbsp;<span class="element-name">getBrain</span><wbr><span class="parameters">(com.monkey.ultimatebot.common.model.BrainKey&nbsp;brainKey)</span></div>
+<div class="block">Returns one custom brain definition.</div>
+</section>
+</li>
+<li>
 <section class="detail" id="getTeamAllyBot(java.util.UUID)">
 <h3>getTeamAllyBot</h3>
 <div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a>&lt;<a href="../model/runtime/BotSnapshot.html" title="class in com.monkey.ultimatebot.api.model.runtime">BotSnapshot</a>&gt;</span>&nbsp;<span class="element-name">getTeamAllyBot</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/UUID.html" title="class or interface in java.util" class="external-link">UUID</a>&nbsp;teamOwnerUUID)</span></div>
@@ -817,6 +863,36 @@ loadScripts(document, 'script');</script>
 <div class="member-signature"><span class="return-type">boolean</span>&nbsp;<span class="element-name">updateCombatModeByBotUUID</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/UUID.html" title="class or interface in java.util" class="external-link">UUID</a>&nbsp;botUUID,
  com.monkey.ultimatebot.common.model.CombatMode&nbsp;combatMode)</span></div>
 <div class="block">Changes the active combat mode using the runtime bot UUID.</div>
+</section>
+</li>
+<li>
+<section class="detail" id="updateBrain(java.util.UUID,com.monkey.ultimatebot.common.model.BrainKey)">
+<h3>updateBrain</h3>
+<div class="member-signature"><span class="return-type">boolean</span>&nbsp;<span class="element-name">updateBrain</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/UUID.html" title="class or interface in java.util" class="external-link">UUID</a>&nbsp;ownerUUID,
+ com.monkey.ultimatebot.common.model.BrainKey&nbsp;brainKey)</span></div>
+<div class="block">Assigns a custom brain to an active bot independently of its combat mode.</div>
+</section>
+</li>
+<li>
+<section class="detail" id="updateBrainByBotUUID(java.util.UUID,com.monkey.ultimatebot.common.model.BrainKey)">
+<h3>updateBrainByBotUUID</h3>
+<div class="member-signature"><span class="return-type">boolean</span>&nbsp;<span class="element-name">updateBrainByBotUUID</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/UUID.html" title="class or interface in java.util" class="external-link">UUID</a>&nbsp;botUUID,
+ com.monkey.ultimatebot.common.model.BrainKey&nbsp;brainKey)</span></div>
+<div class="block">Assigns a custom brain using the runtime bot UUID.</div>
+</section>
+</li>
+<li>
+<section class="detail" id="resetBrain(java.util.UUID)">
+<h3>resetBrain</h3>
+<div class="member-signature"><span class="return-type">boolean</span>&nbsp;<span class="element-name">resetBrain</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/UUID.html" title="class or interface in java.util" class="external-link">UUID</a>&nbsp;ownerUUID)</span></div>
+<div class="block">Restores the brain declared by the selected combat mode, or the built-in brain.</div>
+</section>
+</li>
+<li>
+<section class="detail" id="resetBrainByBotUUID(java.util.UUID)">
+<h3>resetBrainByBotUUID</h3>
+<div class="member-signature"><span class="return-type">boolean</span>&nbsp;<span class="element-name">resetBrainByBotUUID</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/UUID.html" title="class or interface in java.util" class="external-link">UUID</a>&nbsp;botUUID)</span></div>
+<div class="block">Restores the default brain using the runtime bot UUID.</div>
 </section>
 </li>
 <li>

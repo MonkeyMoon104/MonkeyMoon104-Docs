@@ -91,7 +91,7 @@ loadScripts(document, 'script');</script>
 </div>
 <section class="class-description" id="class-description">
 <hr>
-<div class="type-signature"><span class="modifiers">public record </span><span class="element-name type-name-label">CombatModeDefinition</span>(<a href="CombatMode.html" title="enum class in com.monkey.ultimatebot.common.model">CombatMode</a>&nbsp;mode, <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;displayName, boolean&nbsp;enabled, <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;iconMaterial, <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="CombatCapability.html" title="enum class in com.monkey.ultimatebot.common.model">CombatCapability</a>&gt;&nbsp;capabilities, <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="DifficultyTier.html" title="enum class in com.monkey.ultimatebot.common.model">DifficultyTier</a>,<wbr><a href="CombatTuning.html" title="class in com.monkey.ultimatebot.common.model">CombatTuning</a>&gt;&nbsp;profiles)
+<div class="type-signature"><span class="modifiers">public record </span><span class="element-name type-name-label">CombatModeDefinition</span>(<a href="CombatMode.html" title="class in com.monkey.ultimatebot.common.model">CombatMode</a>&nbsp;mode, <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;displayName, boolean&nbsp;enabled, <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;iconMaterial, <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="CombatCapability.html" title="enum class in com.monkey.ultimatebot.common.model">CombatCapability</a>&gt;&nbsp;capabilities, <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="DifficultyTier.html" title="enum class in com.monkey.ultimatebot.common.model">DifficultyTier</a>,<wbr><a href="CombatTuning.html" title="class in com.monkey.ultimatebot.common.model">CombatTuning</a>&gt;&nbsp;profiles, <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;provider, <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&nbsp;description, <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;permission, int&nbsp;order, @Nullable <a href="BrainKey.html" title="class in com.monkey.ultimatebot.common.model">BrainKey</a>&nbsp;brain)
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Record.html" title="class or interface in java.lang" class="external-link">Record</a></span></div>
 <div class="block">Public description of an available combat mode and its difficulty profiles.</div>
 </section>
@@ -105,13 +105,25 @@ loadScripts(document, 'script');</script>
 <div class="summary-table two-column-summary">
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
-<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(com.monkey.ultimatebot.common.model.CombatMode,java.lang.String,boolean,java.lang.String,java.util.Set,java.util.Map)" class="member-name-link">CombatModeDefinition</a><wbr>(<a href="CombatMode.html" title="enum class in com.monkey.ultimatebot.common.model">CombatMode</a>&nbsp;mode,
+<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(com.monkey.ultimatebot.common.model.CombatMode,java.lang.String,boolean,java.lang.String,java.util.Set,java.util.Map)" class="member-name-link">CombatModeDefinition</a><wbr>(<a href="CombatMode.html" title="class in com.monkey.ultimatebot.common.model">CombatMode</a>&nbsp;mode,
  <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;displayName,
  boolean&nbsp;enabled,
  <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;iconMaterial,
  <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="CombatCapability.html" title="enum class in com.monkey.ultimatebot.common.model">CombatCapability</a>&gt;&nbsp;capabilities,
  <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="DifficultyTier.html" title="enum class in com.monkey.ultimatebot.common.model">DifficultyTier</a>,<wbr><a href="CombatTuning.html" title="class in com.monkey.ultimatebot.common.model">CombatTuning</a>&gt;&nbsp;profiles)</code></div>
-<div class="col-last even-row-color">
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(com.monkey.ultimatebot.common.model.CombatMode,java.lang.String,boolean,java.lang.String,java.util.Set,java.util.Map,java.lang.String,java.util.List,java.lang.String,int,com.monkey.ultimatebot.common.model.BrainKey)" class="member-name-link">CombatModeDefinition</a><wbr>(<a href="CombatMode.html" title="class in com.monkey.ultimatebot.common.model">CombatMode</a>&nbsp;mode,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;displayName,
+ boolean&nbsp;enabled,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;iconMaterial,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="CombatCapability.html" title="enum class in com.monkey.ultimatebot.common.model">CombatCapability</a>&gt;&nbsp;capabilities,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="DifficultyTier.html" title="enum class in com.monkey.ultimatebot.common.model">DifficultyTier</a>,<wbr><a href="CombatTuning.html" title="class in com.monkey.ultimatebot.common.model">CombatTuning</a>&gt;&nbsp;profiles,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;provider,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&nbsp;description,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;permission,
+ int&nbsp;order,
+ @Nullable <a href="BrainKey.html" title="class in com.monkey.ultimatebot.common.model">BrainKey</a>&nbsp;brain)</code></div>
+<div class="col-last odd-row-color">
 <div class="block">Creates an instance of a <code>CombatModeDefinition</code> record class.</div>
 </div>
 </div>
@@ -128,10 +140,20 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a><wbr>&lt;<a href="CombatCapability.html" title="enum class in com.monkey.ultimatebot.common.model">CombatCapability</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#capabilities()" class="member-name-link">capabilities</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@Nullable <a href="BrainKey.html" title="class in com.monkey.ultimatebot.common.model">BrainKey</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#brain()" class="member-name-link">brain</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns the value of the <code>brain</code> record component.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a><wbr>&lt;<a href="CombatCapability.html" title="enum class in com.monkey.ultimatebot.common.model">CombatCapability</a>&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#capabilities()" class="member-name-link">capabilities</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the value of the <code>capabilities</code> record component.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#description()" class="member-name-link">description</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns the value of the <code>description</code> record component.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#displayName()" class="member-name-link">displayName</a>()</code></div>
@@ -158,10 +180,20 @@ loadScripts(document, 'script');</script>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the value of the <code>iconMaterial</code> record component.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CombatMode.html" title="enum class in com.monkey.ultimatebot.common.model">CombatMode</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CombatMode.html" title="class in com.monkey.ultimatebot.common.model">CombatMode</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mode()" class="member-name-link">mode</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the value of the <code>mode</code> record component.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#order()" class="member-name-link">order</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns the value of the <code>order</code> record component.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#permission()" class="member-name-link">permission</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns the value of the <code>permission</code> record component.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CombatTuning.html" title="class in com.monkey.ultimatebot.common.model">CombatTuning</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#profile(com.monkey.ultimatebot.common.model.DifficultyTier)" class="member-name-link">profile</a><wbr>(<a href="DifficultyTier.html" title="enum class in com.monkey.ultimatebot.common.model">DifficultyTier</a>&nbsp;difficulty)</code></div>
@@ -173,9 +205,14 @@ loadScripts(document, 'script');</script>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the value of the <code>profiles</code> record component.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#provider()" class="member-name-link">provider</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns the value of the <code>provider</code> record component.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns a string representation of this record class.</div>
 </div>
 </div>
@@ -196,14 +233,19 @@ loadScripts(document, 'script');</script>
 <h2>Constructor Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="&lt;init&gt;(com.monkey.ultimatebot.common.model.CombatMode,java.lang.String,boolean,java.lang.String,java.util.Set,java.util.Map)">
+<section class="detail" id="&lt;init&gt;(com.monkey.ultimatebot.common.model.CombatMode,java.lang.String,boolean,java.lang.String,java.util.Set,java.util.Map,java.lang.String,java.util.List,java.lang.String,int,com.monkey.ultimatebot.common.model.BrainKey)">
 <h3>CombatModeDefinition</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">CombatModeDefinition</span><wbr><span class="parameters">(<a href="CombatMode.html" title="enum class in com.monkey.ultimatebot.common.model">CombatMode</a>&nbsp;mode,
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">CombatModeDefinition</span><wbr><span class="parameters">(<a href="CombatMode.html" title="class in com.monkey.ultimatebot.common.model">CombatMode</a>&nbsp;mode,
  <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;displayName,
  boolean&nbsp;enabled,
  <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;iconMaterial,
  <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="CombatCapability.html" title="enum class in com.monkey.ultimatebot.common.model">CombatCapability</a>&gt;&nbsp;capabilities,
- <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="DifficultyTier.html" title="enum class in com.monkey.ultimatebot.common.model">DifficultyTier</a>,<wbr><a href="CombatTuning.html" title="class in com.monkey.ultimatebot.common.model">CombatTuning</a>&gt;&nbsp;profiles)</span></div>
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="DifficultyTier.html" title="enum class in com.monkey.ultimatebot.common.model">DifficultyTier</a>,<wbr><a href="CombatTuning.html" title="class in com.monkey.ultimatebot.common.model">CombatTuning</a>&gt;&nbsp;profiles,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;provider,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&nbsp;description,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;permission,
+ int&nbsp;order,
+ @Nullable <a href="BrainKey.html" title="class in com.monkey.ultimatebot.common.model">BrainKey</a>&nbsp;brain)</span></div>
 <div class="block">Creates an instance of a <code>CombatModeDefinition</code> record class.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
@@ -213,7 +255,23 @@ loadScripts(document, 'script');</script>
 <dd><code>iconMaterial</code> - the value for the <code>iconMaterial</code> record component</dd>
 <dd><code>capabilities</code> - the value for the <code>capabilities</code> record component</dd>
 <dd><code>profiles</code> - the value for the <code>profiles</code> record component</dd>
+<dd><code>provider</code> - the value for the <code>provider</code> record component</dd>
+<dd><code>description</code> - the value for the <code>description</code> record component</dd>
+<dd><code>permission</code> - the value for the <code>permission</code> record component</dd>
+<dd><code>order</code> - the value for the <code>order</code> record component</dd>
+<dd><code>brain</code> - the value for the <code>brain</code> record component</dd>
 </dl>
+</section>
+</li>
+<li>
+<section class="detail" id="&lt;init&gt;(com.monkey.ultimatebot.common.model.CombatMode,java.lang.String,boolean,java.lang.String,java.util.Set,java.util.Map)">
+<h3>CombatModeDefinition</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">CombatModeDefinition</span><wbr><span class="parameters">(<a href="CombatMode.html" title="class in com.monkey.ultimatebot.common.model">CombatMode</a>&nbsp;mode,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;displayName,
+ boolean&nbsp;enabled,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;iconMaterial,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="CombatCapability.html" title="enum class in com.monkey.ultimatebot.common.model">CombatCapability</a>&gt;&nbsp;capabilities,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="DifficultyTier.html" title="enum class in com.monkey.ultimatebot.common.model">DifficultyTier</a>,<wbr><a href="CombatTuning.html" title="class in com.monkey.ultimatebot.common.model">CombatTuning</a>&gt;&nbsp;profiles)</span></div>
 </section>
 </li>
 </ul>
@@ -275,7 +333,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="mode()">
 <h3>mode</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CombatMode.html" title="enum class in com.monkey.ultimatebot.common.model">CombatMode</a></span>&nbsp;<span class="element-name">mode</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CombatMode.html" title="class in com.monkey.ultimatebot.common.model">CombatMode</a></span>&nbsp;<span class="element-name">mode</span>()</div>
 <div class="block">Returns the value of the <code>mode</code> record component.</div>
 <dl class="notes">
 <dt>Returns:</dt>
@@ -335,6 +393,61 @@ loadScripts(document, 'script');</script>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>the value of the <code>profiles</code> record component</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="provider()">
+<h3>provider</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">provider</span>()</div>
+<div class="block">Returns the value of the <code>provider</code> record component.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the value of the <code>provider</code> record component</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="description()">
+<h3>description</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;</span>&nbsp;<span class="element-name">description</span>()</div>
+<div class="block">Returns the value of the <code>description</code> record component.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the value of the <code>description</code> record component</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="permission()">
+<h3>permission</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">permission</span>()</div>
+<div class="block">Returns the value of the <code>permission</code> record component.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the value of the <code>permission</code> record component</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="order()">
+<h3>order</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">order</span>()</div>
+<div class="block">Returns the value of the <code>order</code> record component.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the value of the <code>order</code> record component</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="brain()">
+<h3>brain</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">@Nullable <a href="BrainKey.html" title="class in com.monkey.ultimatebot.common.model">BrainKey</a></span>&nbsp;<span class="element-name">brain</span>()</div>
+<div class="block">Returns the value of the <code>brain</code> record component.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the value of the <code>brain</code> record component</dd>
 </dl>
 </section>
 </li>

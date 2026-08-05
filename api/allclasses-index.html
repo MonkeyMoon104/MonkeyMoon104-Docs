@@ -55,6 +55,38 @@ loadScripts(document, 'script');</script>
 <div class="summary-table two-column-summary">
 <div class="table-header col-first">Class</div>
 <div class="table-header col-last">Description</div>
+<div class="col-first even-row-color all-classes-table all-classes-table-tab1"><a href="com/monkey/ultimatebot/api/addon/AddonContext.html" title="interface in com.monkey.ultimatebot.api.addon">AddonContext</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab1">
+<div class="block">Scoped services supplied to one externally loaded addon.</div>
+</div>
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab4"><a href="com/monkey/ultimatebot/api/addon/AddonDescriptor.html" title="class in com.monkey.ultimatebot.api.addon">AddonDescriptor</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab4">
+<div class="block">Validated metadata read from <code>ultimatebot-addon.properties</code>.</div>
+</div>
+<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="com/monkey/ultimatebot/api/event/addon/AddonLifecycleEvent.html" title="class in com.monkey.ultimatebot.api.event.addon">AddonLifecycleEvent</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
+<div class="block">Fired when an external UltimateBot addon changes lifecycle state.</div>
+</div>
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab1"><a href="com/monkey/ultimatebot/api/addon/AddonRegistry.html" title="interface in com.monkey.ultimatebot.api.addon">AddonRegistry</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab1">
+<div class="block">Read-only view of addons discovered by UltimateBot.</div>
+</div>
+<div class="col-first even-row-color all-classes-table all-classes-table-tab1"><a href="com/monkey/ultimatebot/api/addon/AddonResourceScope.html" title="interface in com.monkey.ultimatebot.api.addon">AddonResourceScope</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab1">
+<div class="block">Tracks addon-owned resources and releases them in reverse registration order.</div>
+</div>
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab4"><a href="com/monkey/ultimatebot/api/addon/AddonSnapshot.html" title="class in com.monkey.ultimatebot.api.addon">AddonSnapshot</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab4">
+<div class="block">Immutable status of one installed addon.</div>
+</div>
+<div class="col-first even-row-color all-classes-table all-classes-table-tab3"><a href="com/monkey/ultimatebot/api/addon/AddonState.html" title="enum class in com.monkey.ultimatebot.api.addon">AddonState</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab3">
+<div class="block">Observable lifecycle state of an installed addon.</div>
+</div>
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab1"><a href="com/monkey/ultimatebot/api/addon/AddonTask.html" title="interface in com.monkey.ultimatebot.api.addon">AddonTask</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab1">
+<div class="block">Cancellable scheduler handle owned by an addon resource scope.</div>
+</div>
 <div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="com/monkey/ultimatebot/api/event/combat/BotAttackEvent.html" title="class in com.monkey.ultimatebot.api.event.combat">BotAttackEvent</a></div>
 <div class="col-last even-row-color all-classes-table all-classes-table-tab2">
 <div class="block">Fired immediately before a bot executes a combat attack.</div>
@@ -66,6 +98,22 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color all-classes-table all-classes-table-tab4"><a href="com/monkey/ultimatebot/api/model/configuration/BotBlastProtection.html" title="class in com.monkey.ultimatebot.api.model.configuration">BotBlastProtection</a></div>
 <div class="col-last even-row-color all-classes-table all-classes-table-tab4">
 <div class="block">Per-armor-piece blast protection profile.</div>
+</div>
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab1"><a href="com/monkey/ultimatebot/api/extension/brain/BotBrainContext.html" title="interface in com.monkey.ultimatebot.api.extension.brain">BotBrainContext</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab1">
+<div class="block">Stable per-bot services supplied to a custom brain factory.</div>
+</div>
+<div class="col-first even-row-color all-classes-table all-classes-table-tab1"><a href="com/monkey/ultimatebot/api/extension/brain/BotBrainProvider.html" title="interface in com.monkey.ultimatebot.api.extension.brain">BotBrainProvider</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab1">
+<div class="block">Factory and metadata provider for a custom bot brain.</div>
+</div>
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab1"><a href="com/monkey/ultimatebot/api/extension/brain/BotBrainSession.html" title="interface in com.monkey.ultimatebot.api.extension.brain">BotBrainSession</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab1">
+<div class="block">Per-bot custom AI instance with deterministic lifecycle ownership.</div>
+</div>
+<div class="col-first even-row-color all-classes-table all-classes-table-tab1"><a href="com/monkey/ultimatebot/api/extension/control/BotControl.html" title="interface in com.monkey.ultimatebot.api.extension.control">BotControl</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab1">
+<div class="block">Stable, server-thread-only controls available to custom combat sessions and brains.</div>
 </div>
 <div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="com/monkey/ultimatebot/api/event/combat/BotDamageEvent.html" title="class in com.monkey.ultimatebot.api.event.combat">BotDamageEvent</a></div>
 <div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
@@ -267,17 +315,79 @@ loadScripts(document, 'script');</script>
 <div class="col-last even-row-color all-classes-table all-classes-table-tab2">
 <div class="block">Fired after one or more totems have been consumed by a bot.</div>
 </div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab1"><a href="com/monkey/ultimatebot/api/managers/IBotManager.html" title="interface in com.monkey.ultimatebot.api.managers">IBotManager</a></div>
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab4"><a href="com/monkey/ultimatebot/api/extension/brain/BrainDamage.html" title="class in com.monkey.ultimatebot.api.extension.brain">BrainDamage</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab4">
+<div class="block">Immutable damage signal delivered directly to one custom brain session.</div>
+</div>
+<div class="col-first even-row-color all-classes-table all-classes-table-tab4"><a href="com/monkey/ultimatebot/api/extension/brain/BrainDescriptor.html" title="class in com.monkey.ultimatebot.api.extension.brain">BrainDescriptor</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab4">
+<div class="block">Immutable identity and ownership declaration for a custom bot brain.</div>
+</div>
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab4"><a href="com/monkey/ultimatebot/api/extension/brain/BrainTargetChange.html" title="class in com.monkey.ultimatebot.api.extension.brain">BrainTargetChange</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab4">
+<div class="block">Immutable target transition delivered without going through the global event bus.</div>
+</div>
+<div class="col-first even-row-color all-classes-table all-classes-table-tab4"><a href="com/monkey/ultimatebot/api/extension/brain/BrainTick.html" title="class in com.monkey.ultimatebot.api.extension.brain">BrainTick</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab4">
+<div class="block">Immutable input delivered once per server tick to a full custom brain.</div>
+</div>
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab4"><a href="com/monkey/ultimatebot/api/extension/combat/CombatModeDescriptor.html" title="class in com.monkey.ultimatebot.api.extension.combat">CombatModeDescriptor</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab4">
+<div class="block">Complete public metadata and defaults for one dynamically registered combat mode.</div>
+</div>
+<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="com/monkey/ultimatebot/api/extension/combat/CombatModeDescriptor.Builder.html" title="class in com.monkey.ultimatebot.api.extension.combat">CombatModeDescriptor.Builder</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
+<div class="block">Fluent builder for addon-provided mode metadata, profiles and kit.</div>
+</div>
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab1"><a href="com/monkey/ultimatebot/api/extension/combat/CombatModeProvider.html" title="interface in com.monkey.ultimatebot.api.extension.combat">CombatModeProvider</a></div>
 <div class="col-last odd-row-color all-classes-table all-classes-table-tab1">
+<div class="block">Factory and metadata provider for one custom combat mode.</div>
+</div>
+<div class="col-first even-row-color all-classes-table all-classes-table-tab1"><a href="com/monkey/ultimatebot/api/extension/combat/CombatModeRuntime.html" title="interface in com.monkey.ultimatebot.api.extension.combat">CombatModeRuntime</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab1">
+<div class="block">Per-bot services supplied when a custom combat-mode session is created.</div>
+</div>
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab1"><a href="com/monkey/ultimatebot/api/extension/combat/CombatModeSession.html" title="interface in com.monkey.ultimatebot.api.extension.combat">CombatModeSession</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab1">
+<div class="block">Per-bot stateful combat strategy owned and closed by UltimateBot.</div>
+</div>
+<div class="col-first even-row-color all-classes-table all-classes-table-tab4"><a href="com/monkey/ultimatebot/api/extension/combat/CombatModeTick.html" title="class in com.monkey.ultimatebot.api.extension.combat">CombatModeTick</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab4">
+<div class="block">Immutable input delivered once per active combat tick.</div>
+</div>
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab1"><a href="com/monkey/ultimatebot/api/extension/ExtensionRegistration.html" title="interface in com.monkey.ultimatebot.api.extension">ExtensionRegistration</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab1">
+<div class="block">Idempotent registration handle returned for every installed extension.</div>
+</div>
+<div class="col-first even-row-color all-classes-table all-classes-table-tab1"><a href="com/monkey/ultimatebot/api/managers/IBotManager.html" title="interface in com.monkey.ultimatebot.api.managers">IBotManager</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab1">
 <div class="block">Public service interface for creating, managing and removing UltimateBot instances.</div>
 </div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab1"><a href="com/monkey/ultimatebot/api/managers/IBotRegistry.html" title="interface in com.monkey.ultimatebot.api.managers">IBotRegistry</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab1">
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab1"><a href="com/monkey/ultimatebot/api/managers/IBotRegistry.html" title="interface in com.monkey.ultimatebot.api.managers">IBotRegistry</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab1">
 <div class="block">Read-only registry view for currently active bots.</div>
 </div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="com/monkey/ultimatebot/api/UltimateBotAPI.html" title="class in com.monkey.ultimatebot.api">UltimateBotAPI</a></div>
-<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
+<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="com/monkey/ultimatebot/api/extension/combat/ModeKit.html" title="class in com.monkey.ultimatebot.api.extension.combat">ModeKit</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
+<div class="block">Immutable inventory and armor template applied atomically when a custom mode starts.</div>
+</div>
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="com/monkey/ultimatebot/api/extension/combat/ModeKit.Builder.html" title="class in com.monkey.ultimatebot.api.extension.combat">ModeKit.Builder</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">&nbsp;</div>
+<div class="col-first even-row-color all-classes-table all-classes-table-tab1"><a href="com/monkey/ultimatebot/api/extension/nativeaccess/NativeBotAccess.html" title="interface in com.monkey.ultimatebot.api.extension.nativeaccess">NativeBotAccess</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab1">
+<div class="block">Explicit version-bound escape hatch for expert addons that require native server objects.</div>
+</div>
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab1"><a href="com/monkey/ultimatebot/api/addon/UltimateBotAddon.html" title="interface in com.monkey.ultimatebot.api.addon">UltimateBotAddon</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab1">
+<div class="block">Main entry point implemented by jars installed in UltimateBot's addon directory.</div>
+</div>
+<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="com/monkey/ultimatebot/api/UltimateBotAPI.html" title="class in com.monkey.ultimatebot.api">UltimateBotAPI</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
 <div class="block">Main public entry point for the UltimateBot API.</div>
+</div>
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab1"><a href="com/monkey/ultimatebot/api/extension/UltimateBotExtensionRegistry.html" title="interface in com.monkey.ultimatebot.api.extension">UltimateBotExtensionRegistry</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab1">
+<div class="block">Public registry used by Paper plugins to install custom modes and bot brains.</div>
 </div>
 <div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="com/monkey/ultimatebot/api/event/lifecycle/UltimateBotReadyEvent.html" title="class in com.monkey.ultimatebot.api.event.lifecycle">UltimateBotReadyEvent</a></div>
 <div class="col-last even-row-color all-classes-table all-classes-table-tab2">
