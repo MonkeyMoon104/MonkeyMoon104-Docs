@@ -13,7 +13,7 @@ Regular Paper plugins register through `UltimateBotAPI.get().getExtensions()` an
 
 ```kotlin
 repositories {
-    maven("https://repo.monkeymoon104.it/releases")
+    maven("https://repo.monkeymoon104.it/release")
     maven("https://repo.papermc.io/repository/maven-public/")
 }
 
