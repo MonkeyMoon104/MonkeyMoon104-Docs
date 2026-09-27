@@ -191,8 +191,8 @@ depend: [UltimateBot]</code></pre>
             </div>
 
             <div class="callout callout-warning">
-              <h3>Never shade API or common into your jar</h3>
-              <p>Bundling public UltimateBot classes creates duplicate class identities and breaks provider casting. Keep the dependency compile-only; UltimateBot provides both API and shared models on the server.</p>
+              <h3>Never shade the API into your jar</h3>
+              <p>Bundling public UltimateBot classes creates duplicate class identities and breaks provider casting. Keep the dependency compile-only; UltimateBot provides the API (including domain models) on the server.</p>
             </div>
           </section>
 
@@ -520,7 +520,7 @@ native.1.21.11=com.example.adaptive.nms.v1_21_11.NativeAddon</code></pre>
 
             <ul class="check-list">
               <li>No manual API jar is installed on the server.</li>
-              <li>API and common remain compile-only and are never shaded.</li>
+              <li>The API remains compile-only and is never shaded.</li>
               <li>Private third-party libraries may be relocated inside the addon jar.</li>
               <li>Replacing addon jars through server reload is intentionally unsupported; restart after changes.</li>
               <li>One addon jar may contain separate NMS implementations for every version it supports.</li>
@@ -569,7 +569,7 @@ native.1.21.11=com.example.adaptive.nms.v1_21_11.NativeAddon</code></pre>
             <div class="button-row">
               <a class="button button-primary" href="reference.html">Javadoc overview</a>
               <a class="button" href="allclasses-index.html">All API classes</a>
-              <a class="button button-quiet" href="../common/">Shared model reference</a>
+              <a class="button button-quiet" href="com/monkey/ultimatebot/api/model/package-summary.html">Domain models</a>
             </div>
           </section>
         </div>
@@ -583,7 +583,7 @@ native.1.21.11=com.example.adaptive.nms.v1_21_11.NativeAddon</code></pre>
           <a href="../">Documentation home</a>
           <a href="../sdk/">Remote SDK</a>
           <a href="reference.html">Javadocs</a>
-          <a href="../common/">Shared types</a>
+          <a href="com/monkey/ultimatebot/api/model/package-summary.html">Domain models</a>
         </div>
       </div>
     </footer>

@@ -3,15 +3,15 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Complete UltimateBot 2.0.01 remote Java SDK guide with authenticated bot operations, immutable models and reconnecting live events.">
+    <meta name="description" content="Complete UltimateBot 2.0.1 remote Java SDK guide with authenticated bot operations, immutable models and reconnecting live events.">
     <meta name="theme-color" content="#070b12">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="UltimateBot Developer Documentation">
-    <meta property="og:title" content="UltimateBot SDK 2.0.01">
+    <meta property="og:title" content="UltimateBot SDK 2.0.1">
     <meta property="og:description" content="The complete remote Java SDK guide for authenticated bot operations and reconnecting live events.">
     <meta property="og:url" content="https://docs.monkeymoon104.it/sdk/">
     <meta name="twitter:card" content="summary">
-    <title>UltimateBot SDK 2.0.01 · Developer Guide</title>
+    <title>UltimateBot SDK 2.0.1 · Developer Guide</title>
     <link rel="canonical" href="https://docs.monkeymoon104.it/sdk/">
     <link rel="stylesheet" href="../assets/docs.css">
     <script defer src="../assets/docs.js"></script>
@@ -29,7 +29,7 @@
           <a href="./" aria-current="page">SDK guide</a>
           <a href="reference.html">Javadocs</a>
           <a href="#events">Live events</a>
-          <span class="version-pill">v2.0.01</span>
+          <span class="version-pill">v2.0.1</span>
         </nav>
         <button class="menu-button" type="button" data-menu-toggle aria-label="Open navigation" aria-expanded="false">
           <span class="menu-icon" aria-hidden="true"></span>
@@ -43,7 +43,7 @@
     <main id="main">
       <section class="hero">
         <div>
-          <p class="eyebrow">Remote Java SDK · 2.0.01</p>
+          <p class="eyebrow">Remote Java SDK · 2.0.1</p>
           <h1>Your bot platform, <span>from anywhere.</span></h1>
           <p class="hero-copy">
             A type-safe client for control panels, orchestration services and automation running outside Paper. Authenticate once, call the Remote API and subscribe to resilient live event streams.
@@ -172,7 +172,7 @@
             <p class="section-kicker">Installation</p>
             <h2>Add the SDK to a Java 21 application.</h2>
             <p class="section-lead">
-              The published artifact brings its shared UltimateBot models and JSON runtime transitively. No Paper or Minecraft dependency is required.
+              The published artifact brings the public <code>api</code> models and JSON runtime transitively. No Paper, Minecraft or internal <code>common</code> dependency is required.
             </p>
 
             <div class="tabs" data-tabs>
@@ -188,7 +188,7 @@
 }
 
 dependencies {
-    implementation("com.monkey.ultimatebot:sdk:2.0.01")
+    implementation("com.monkey.ultimatebot:sdk:2.0.1")
 }</code></pre>
                 </div>
               </div>
@@ -198,7 +198,7 @@ dependencies {
                   <pre><code>&lt;dependency&gt;
     &lt;groupId&gt;com.monkey.ultimatebot&lt;/groupId&gt;
     &lt;artifactId&gt;sdk&lt;/artifactId&gt;
-    &lt;version&gt;2.0.01&lt;/version&gt;
+    &lt;version&gt;2.0.1&lt;/version&gt;
 &lt;/dependency&gt;</code></pre>
                 </div>
               </div>
@@ -427,7 +427,7 @@ client.updateBrain(botUuid, BrainKey.of("myaddon", "adaptive-ai"));</code></pre>
             <p class="section-kicker">Generated from source</p>
             <h2>Complete SDK reference.</h2>
             <p class="section-lead">
-              Search every public SDK type generated for version 2.0.01. Open a result for its constructor, builder methods, fields, response contract and nullability details.
+              Search every public SDK type generated for version 2.0.1. Open a result for its constructor, builder methods, fields, response contract and nullability details.
             </p>
 
             <div class="search-panel" data-reference-index="type-search-index.js">
@@ -446,7 +446,7 @@ client.updateBrain(botUuid, BrainKey.of("myaddon", "adaptive-ai"));</code></pre>
             <div class="button-row">
               <a class="button button-primary" href="reference.html">Javadoc overview</a>
               <a class="button" href="allclasses-index.html">All SDK classes</a>
-              <a class="button button-quiet" href="../common/">Shared model reference</a>
+              <a class="button button-quiet" href="../api/com/monkey/ultimatebot/api/model/package-summary.html">Domain models</a>
             </div>
           </section>
         </div>
@@ -455,12 +455,12 @@ client.updateBrain(botUuid, BrainKey.of("myaddon", "adaptive-ai"));</code></pre>
 
     <footer class="site-footer">
       <div class="footer-inner">
-        <span>© <span data-current-year></span> MonkeyMoon104 · UltimateBot SDK 2.0.01</span>
+        <span>© <span data-current-year></span> MonkeyMoon104 · UltimateBot SDK 2.0.1</span>
         <div class="footer-links">
           <a href="../">Documentation home</a>
           <a href="../api/">Server API</a>
           <a href="reference.html">Javadocs</a>
-          <a href="../common/">Shared types</a>
+          <a href="../api/com/monkey/ultimatebot/api/model/package-summary.html">Domain models</a>
         </div>
       </div>
     </footer>

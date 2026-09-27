@@ -18,12 +18,12 @@ repositories {
 }
 
 dependencies {
-    compileOnly("com.monkey.ultimatebot:api:2.0.0")
+    compileOnly("com.monkey.ultimatebot:api:2.0.1")
     compileOnly("io.papermc.paper:paper-api:1.21.4-R0.1-SNAPSHOT")
 }
 ```
 
-The API and common artifacts must never be shaded into an addon. The addon engine rejects jars containing UltimateBot classes because duplicate class identities break provider casting and lifecycle cleanup.
+The API artifact must never be shaded into an addon. The addon engine rejects jars containing UltimateBot classes because duplicate class identities break provider casting and lifecycle cleanup.
 
 ## Hosted addon descriptor
 

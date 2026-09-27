@@ -13,6 +13,12 @@ com.monkey.ultimatebot.api.extension.combat
 com.monkey.ultimatebot.api.extension.control
 com.monkey.ultimatebot.api.extension.nativeaccess
 com.monkey.ultimatebot.api.managers
+com.monkey.ultimatebot.api.model.bot
+com.monkey.ultimatebot.api.model.brain
+com.monkey.ultimatebot.api.model.combat
 com.monkey.ultimatebot.api.model.configuration
 com.monkey.ultimatebot.api.model.identity
+com.monkey.ultimatebot.api.model.platform
 com.monkey.ultimatebot.api.model.runtime
+com.monkey.ultimatebot.api.model.settings
+com.monkey.ultimatebot.api.util
